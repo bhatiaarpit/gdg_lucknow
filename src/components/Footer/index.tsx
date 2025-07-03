@@ -14,6 +14,8 @@ import {
   Heart,
   ArrowRight
 } from 'lucide-react';
+import Image from 'next/image';
+import gdgLogo from '@/assests/gdgLogo.svg'; 
 
 const Footer = () => {
   const quickLinks = [
@@ -94,8 +96,15 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 via-red-500 via-yellow-500 to-green-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">G</span>
+              <div className="w-15 h-15 flex items-center justify-center bg-white rounded-full overflow-hidden border-1 border-black shadow-lg">
+                <Image
+                  src={gdgLogo}
+                  alt="GDG Logo"
+                  width={96}
+                  height={96}
+                  priority
+                  className="object-contain"
+                />
               </div>
               <div>
                 <h3 className="text-lg font-bold text-gray-900">GDG Lucknow</h3>

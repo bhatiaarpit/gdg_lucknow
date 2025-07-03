@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { Users, Calendar, MapPin, Code, Heart, Award, Globe, ChevronRight, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
+import gdgLogo from '@/assests/gdgLogo.svg'; 
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('story');
@@ -104,6 +106,7 @@ const About = () => {
           <p className="text-xl text-gray-700 leading-relaxed">
             GDG Lucknow began in 2016 with a simple vision: to create a space where developers in Lucknow could come together, learn, and grow using Google technologies. What started as a small group of passionate individuals has now evolved into one of the most active tech communities in Uttar Pradesh.
           </p>
+
           
           <p className="text-gray-600 leading-relaxed">
             Our journey has been marked by continuous learning, innovation, and community building. We've organized numerous DevFests, study jams, workshops, and meetups that have helped thousands of developers enhance their skills and build meaningful connections.
@@ -153,8 +156,15 @@ const About = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8">
             <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 via-red-500 via-yellow-500 to-green-500 rounded-full flex items-center justify-center shadow-xl">
-                <span className="text-white font-bold text-3xl">G</span>
+              <div className="w-24 h-24 flex items-center justify-center bg-white rounded-full overflow-hidden border-1 border-black shadow-lg">
+                <Image
+                  src={gdgLogo}
+                  alt="GDG Logo"
+                  width={96}
+                  height={96}
+                  priority
+                  className="object-contain"
+                />
               </div>
             </div>
             

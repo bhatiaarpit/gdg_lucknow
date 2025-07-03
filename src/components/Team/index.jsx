@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { Users, Star, Award, Globe, Github, Linkedin, Twitter, Mail, MapPin, ChevronRight, ExternalLink, Heart, Code, Briefcase, GraduationCap } from 'lucide-react';
+import gdgLogo from '@/assests/gdgLogo.svg'; 
+import Image from 'next/image';
 
 const Team = () => {
   const [activeTab, setActiveTab] = useState('organizers');
@@ -329,8 +331,15 @@ const Team = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8">
             <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 via-red-500 via-yellow-500 to-green-500 rounded-full flex items-center justify-center shadow-xl">
-                <Users className="h-10 w-10 text-white" />
+              <div className="w-24 h-24 flex items-center justify-center bg-white rounded-full overflow-hidden border-1 border-black shadow-lg">
+                <Image
+                  src={gdgLogo}
+                  alt="GDG Logo"
+                  width={96}
+                  height={96}
+                  priority
+                  className="object-contain"
+                />
               </div>
             </div>
             
@@ -367,22 +376,24 @@ const Team = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Tab Navigation */}
           <div className="flex justify-center mb-12">
-            <div className="bg-white rounded-2xl p-2 shadow-lg">
-              {Object.keys(tabContent).map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                    activeTab === tab
-                      ? 'bg-blue-600 text-white shadow-lg'
-                      : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  {tab === 'organizers' && 'Organizers'}
-                  {tab === 'coreTeam' && 'Core Team'}
-                  {tab === 'volunteers' && 'Volunteers'}
-                </button>
-              ))}
+            <div className="bg-white rounded-2xl p-2 shadow-lg overflow-x-auto">
+              <div className="flex flex-nowrap gap-2">
+                {Object.keys(tabContent).map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
+                      activeTab === tab
+                        ? 'bg-blue-600 text-white shadow-lg'
+                        : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                    }`}
+                  >
+                    {tab === 'organizers' && 'Organizers'}
+                    {tab === 'coreTeam' && 'Core Team'}
+                    {tab === 'volunteers' && 'Volunteers'}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
