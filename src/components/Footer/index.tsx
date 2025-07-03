@@ -231,7 +231,7 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                  className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none text-black focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                 />
                 <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
                   Subscribe
@@ -242,21 +242,20 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="border-t border-gray-200 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-4 text-sm text-gray-600">
-              <span>© 2024 GDG Lucknow. All rights reserved.</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+          <div className="flex flex-col space-y-4 md:flex-row md:justify-between md:items-center md:space-y-0">
+            <div className="flex flex-col items-center space-y-2 text-sm text-gray-600 md:flex-row md:items-center md:space-y-0 md:space-x-4">
+              <span className="text-center">© 2024 GDG Lucknow. All rights reserved.</span>
               <span className="hidden md:block">•</span>
-              <span className="flex items-center space-x-1">
+              <span className="flex items-center justify-center space-x-1">
                 <span>Made with</span>
                 <Heart className="h-4 w-4 text-red-500 animate-pulse" />
                 <span>in Lucknow</span>
               </span>
             </div>
             
-            <div className="flex items-center space-x-6 text-sm">
+            <div className="flex flex-col items-center space-y-2 text-sm sm:flex-row sm:items-center sm:space-y-0 sm:space-x-6">
               <a href="https://developers.google.com/community/gdg" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors flex items-center space-x-1">
                 <span>Google Developers</span>
                 <ExternalLink className="h-3 w-3" />
