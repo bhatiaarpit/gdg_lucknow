@@ -104,13 +104,12 @@ const About = () => {
 
   const tabContent: Record<TabKey, JSX.Element> = {
     story: (
-      <div className="space-y-8">
+      <div className="space-y-6 sm:space-y-8">
         <div className="prose prose-lg max-w-none">
-          <p className="text-xl text-gray-700 leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
             GDG Lucknow began in 2016 with a simple vision: to create a space where developers in Lucknow could come together, learn, and grow using Google technologies. What started as a small group of passionate individuals has now evolved into one of the most active tech communities in Uttar Pradesh.
           </p>
 
-          
           <p className="text-gray-600 leading-relaxed">
             Our journey has been marked by continuous learning, innovation, and community building. We&apos;ve organized numerous DevFests, study jams, workshops, and meetups that have helped thousands of developers enhance their skills and build meaningful connections.
           </p>
@@ -122,29 +121,29 @@ const About = () => {
       </div>
     ),
     mission: (
-      <div className="space-y-8">
-        <div className="bg-gradient-to-r from-blue-50 to-green-50 p-8 rounded-2xl">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
-          <p className="text-lg text-gray-700 leading-relaxed">
+      <div className="space-y-6 sm:space-y-8">
+        <div className="bg-gradient-to-r from-blue-50 to-green-50 p-6 sm:p-8 rounded-2xl">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Our Mission</h3>
+          <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
             To empower developers in Lucknow and surrounding regions by providing access to cutting-edge Google technologies, fostering innovation, and building a supportive community that encourages learning, sharing, and collaboration.
           </p>
         </div>
         
-        <div className="bg-gradient-to-r from-red-50 to-yellow-50 p-8 rounded-2xl">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
-          <p className="text-lg text-gray-700 leading-relaxed">
+        <div className="bg-gradient-to-r from-red-50 to-yellow-50 p-6 sm:p-8 rounded-2xl">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Our Vision</h3>
+          <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
             To be the leading technology community in Northern India, known for nurturing talent, driving innovation, and creating opportunities that connect local developers with global technologies and opportunities.
           </p>
         </div>
       </div>
     ),
     values: (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
         {values.map((value, index) => (
           <div key={index} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className="text-4xl mb-4">{value.icon}</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-            <p className="text-gray-600 leading-relaxed">{value.description}</p>
+            <div className="text-3xl sm:text-4xl mb-4">{value.icon}</div>
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{value.description}</p>
           </div>
         ))}
       </div>
@@ -154,12 +153,12 @@ const About = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-green-50 py-20">
+      <section className="relative bg-gradient-to-br from-blue-50 via-white to-green-50 py-12 sm:py-16 lg:py-20">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-100/20 to-green-100/20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-8">
-            <div className="flex justify-center mb-6">
-              <div className="w-24 h-24 flex items-center justify-center bg-white rounded-full overflow-hidden border-1 border-black shadow-lg">
+          <div className="text-center space-y-6 sm:space-y-8">
+            <div className="flex justify-center mb-4 sm:mb-6">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center bg-white rounded-full overflow-hidden border-1 border-black shadow-lg">
                 <Image
                   src={gdgLogo}
                   alt="GDG Logo"
@@ -171,11 +170,11 @@ const About = () => {
               </div>
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 px-4">
               About <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">GDG Lucknow</span>
             </h1>
             
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed px-4">
               Empowering developers, fostering innovation, and building the future of technology in the heart of Uttar Pradesh since 2016.
             </p>
           </div>
@@ -183,16 +182,16 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className={`inline-flex p-4 rounded-2xl ${stat.bg} mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <stat.icon className={`h-8 w-8 ${stat.color}`} />
+                <div className={`inline-flex p-3 sm:p-4 rounded-2xl ${stat.bg} mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <stat.icon className={`h-6 w-6 sm:h-8 sm:w-8 ${stat.color}`} />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
+                <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-gray-600 px-2">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -200,50 +199,57 @@ const About = () => {
       </section>
 
       {/* Main Content Tabs */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 sm:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Tab Navigation */}
-          <div className="flex justify-center mb-12">
-            <div className="bg-white rounded-2xl p-2 shadow-lg">
-              {tabKeys.map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                    activeTab === tab
-                      ? 'bg-blue-600 text-white shadow-lg'
-                      : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-              ))}
+          <div className="flex justify-center mb-8 sm:mb-12">
+            <div className="bg-white rounded-2xl p-1 sm:p-2 shadow-lg w-full max-w-md sm:max-w-none sm:w-auto">
+              <div className="flex flex-col sm:flex-row">
+                {tabKeys.map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`px-4 sm:px-6 py-3 rounded-xl font-medium transition-all duration-300 text-sm sm:text-base ${
+                      activeTab === tab
+                        ? 'bg-blue-600 text-white shadow-lg'
+                        : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                    }`}
+                  >
+                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Tab Content */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
             {tabContent[activeTab]}
           </div>
         </div>
       </section>
 
       {/* Timeline Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Journey</h2>
-            <p className="text-xl text-gray-600">From humble beginnings to a thriving community</p>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Our Journey</h2>
+            <p className="text-lg sm:text-xl text-gray-600">From humble beginnings to a thriving community</p>
           </div>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-600 to-green-600"></div>
-
-            {timeline.map((item, index) => (
-              <div key={index} className={`relative flex items-center mb-8 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                  <div className={`bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ${
+          {/* Mobile Timeline */}
+          <div className="block lg:hidden">
+            <div className="relative">
+              {/* Mobile timeline line */}
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 to-green-600"></div>
+              
+              {timeline.map((item, index) => (
+                <div key={index} className="relative flex items-start mb-8 pl-16">
+                  <div className={`absolute left-6 w-4 h-4 rounded-full ${
+                    item.milestone ? 'bg-blue-600' : 'bg-gray-400'
+                  } border-4 border-white shadow-lg`}></div>
+                  
+                  <div className={`bg-white p-4 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 w-full ${
                     item.milestone ? 'ring-2 ring-blue-600/20' : ''
                   }`}>
                     <div className={`text-sm font-semibold mb-2 ${
@@ -252,44 +258,70 @@ const About = () => {
                       {item.year}
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
+                    <p className="text-gray-600 text-sm sm:text-base">{item.description}</p>
                   </div>
                 </div>
+              ))}
+            </div>
+          </div>
 
-                {/* Timeline dot */}
-                <div className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full ${
-                  item.milestone ? 'bg-blue-600' : 'bg-gray-400'
-                } border-4 border-white shadow-lg`}></div>
-              </div>
-            ))}
+          {/* Desktop Timeline */}
+          <div className="hidden lg:block">
+            <div className="relative">
+              {/* Desktop timeline line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-600 to-green-600"></div>
+
+              {timeline.map((item, index) => (
+                <div key={index} className={`relative flex items-center mb-8 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                    <div className={`bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ${
+                      item.milestone ? 'ring-2 ring-blue-600/20' : ''
+                    }`}>
+                      <div className={`text-sm font-semibold mb-2 ${
+                        item.milestone ? 'text-blue-600' : 'text-gray-500'
+                      }`}>
+                        {item.year}
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
+                      <p className="text-gray-600">{item.description}</p>
+                    </div>
+                  </div>
+
+                  {/* Timeline dot */}
+                  <div className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full ${
+                    item.milestone ? 'bg-blue-600' : 'bg-gray-400'
+                  } border-4 border-white shadow-lg`}></div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-green-600">
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-blue-600 to-green-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <div className="flex justify-center">
-              <Heart className="h-16 w-16 text-white animate-pulse" />
+              <Heart className="h-12 w-12 sm:h-16 sm:w-16 text-white animate-pulse" />
             </div>
             
-            <h2 className="text-4xl font-bold text-white">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white px-4">
               Ready to Join Our Community?
             </h2>
             
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto px-4">
               Be part of something bigger. Connect with fellow developers, learn new technologies, and contribute to the growing tech ecosystem in Lucknow.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center space-x-2 group">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+              <button className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center space-x-2 group w-full sm:w-auto">
                 <span>Join GDG Lucknow</span>
-                <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+                <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
               
-              <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300 flex items-center justify-center space-x-2">
-                <ExternalLink className="h-5 w-5" />
+              <button className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300 flex items-center justify-center space-x-2 w-full sm:w-auto">
+                <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5" />
                 <span>Visit Our Events</span>
               </button>
             </div>
