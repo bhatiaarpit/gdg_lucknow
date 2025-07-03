@@ -56,28 +56,28 @@ const ContactPage = () => {
 
   const contactInfo = [
     {
-      icon: <Mail className="h-6 w-6" />,
+      icon: <Mail className="h-6 w-6 text-black" />,
       title: 'Email',
       value: 'hello@gdglucknow.dev',
       description: 'Send us an email anytime',
       link: 'mailto:hello@gdglucknow.dev'
     },
     {
-      icon: <Phone className="h-6 w-6" />,
+      icon: <Phone className="h-6 w-6 text-black" />,
       title: 'Phone',
       value: '+91 98765 43210',
       description: 'Call us during office hours',
       link: 'tel:+919876543210'
     },
     {
-      icon: <MapPin className="h-6 w-6" />,
+      icon: <MapPin className="h-6 w-6 text-black" />,
       title: 'Location',
       value: 'Lucknow, Uttar Pradesh',
       description: 'Visit us at our events',
       link: 'https://maps.google.com/?q=Lucknow'
     },
     {
-      icon: <Clock className="h-6 w-6" />,
+      icon: <Clock className="h-6 w-6 text-black" />,
       title: 'Office Hours',
       value: 'Mon - Fri: 9 AM - 6 PM',
       description: 'We typically respond within 24 hours',
@@ -199,7 +199,7 @@ const ContactPage = () => {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 text-black">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
