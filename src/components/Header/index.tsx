@@ -13,14 +13,18 @@ const Header = () => {
 
   // Close menu when clicking outside or on escape key
   useEffect(() => {
-    const handleEscape = (e) => {
+    const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setIsMenuOpen(false);
       }
     };
 
-    const handleClickOutside = (e) => {
-      if (isMenuOpen && !e.target.closest('.mobile-menu') && !e.target.closest('.menu-button')) {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        isMenuOpen &&
+        !(e.target as HTMLElement).closest('.mobile-menu') &&
+        !(e.target as HTMLElement).closest('.menu-button')
+      ) {
         setIsMenuOpen(false);
       }
     };
@@ -60,7 +64,7 @@ const Header = () => {
     { href: '/contact', label: 'Contact' },
   ];
 
-  const isActiveLink = (href) => {
+  const isActiveLink = (href: string) => {
     if (href === '/') {
       return pathname === '/';
     }

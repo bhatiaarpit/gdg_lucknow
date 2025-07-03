@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Calendar, Clock, MapPin, Users, Tag, ArrowRight, Search, Filter, Play, ExternalLink } from 'lucide-react';
+import { Calendar, Clock, MapPin, Users, ArrowRight, Search, Filter, Play, ExternalLink } from 'lucide-react';
 
 const EventsPage = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
@@ -132,7 +132,26 @@ const EventsPage = () => {
     }
   ];
 
-  const filteredEvents = (events) => {
+  type EventType = {
+    id: number;
+    title: string;
+    date: string;
+    time: string;
+    location: string;
+    category: string;
+    attendees: number;
+    maxAttendees: number;
+    description: string;
+    image: string;
+    speaker: string;
+    tags: string[];
+    registrationLink?: string;
+    featured?: boolean;
+    recordingLink?: string;
+    slidesLink?: string;
+  };
+
+  const filteredEvents = (events: EventType[]) => {
     return events.filter(event => {
       const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            event.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -142,7 +161,7 @@ const EventsPage = () => {
     });
   };
 
-  const formatDate = (dateString) => {
+  const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {
       weekday: 'long',
@@ -152,7 +171,7 @@ const EventsPage = () => {
     });
   };
 
-  const EventCard = ({ event, isUpcoming = true }) => (
+  const EventCard = ({ event, isUpcoming = true }: { event: EventType; isUpcoming?: boolean }) => (
     <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200 overflow-hidden ${event.featured ? 'ring-2 ring-blue-500' : ''}`}>
       {event.featured && (
         <div className="bg-gradient-to-r from-blue-500 to-green-500 text-white text-xs font-semibold px-3 py-1 text-center">

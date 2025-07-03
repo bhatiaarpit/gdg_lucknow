@@ -113,7 +113,7 @@ const Footer = () => {
             </div>
             
             <p className="text-gray-600 text-sm leading-relaxed">
-              We're a community of developers, designers, and tech enthusiasts in Lucknow, 
+              We&apos;re a community of developers, designers, and tech enthusiasts in Lucknow, 
               passionate about Google technologies and building innovative solutions together.
             </p>
             

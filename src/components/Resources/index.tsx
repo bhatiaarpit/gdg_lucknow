@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { BookOpen, Download, ExternalLink, Search, Filter, Star, Clock, Eye, Tag, Play, FileText, Code, Video } from 'lucide-react';
+import { BookOpen, Download, ExternalLink, Search, Filter, Star, Clock, Eye, Play, FileText, Code, Video } from 'lucide-react';
 
 const ResourcesPage = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -201,7 +201,7 @@ const ResourcesPage = () => {
     });
   };
 
-  const formatDate = (dateString) => {
+  const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {
       year: 'numeric',
@@ -210,7 +210,7 @@ const ResourcesPage = () => {
     });
   };
 
-  const getResourceIcon = (type) => {
+  const getResourceIcon = (type: string) => {
     switch (type) {
       case 'video': return <Video className="h-5 w-5" />;
       case 'tutorial': return <BookOpen className="h-5 w-5" />;
@@ -222,7 +222,7 @@ const ResourcesPage = () => {
     }
   };
 
-  const getDifficultyColor = (difficulty) => {
+  const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'Beginner': return 'bg-green-100 text-green-700';
       case 'Intermediate': return 'bg-yellow-100 text-yellow-700';
@@ -231,7 +231,29 @@ const ResourcesPage = () => {
     }
   };
 
-  const ResourceCard = ({ resource }) => (
+  type Resource = {
+    id: number;
+    title: string;
+    description: string;
+    category: string;
+    type: string;
+    author: string;
+    publishedDate: string;
+    rating: number;
+    views: number;
+    downloadCount: number;
+    tags: string[];
+    difficulty: string;
+    duration: string;
+    featured: boolean;
+    links: {
+      view?: string;
+      download?: string;
+      external?: string;
+    };
+  };
+
+  const ResourceCard = ({ resource }: { resource: Resource }) => (
     <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200 overflow-hidden ${resource.featured ? 'ring-2 ring-blue-500' : ''}`}>
       {resource.featured && (
         <div className="bg-gradient-to-r from-blue-500 to-green-500 text-white text-xs font-semibold px-3 py-1 text-center">

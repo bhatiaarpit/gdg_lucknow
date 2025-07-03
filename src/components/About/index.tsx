@@ -1,12 +1,15 @@
 'use client';
 
-import { useState } from 'react';
-import { Users, Calendar, MapPin, Code, Heart, Award, Globe, ChevronRight, ExternalLink } from 'lucide-react';
+import { JSX, useState } from 'react';
+import { Users, Calendar, Code, Heart, Award, ChevronRight, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import gdgLogo from '@/assests/gdgLogo.svg'; 
 
 const About = () => {
-  const [activeTab, setActiveTab] = useState('story');
+  const tabKeys = ['story', 'mission', 'values'] as const;
+  type TabKey = typeof tabKeys[number];
+
+  const [activeTab, setActiveTab] = useState<TabKey>('story');
 
   const stats = [
     { icon: Users, label: 'Active Members', value: '2,500+', color: 'text-blue-600', bg: 'bg-blue-50' },
@@ -99,7 +102,7 @@ const About = () => {
     }
   ];
 
-  const tabContent = {
+  const tabContent: Record<TabKey, JSX.Element> = {
     story: (
       <div className="space-y-8">
         <div className="prose prose-lg max-w-none">
@@ -109,11 +112,11 @@ const About = () => {
 
           
           <p className="text-gray-600 leading-relaxed">
-            Our journey has been marked by continuous learning, innovation, and community building. We've organized numerous DevFests, study jams, workshops, and meetups that have helped thousands of developers enhance their skills and build meaningful connections.
+            Our journey has been marked by continuous learning, innovation, and community building. We&apos;ve organized numerous DevFests, study jams, workshops, and meetups that have helped thousands of developers enhance their skills and build meaningful connections.
           </p>
           
           <p className="text-gray-600 leading-relaxed">
-            Today, we're proud to be a diverse community that welcomes developers of all skill levels - from students taking their first steps in programming to experienced professionals sharing their expertise. Our mission remains the same: to foster a culture of learning, sharing, and building together.
+            Today, we&apos;re proud to be a diverse community that welcomes developers of all skill levels - from students taking their first steps in programming to experienced professionals sharing their expertise. Our mission remains the same: to foster a culture of learning, sharing, and building together.
           </p>
         </div>
       </div>
@@ -202,7 +205,7 @@ const About = () => {
           {/* Tab Navigation */}
           <div className="flex justify-center mb-12">
             <div className="bg-white rounded-2xl p-2 shadow-lg">
-              {Object.keys(tabContent).map((tab) => (
+              {tabKeys.map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}

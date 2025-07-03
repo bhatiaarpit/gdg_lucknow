@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Calendar, Users, MapPin, ArrowRight, Play, Code, Lightbulb, Heart } from 'lucide-react';
+import { Calendar, Users, MapPin, ArrowRight, Play, Code, Lightbulb } from 'lucide-react';
 import Image from 'next/image';
 import gdgLogo from '@/assests/gdgLogo.svg'; // Adjust path if needed
 
 const Hero = () => {
-  const [hoveredCard, setHoveredCard] = useState(null);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const heroStats = [
     { icon: Users, label: 'Community Members', value: '2,500+', color: 'text-blue-600' },

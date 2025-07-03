@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Users, Calendar, ExternalLink, Github, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Users, Calendar, Github, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +14,9 @@ const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -22,7 +24,7 @@ const ContactPage = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -168,7 +170,7 @@ const ContactPage = () => {
               </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Have questions, ideas, or want to collaborate? We'd love to hear from you. Reach out to our team and join our growing community.
+              Have questions, ideas, or want to collaborate? We&apos;d love to hear from you. Reach out to our team and join our growing community.
             </p>
           </div>
         </div>
@@ -181,7 +183,7 @@ const ContactPage = () => {
           <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Send us a message</h2>
-              <p className="text-gray-600">Fill out the form below and we'll get back to you as soon as possible.</p>
+              <p className="text-gray-600">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
             </div>
 
             {submitStatus === 'success' && (
@@ -192,7 +194,7 @@ const ContactPage = () => {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <p className="text-green-800 font-medium">Message sent successfully! We'll get back to you soon.</p>
+                  <p className="text-green-800 font-medium">Message sent successfully! We&apos;ll get back to you soon.</p>
                 </div>
               </div>
             )}
@@ -391,7 +393,7 @@ const ContactPage = () => {
         {/* Call to Action */}
         <div className="mt-16 bg-gradient-to-r from-blue-600 via-green-600 to-red-600 rounded-xl p-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to join our community?</h2>
-          <p className="text-xl text-white mb-6">Don't miss out on our upcoming events and resources</p>
+          <p className="text-xl text-white mb-6">Don&apos;t miss out on our upcoming events and resources</p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
               <Calendar className="h-5 w-5" />
