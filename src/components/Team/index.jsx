@@ -123,7 +123,7 @@ const Team = () => {
       </section>
 
       {/* Main Content Tabs */}
-      <section className="py-8 bg-gray-50">
+      <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center mb-6">
             <div className="bg-white rounded-2xl p-2 shadow-lg overflow-x-auto">
