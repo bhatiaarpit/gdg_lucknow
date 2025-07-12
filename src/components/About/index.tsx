@@ -1,155 +1,55 @@
 'use client';
 
-import { JSX, useState } from 'react';
-import { Users, Calendar, Code, Heart, Award, ChevronRight, ExternalLink } from 'lucide-react';
+// import { useState } from 'react';
 import Image from 'next/image';
 import gdgLogo from '@/assests/gdgLogo.svg'; 
-
+import { Users, Calendar, Heart, Award, ExternalLink, Code, Lightbulb, Share2, Network, Handshake, BookOpen, Star, ChevronRight } from 'lucide-react';
 const About = () => {
-  const tabKeys = ['story', 'mission', 'values'] as const;
-  type TabKey = typeof tabKeys[number];
-
-  const [activeTab, setActiveTab] = useState<TabKey>('story');
-
+  // Sample data - replace with your actual data
   const stats = [
-    { icon: Users, label: 'Active Members', value: '2,500+', color: 'text-blue-600', bg: 'bg-blue-50' },
-    { icon: Calendar, label: 'Events Organized', value: '150+', color: 'text-green-600', bg: 'bg-green-50' },
-    { icon: Code, label: 'Projects Built', value: '80+', color: 'text-red-600', bg: 'bg-red-50' },
-    { icon: Award, label: 'Years Active', value: '8+', color: 'text-yellow-600', bg: 'bg-yellow-50' },
+    { value: '2500+', label: 'Community Members', icon: 'Users', bg: 'bg-blue-100', color: 'text-blue-600' },
+    { value: '15+', label: 'Events Hosted', icon: 'Calendar', bg: 'bg-green-100', color: 'text-green-600' },
+    { value: '50+', label: 'Projects Built', icon: 'Award', bg: 'bg-purple-100', color: 'text-purple-600' }
   ];
 
-  const values = [
+   const values = [
     {
+      icon: 'Handshake',
       title: 'Learn Together',
-      description: 'We believe in collaborative learning where everyone teaches and everyone learns.',
-      icon: '🎓',
-      color: 'blue'
+      description: 'We grow together by learning from each other — creating a welcoming space where curiosity sparks discovery, and everyone\'s knowledge fuels our collective journey.'
     },
     {
+      icon: 'Lightbulb',
       title: 'Build Innovation',
-      description: 'Creating solutions that matter and making a positive impact on our community.',
-      icon: '🚀',
-      color: 'green'
+      description: 'We turn bold ideas into real solutions — driving innovation that matters through creativity, curiosity, and a passion for positive impact.'
     },
     {
+      icon: 'BookOpen',
       title: 'Share Knowledge',
-      description: 'Open source mindset - sharing knowledge, code, and experiences with everyone.',
-      icon: '💡',
-      color: 'yellow'
+      description: 'Inspired by open source, we believe knowledge multiplies when shared. By exchanging code, ideas, and experiences, we empower each other to reach new heights.'
     },
     {
+      icon: 'Star',
       title: 'Connect & Grow',
-      description: 'Building lasting relationships and growing together as a tech community.',
-      icon: '🤝',
-      color: 'red'
+      description: 'We thrive on genuine connections — building friendships, mentoring one another, and growing together as a vibrant tech family.'
     }
   ];
 
-  const timeline = [
-    {
-      year: '2016',
-      title: 'GDG Lucknow Founded',
-      description: 'Started as a small group of passionate developers wanting to learn Google technologies.',
-      milestone: true
-    },
-    {
-      year: '2017',
-      title: 'First DevFest',
-      description: 'Organized our first DevFest with 200+ attendees and 15 speakers.',
-      milestone: false
-    },
-    {
-      year: '2018',
-      title: 'Women Techmakers Launch',
-      description: 'Launched Women Techmakers Lucknow to support women in technology.',
-      milestone: true
-    },
-    {
-      year: '2019',
-      title: 'Community Growth',
-      description: 'Crossed 1000 members and started regular monthly meetups.',
-      milestone: false
-    },
-    {
-      year: '2020',
-      title: 'Virtual Pivot',
-      description: 'Successfully transitioned to virtual events during pandemic, reaching global audience.',
-      milestone: true
-    },
-    {
-      year: '2021',
-      title: 'Hybrid Events',
-      description: 'Introduced hybrid events combining in-person and virtual experiences.',
-      milestone: false
-    },
-    {
-      year: '2022',
-      title: 'Open Source Focus',
-      description: 'Launched multiple open source initiatives and hacktober fest celebrations.',
-      milestone: true
-    },
-    {
-      year: '2023',
-      title: 'Industry Partnerships',
-      description: 'Established partnerships with local startups and tech companies.',
-      milestone: false
-    },
-    {
-      year: '2024',
-      title: 'Present Day',
-      description: 'Thriving community of 2500+ members with weekly events and workshops.',
-      milestone: true
-    }
-  ];
-
-  const tabContent: Record<TabKey, JSX.Element> = {
-    story: (
-      <div className="space-y-6 sm:space-y-8">
-        <div className="prose prose-lg max-w-none">
-          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
-            GDG Lucknow began in 2016 with a simple vision: to create a space where developers in Lucknow could come together, learn, and grow using Google technologies. What started as a small group of passionate individuals has now evolved into one of the most active tech communities in Uttar Pradesh.
-          </p>
-
-          <p className="text-gray-600 leading-relaxed">
-            Our journey has been marked by continuous learning, innovation, and community building. We&apos;ve organized numerous DevFests, study jams, workshops, and meetups that have helped thousands of developers enhance their skills and build meaningful connections.
-          </p>
-          
-          <p className="text-gray-600 leading-relaxed">
-            Today, we&apos;re proud to be a diverse community that welcomes developers of all skill levels - from students taking their first steps in programming to experienced professionals sharing their expertise. Our mission remains the same: to foster a culture of learning, sharing, and building together.
-          </p>
-        </div>
-      </div>
-    ),
-    mission: (
-      <div className="space-y-6 sm:space-y-8">
-        <div className="bg-gradient-to-r from-blue-50 to-green-50 p-6 sm:p-8 rounded-2xl">
-          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Our Mission</h3>
-          <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-            To empower developers in Lucknow and surrounding regions by providing access to cutting-edge Google technologies, fostering innovation, and building a supportive community that encourages learning, sharing, and collaboration.
-          </p>
-        </div>
-        
-        <div className="bg-gradient-to-r from-red-50 to-yellow-50 p-6 sm:p-8 rounded-2xl">
-          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Our Vision</h3>
-          <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-            To be the leading technology community in Northern India, known for nurturing talent, driving innovation, and creating opportunities that connect local developers with global technologies and opportunities.
-          </p>
-        </div>
-      </div>
-    ),
-    values: (
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-        {values.map((value, index) => (
-          <div key={index} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className="text-3xl sm:text-4xl mb-4">{value.icon}</div>
-            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-            <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{value.description}</p>
-          </div>
-        ))}
-      </div>
-    )
+  const iconMap = {
+    Users: Users,
+    Calendar: Calendar,
+    Award: Award,
+    Heart: Heart,
+    ChevronRight: ChevronRight,
+    ExternalLink: ExternalLink,
+    Code: Code,
+    Lightbulb: Lightbulb,
+    Share2: Share2,
+    Network: Network,
+    Handshake: Handshake,
+    BookOpen: BookOpen,
+    Star: Star
   };
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -158,7 +58,8 @@ const About = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 sm:space-y-8">
             <div className="flex justify-center mb-4 sm:mb-6">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center bg-white rounded-full overflow-hidden border-1 border-black shadow-lg">
+              <div className="flex justify-center mb-6">
+              <div className="w-24 h-24 flex items-center justify-center bg-white rounded-full overflow-hidden border-1 border-black shadow-lg">
                 <Image
                   src={gdgLogo}
                   alt="GDG Logo"
@@ -169,13 +70,14 @@ const About = () => {
                 />
               </div>
             </div>
+            </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 px-4">
               About <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">GDG Lucknow</span>
             </h1>
             
-            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed px-4">
-              Empowering developers, fostering innovation, and building the future of technology in the heart of Uttar Pradesh since 2016.
+            <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed px-4">
+              Google Developer Group Lucknow is a vibrant, volunteer-driven tech community established in 2021 with a mission to empower developers, designers, students, and tech enthusiasts across Uttar Pradesh.
             </p>
           </div>
         </div>
@@ -184,121 +86,101 @@ const About = () => {
       {/* Stats Section */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className={`inline-flex p-3 sm:p-4 rounded-2xl ${stat.bg} mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <stat.icon className={`h-6 w-6 sm:h-8 sm:w-8 ${stat.color}`} />
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            {stats.map((stat, index) => {
+              const IconComponent = iconMap[stat.icon as keyof typeof iconMap];
+              return (
+                <div key={index} className="text-center group">
+                  <div className={`inline-flex p-3 sm:p-4 rounded-2xl ${stat.bg} mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <IconComponent className={`h-6 w-6 sm:h-8 sm:w-8 ${stat.color}`} />
+                  </div>
+                  <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">{stat.value}</div>
+                  <div className="text-xs sm:text-sm text-gray-600 px-2">{stat.label}</div>
                 </div>
-                <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">{stat.value}</div>
-                <div className="text-xs sm:text-sm text-gray-600 px-2">{stat.label}</div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Main Content Tabs */}
+      {/* About Content - Simplified */}
+      <section className=" bg-gray-50">
+        <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto space-y-8">
+            {/* Main Description */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8">
+              <div className="prose prose-lg max-w-none text-center">
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  We believe in learning through collaboration. From beginner-friendly workshops and hackathons to advanced AI/ML bootcamps and cloud sessions — we create spaces for innovation, networking, and real-world problem-solving.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Our community brings together passionate individuals who are eager to explore Google technologies, grow their skill sets, and build meaningful tech for social good. Whether you&apos;re looking to upskill, collaborate, or contribute — GDG Lucknow welcomes you.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision Section */}
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Tab Navigation */}
-          <div className="flex justify-center mb-8 sm:mb-12">
-            <div className="bg-white rounded-2xl p-1 sm:p-2 shadow-lg w-full max-w-md sm:max-w-none sm:w-auto">
-              <div className="flex flex-col sm:flex-row">
-                {tabKeys.map((tab) => (
-                  <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`px-4 sm:px-6 py-3 rounded-xl font-medium transition-all duration-300 text-sm sm:text-base ${
-                      activeTab === tab
-                        ? 'bg-blue-600 text-white shadow-lg'
-                        : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
-                    }`}
-                  >
-                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                  </button>
-                ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Mission */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
+              <div className="text-center mb-6">
+                <div className="inline-flex p-3 rounded-full bg-blue-100 mb-4">
+                  <Lightbulb className="h-8 w-8 text-blue-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
               </div>
+              <p className="text-gray-700 leading-relaxed text-center">
+                To empower developers across Lucknow and neighboring regions by providing hands-on access to Google technologies, fostering a spirit of innovation, and nurturing a collaborative community rooted in continuous learning, inclusivity, and growth.
+              </p>
             </div>
-          </div>
 
-          {/* Tab Content */}
-          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
-            {tabContent[activeTab]}
+            {/* Vision */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
+              <div className="text-center mb-6">
+                <div className="inline-flex p-3 rounded-full bg-green-100 mb-4">
+                  <Network className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
+              </div>
+              <p className="text-gray-700 leading-relaxed text-center">
+                To become Northern India&apos;s most vibrant and impactful tech community — known for cultivating talent, driving real-world innovation, and connecting developers locally and globally through meaningful opportunities and shared purpose.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-12 sm:py-16 bg-white">
+       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Our Journey</h2>
-            <p className="text-lg sm:text-xl text-gray-600">From humble beginnings to a thriving community</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Our Values</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-green-600 mx-auto rounded-full"></div>
           </div>
-
-          {/* Mobile Timeline */}
-          <div className="block lg:hidden">
-            <div className="relative">
-              {/* Mobile timeline line */}
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 to-green-600"></div>
-              
-              {timeline.map((item, index) => (
-                <div key={index} className="relative flex items-start mb-8 pl-16">
-                  <div className={`absolute left-6 w-4 h-4 rounded-full ${
-                    item.milestone ? 'bg-blue-600' : 'bg-gray-400'
-                  } border-4 border-white shadow-lg`}></div>
-                  
-                  <div className={`bg-white p-4 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 w-full ${
-                    item.milestone ? 'ring-2 ring-blue-600/20' : ''
-                  }`}>
-                    <div className={`text-sm font-semibold mb-2 ${
-                      item.milestone ? 'text-blue-600' : 'text-gray-500'
-                    }`}>
-                      {item.year}
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                    <p className="text-gray-600 text-sm sm:text-base">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Desktop Timeline */}
-          <div className="hidden lg:block">
-            <div className="relative">
-              {/* Desktop timeline line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-600 to-green-600"></div>
-
-              {timeline.map((item, index) => (
-                <div key={index} className={`relative flex items-center mb-8 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                    <div className={`bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ${
-                      item.milestone ? 'ring-2 ring-blue-600/20' : ''
-                    }`}>
-                      <div className={`text-sm font-semibold mb-2 ${
-                        item.milestone ? 'text-blue-600' : 'text-gray-500'
-                      }`}>
-                        {item.year}
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                      <p className="text-gray-600">{item.description}</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            {values.map((value, index) => {
+              const IconComponent = iconMap[value.icon as keyof typeof iconMap];
+              return (
+                <div key={index} className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border">
+                  <div className="text-center mb-4">
+                    <div className="inline-flex p-3 rounded-full bg-blue-100 mb-2">
+                      <IconComponent className="h-8 w-8 text-blue-600" />
                     </div>
                   </div>
-
-                  {/* Timeline dot */}
-                  <div className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full ${
-                    item.milestone ? 'bg-blue-600' : 'bg-gray-400'
-                  } border-4 border-white shadow-lg`}></div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3 text-center">{value.title}</h3>
+                  <p className="text-gray-600 leading-relaxed text-center">{value.description}</p>
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-12 sm:py-16 bg-gradient-to-r from-blue-600 to-green-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-6 sm:space-y-8">
@@ -307,23 +189,27 @@ const About = () => {
             </div>
             
             <h2 className="text-3xl sm:text-4xl font-bold text-white px-4">
-              Ready to Join Our Community?
+              Become a Part of Something Bigger <br/>GDG Lucknow Awaits!
             </h2>
             
-            <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto px-4">
-              Be part of something bigger. Connect with fellow developers, learn new technologies, and contribute to the growing tech ecosystem in Lucknow.
-            </p>
+            {/* <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto px-4">
+              Connect. Learn. Build. <br/>Join hands with developers, designers, and tech enthusiasts driving innovation in Lucknow. Discover tools, meet mentors, and be part of something transformative.
+            </p> */}
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-              <button className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center space-x-2 group w-full sm:w-auto">
-                <span>Join GDG Lucknow</span>
-                <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-200" />
-              </button>
-              
-              <button className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300 flex items-center justify-center space-x-2 w-full sm:w-auto">
+               <a
+              href="https://chat.whatsapp.com/L5VMIIEiUz90gh5gcOC054?mode=ac_c"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            >
+              <span>Join Our Community</span>
+              <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+            </a>
+              {/* <button className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-colors duration-300 flex items-center justify-center space-x-2 group w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-blue-600">
                 <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5" />
-                <span>Visit Our Events</span>
-              </button>
+                <span>Learn More</span>
+              </button> */}
             </div>
           </div>
         </div>

@@ -1,10 +1,25 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Users, Calendar, Github, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Send, MessageCircle, Calendar, Users, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { inquiryTypes, contactInfo, socialLinks, teamMembers, faqs } from '@/Data/Contact';
+import Image from 'next/image';
+
+// Type definitions for better TypeScript support
+type SocialPlatform = 'github' | 'linkedin' | 'twitter' | 'email';
+
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  inquiryType: string;
+}
+
+type SubmitStatus = '' | 'success' | 'error';
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     subject: '',
@@ -12,7 +27,7 @@ const ContactPage = () => {
     inquiryType: 'general'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState('');
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('');
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -27,136 +42,125 @@ const ContactPage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-        inquiryType: 'general'
+    setSubmitStatus('');
+
+    try {
+      const response = await fetch('https://formspree.io/f/xvgqpopo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          inquiryType: formData.inquiryType,
+        }),
       });
-      
-      // Reset status after 5 seconds
-      setTimeout(() => setSubmitStatus(''), 5000);
-    }, 2000);
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+          inquiryType: 'general'
+        });
+
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitStatus(''), 5000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const inquiryTypes = [
-    { value: 'general', label: 'General Inquiry' },
-    { value: 'speaker', label: 'Speaker/Volunteer' },
-    { value: 'partnership', label: 'Partnership' },
-    { value: 'event', label: 'Event Collaboration' },
-    { value: 'technical', label: 'Technical Support' },
-    { value: 'media', label: 'Media/Press' }
-  ];
-
-  const contactInfo = [
-    {
-      icon: <Mail className="h-6 w-6 text-black" />,
-      title: 'Email',
-      value: 'hello@gdglucknow.dev',
-      description: 'Send us an email anytime',
-      link: 'mailto:hello@gdglucknow.dev'
-    },
-    {
-      icon: <Phone className="h-6 w-6 text-black" />,
-      title: 'Phone',
-      value: '+91 98765 43210',
-      description: 'Call us during office hours',
-      link: 'tel:+919876543210'
-    },
-    {
-      icon: <MapPin className="h-6 w-6 text-black" />,
-      title: 'Location',
-      value: 'Lucknow, Uttar Pradesh',
-      description: 'Visit us at our events',
-      link: 'https://maps.google.com/?q=Lucknow'
-    },
-    {
-      icon: <Clock className="h-6 w-6 text-black" />,
-      title: 'Office Hours',
-      value: 'Mon - Fri: 9 AM - 6 PM',
-      description: 'We typically respond within 24 hours',
-      link: null
+  // Status message JSX (replace the existing success message in your form)
+  const StatusMessage = () => {
+    if (submitStatus === 'success') {
+      return (
+        <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+          <div className="flex items-center space-x-2">
+            <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+              <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <p className="text-green-800 font-medium">Message sent successfully! We&apos;ll get back to you soon.</p>
+          </div>
+        </div>
+      );
     }
-  ];
 
-  const socialLinks = [
-    {
-      icon: <Twitter className="h-5 w-5" />,
-      name: 'Twitter',
-      url: 'https://twitter.com/gdglucknow',
-      color: 'bg-blue-500 hover:bg-blue-600'
-    },
-    {
-      icon: <Linkedin className="h-5 w-5" />,
-      name: 'LinkedIn',
-      url: 'https://linkedin.com/company/gdglucknow',
-      color: 'bg-blue-700 hover:bg-blue-800'
-    },
-    {
-      icon: <Github className="h-5 w-5" />,
-      name: 'GitHub',
-      url: 'https://github.com/gdglucknow',
-      color: 'bg-gray-800 hover:bg-gray-900'
-    },
-    {
-      icon: <Instagram className="h-5 w-5" />,
-      name: 'Instagram',
-      url: 'https://instagram.com/gdglucknow',
-      color: 'bg-pink-500 hover:bg-pink-600'
+    if (submitStatus === 'error') {
+      return (
+        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+          <div className="flex items-center space-x-2">
+            <div className="w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
+              <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <p className="text-red-800 font-medium">There was an error sending your message. Please try again.</p>
+          </div>
+        </div>
+      );
     }
-  ];
 
-  const teamMembers = [
-    {
-      name: 'Rahul Sharma',
-      role: 'Organizer',
-      image: '/api/placeholder/100/100',
-      email: 'rahul@gdglucknow.dev'
-    },
-    {
-      name: 'Priya Gupta',
-      role: 'Co-Organizer',
-      image: '/api/placeholder/100/100',
-      email: 'priya@gdglucknow.dev'
-    },
-    {
-      name: 'Amit Kumar',
-      role: 'Tech Lead',
-      image: '/api/placeholder/100/100',
-      email: 'amit@gdglucknow.dev'
-    },
-    {
-      name: 'Neha Srivastava',
-      role: 'Community Manager',
-      image: '/api/placeholder/100/100',
-      email: 'neha@gdglucknow.dev'
-    }
-  ];
+    return null;
+  };
 
-  const faqs = [
-    {
-      question: 'How can I become a speaker at your events?',
-      answer: 'We welcome speakers from all backgrounds! Fill out the contact form with "Speaker/Volunteer" as the inquiry type, and tell us about your expertise and what you\'d like to share with our community.'
-    },
-    {
-      question: 'Are your events free to attend?',
-      answer: 'Yes, all our events are free to attend! We believe in making technology education accessible to everyone in our community.'
-    },
-    {
-      question: 'How can I volunteer or help organize events?',
-      answer: 'We\'re always looking for passionate volunteers! Contact us through the form or reach out directly to any of our team members.'
-    },
-    {
-      question: 'Do you offer mentorship programs?',
-      answer: 'We occasionally run mentorship programs. Follow our social media channels or subscribe to our newsletter to stay updated on upcoming opportunities.'
+  const getSocialIcon = (platform: SocialPlatform) => {
+    switch (platform) {
+      case 'github':
+        return <Github className="h-4 w-4" />;
+      case 'linkedin':
+        return <Linkedin className="h-4 w-4" />;
+      case 'twitter':
+        return <Twitter className="h-4 w-4" />;
+      case 'email':
+        return <Mail className="h-4 w-4" />;
+      default:
+        return null;
     }
-  ];
+  };
+
+  const getSocialUrl = (platform: SocialPlatform, handle: string) => {
+    switch (platform) {
+      case 'github':
+        return `https://github.com/${handle}`;
+      case 'linkedin':
+        return `https://linkedin.com/in/${handle}`;
+      case 'twitter':
+        return `https://twitter.com/${handle}`;
+      case 'email':
+        return `mailto:${handle}`;
+      default:
+        return '#';
+    }
+  };
+
+  const getSocialColor = (platform: SocialPlatform) => {
+    switch (platform) {
+      case 'github':
+        return 'hover:text-gray-900';
+      case 'linkedin':
+        return 'hover:text-blue-600';
+      case 'twitter':
+        return 'hover:text-blue-400';
+      case 'email':
+        return 'hover:text-red-600';
+      default:
+        return 'hover:text-gray-600';
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -165,7 +169,7 @@ const ContactPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              <span className="bg-gradient-to-r from-blue-600 via-green-600 to-red-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
                 Get in Touch
               </span>
             </h1>
@@ -186,18 +190,7 @@ const ContactPage = () => {
               <p className="text-gray-600">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
             </div>
 
-            {submitStatus === 'success' && (
-              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                <div className="flex items-center space-x-2">
-                  <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <p className="text-green-800 font-medium">Message sent successfully! We&apos;ll get back to you soon.</p>
-                </div>
-              </div>
-            )}
+            <StatusMessage />
 
             <form onSubmit={handleSubmit} className="space-y-6 text-black">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -306,7 +299,7 @@ const ContactPage = () => {
             {/* Contact Info Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {contactInfo.map((info, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                <div key={index} className="bg-white rounded-xl shadow-lg p-[15px] border border-gray-200 hover:shadow-xl transition-shadow duration-300">
                   <div className="flex items-start space-x-4">
                     <div className="p-3 bg-blue-100 rounded-lg">
                       {info.icon}
@@ -350,22 +343,45 @@ const ContactPage = () => {
             </div>
 
             {/* Team Members */}
-            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Meet our team</h3>
-              <div className="grid grid-cols-2 gap-4">
+            <div className="bg-white rounded-2xl shadow-md p-6 border border-gray-100">
+              <h3 className="text-xl font-semibold text-gray-900 mb-6">Meet Our Team</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-6">
                 {teamMembers.map((member, index) => (
-                  <div key={index} className="text-center">
-                    <div className="w-16 h-16 bg-gray-200 rounded-full mx-auto mb-2 flex items-center justify-center">
-                      <Users className="h-8 w-8 text-gray-400" />
+                  <div
+                    key={index}
+                    className="bg-gray-50 p-4 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow duration-300"
+                  >
+                    <div className="w-20 h-20 bg-gray-200 rounded-lg mx-auto mb-3 overflow-hidden flex items-center justify-center">
+                      {member.image ? (
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          width={80}
+                          height={80}
+                          className="object-cover w-full h-full rounded-lg"
+                        />
+                      ) : (
+                        <Users className="h-8 w-8 text-gray-400" />
+                      )}
                     </div>
                     <h4 className="font-semibold text-gray-900 text-sm">{member.name}</h4>
-                    <p className="text-xs text-gray-600 mb-1">{member.role}</p>
-                    <a
-                      href={`mailto:${member.email}`}
-                      className="text-blue-600 hover:text-blue-800 text-xs"
-                    >
-                      {member.email}
-                    </a>
+                    <p className="text-xs text-gray-600 mb-3">{member.role}</p>
+                    {member.social && (
+                      <div className="flex justify-center space-x-2">
+                        {Object.entries(member.social).map(([platform, handle]) => (
+                          <a
+                            key={platform}
+                            href={getSocialUrl(platform as SocialPlatform, handle as string)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`p-2 rounded-lg bg-white border border-gray-200 text-gray-600 transition-colors duration-200 ${getSocialColor(platform as SocialPlatform)}`}
+                            title={`${member.name} on ${platform}`}
+                          >
+                            {getSocialIcon(platform as SocialPlatform)}
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -379,7 +395,7 @@ const ContactPage = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
             <p className="text-lg text-gray-600">Quick answers to common questions</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {faqs.map((faq, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
@@ -391,17 +407,24 @@ const ContactPage = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 bg-gradient-to-r from-blue-600 via-green-600 to-red-600 rounded-xl p-8 text-center">
+        <div className="mt-16 bg-gradient-to-r from-blue-600 to-green-600 rounded-xl p-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to join our community?</h2>
           <p className="text-xl text-white mb-6">Don&apos;t miss out on our upcoming events and resources</p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
               <Calendar className="h-5 w-5" />
-              <span>View Events</span>
+              <a href="/events">
+                <span>View Events</span>
+              </a>
             </button>
             <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
               <MessageCircle className="h-5 w-5" />
-              <span>Join Community</span>
+              <a
+                href="https://chat.whatsapp.com/L5VMIIEiUz90gh5gcOC054?mode=ac_c"
+                target="_blank"
+              >
+                Join Our Community
+              </a>
             </button>
           </div>
         </div>

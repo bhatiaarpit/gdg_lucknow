@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { 
   Mail, 
   MapPin, 
-  Calendar, 
   Github, 
   Twitter, 
   Linkedin, 
@@ -22,18 +21,20 @@ const Footer = () => {
     { href: '/about', label: 'About Us' },
     { href: '/events', label: 'Events' },
     { href: '/team', label: 'Team' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/resources', label: 'Resources' },
+    // { href: '/blog', label: 'Blog' },
+    // { href: '/resources', label: 'Resources' },
     { href: '/contact', label: 'Contact' },
   ];
 
   const communityLinks = [
-    { href: '/join', label: 'Join Community' },
-    { href: '/volunteer', label: 'Become Volunteer' },
-    { href: '/speaker', label: 'Speak at Event' },
-    { href: '/sponsor', label: 'Sponsor Us' },
+    { 
+      href: 'https://chat.whatsapp.com/L5VMIIEiUz90gh5gcOC054?mode=ac_c', 
+      label: 'Join Community' 
+    },
+    { href: '/contact', label: 'Become Volunteer' },
+    { href: '/contact', label: 'Speak at Event' },
+    { href: '/contact', label: 'Sponsor Us' },
     { href: '/code-of-conduct', label: 'Code of Conduct' },
-    { href: '/privacy', label: 'Privacy Policy' },
   ];
 
   const socialLinks = [
@@ -71,19 +72,9 @@ const Footer = () => {
 
   const upcomingEvents = [
     {
-      title: 'Android Development Workshop',
-      date: 'July 15, 2024',
-      type: 'Workshop'
-    },
-    {
-      title: 'Cloud Study Jam',
-      date: 'July 22, 2024',
-      type: 'Study Jam'
-    },
-    {
-      title: 'DevFest Lucknow 2024',
-      date: 'November 16, 2024',
-      type: 'Conference'
+      title: 'DevFest Lucknow 2025',
+      date: 'TO BE ANNOUNCED',
+      type: 'Meetup'
     }
   ];
 
@@ -124,13 +115,9 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-sm text-gray-600">
                 <Mail className="h-4 w-4 text-blue-500" />
-                <a href="mailto:hello@gdglucknow.com" className="hover:text-blue-600 transition-colors">
-                  hello@gdglucknow.com
+                <a href="mailto:lucknow.devs@gmail.com" className="hover:text-blue-600 transition-colors">
+                  lucknow.devs@gmail.com
                 </a>
-              </div>
-              <div className="flex items-center space-x-3 text-sm text-gray-600">
-                <Calendar className="h-4 w-4 text-green-500" />
-                <span>Events every weekend</span>
               </div>
             </div>
           </div>
@@ -176,7 +163,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-gray-900">Upcoming Events</h4>
             <div className="space-y-4">
               {upcomingEvents.map((event, index) => (
-                <div key={index} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
+                <div key={index} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors border">
                   <h5 className="font-medium text-gray-900 text-sm mb-1">{event.title}</h5>
                   <p className="text-xs text-gray-600 mb-2">{event.date}</p>
                   <span className={`inline-block px-2 py-1 rounded text-xs font-medium ${
@@ -221,21 +208,6 @@ const Footer = () => {
                     <social.icon className="h-5 w-5" />
                   </a>
                 ))}
-              </div>
-            </div>
-
-            {/* Newsletter Signup */}
-            <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <span className="text-gray-700 font-medium">Stay updated:</span>
-              <div className="flex space-x-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none text-black focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                />
-                <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
-                  Subscribe
-                </button>
               </div>
             </div>
           </div>

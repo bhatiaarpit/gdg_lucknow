@@ -11,7 +11,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Close menu when clicking outside or on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -38,7 +37,6 @@ const Header = () => {
     };
   }, [isMenuOpen]);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -60,7 +58,7 @@ const Header = () => {
     { href: '/about', label: 'About' },
     { href: '/events', label: 'Events' },
     { href: '/team', label: 'Team' },
-    { href: '/resources', label: 'Resources' },
+    // { href: '/resources', label: 'Resources' },
     { href: '/contact', label: 'Contact' },
   ];
 
@@ -110,12 +108,14 @@ const Header = () => {
 
             {/* CTA Button */}
             <div className="hidden md:flex items-center space-x-4">
-              <Link
-                href="/join"
+              <a
+                href="https://chat.whatsapp.com/L5VMIIEiUz90gh5gcOC054?mode=ac_c"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
               >
                 Join Community
-              </Link>
+              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -137,11 +137,11 @@ const Header = () => {
       {isMenuOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
           {/* Background overlay */}
-          <div 
+          <div
             className="fixed inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setIsMenuOpen(false)}
           ></div>
-          
+
           {/* Menu panel */}
           <div className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out mobile-menu">
             <div className="flex flex-col h-full">
@@ -184,13 +184,15 @@ const Header = () => {
 
               {/* CTA Button */}
               <div className="px-6 py-6 border-t border-gray-200">
-                <Link
-                  href="/join"
+                <a
+                  href="https://chat.whatsapp.com/L5VMIIEiUz90gh5gcOC054?mode=ac_c"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg text-base font-medium hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Join Community
-                </Link>
+                </a>
               </div>
             </div>
           </div>

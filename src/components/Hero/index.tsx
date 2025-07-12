@@ -4,15 +4,15 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Calendar, Users, MapPin, ArrowRight, Play, Code, Lightbulb } from 'lucide-react';
 import Image from 'next/image';
-import gdgLogo from '@/assests/gdgLogo.svg'; // Adjust path if needed
+import gdgLogo from '@/assests/gdgLogo.svg';
 
 const Hero = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const heroStats = [
     { icon: Users, label: 'Community Members', value: '2,500+', color: 'text-blue-600' },
-    { icon: Calendar, label: 'Events Hosted', value: '150+', color: 'text-green-600' },
-    { icon: MapPin, label: 'Years Active', value: '8+', color: 'text-red-600' },
+    { icon: Calendar, label: 'Events Hosted', value: '15+', color: 'text-green-600' },
+    { icon: MapPin, label: 'Years Active', value: '4+', color: 'text-red-600' },
   ];
 
   const features = [
@@ -85,20 +85,22 @@ const Hero = () => {
             <p className="text-xl md:text-2xl text-slate-700 font-semibold max-w-4xl mx-auto leading-relaxed">
               Empowering developers and fostering innovation in the vibrant tech community of Lucknow
             </p>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            {/* <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Join our passionate community of developers, designers, and technology enthusiasts. Learn cutting-edge Google technologies, participate in engaging workshops, network with industry experts, and contribute to meaningful projects that shape the future of technology.
-            </p>
+            </p> */}
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/join"
+            <a
+              href="https://chat.whatsapp.com/L5VMIIEiUz90gh5gcOC054?mode=ac_c"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
               <span>Join Our Community</span>
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
-            </Link>
+            </a>
             <Link
               href="/events"
               className="border-2 border-green-600 text-green-600 bg-white hover:bg-green-600 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
@@ -151,15 +153,6 @@ const Hero = () => {
               <p className="text-gray-600 leading-relaxed">
                 {feature.description}
               </p>
-
-              {/* Hover effect indicator */}
-              <div className={`absolute bottom-0 left-0 w-full h-1 ${hoveredCard === index
-                  ? `${feature.color === 'blue' ? 'bg-blue-500' :
-                    feature.color === 'green' ? 'bg-green-500' :
-                      'bg-yellow-500'
-                  } rounded-b-2xl`
-                  : 'bg-transparent'
-                } transition-all duration-300`}></div>
             </div>
           ))}
         </div>
