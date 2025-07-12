@@ -1,5 +1,5 @@
 import { Mail, MapPin, Twitter, Linkedin, Github, Instagram } from 'lucide-react';
-import Arpit from '../assests/Arpit.png'; 
+import Arpit from '../assests/Arpit.png';
 import Akshat from '../assests/Akshat.png';
 import Abhishek from '../assests/Abhishek.png';
 
@@ -63,28 +63,32 @@ export const teamMembers = [
     role: 'Organizer',
     image: Abhishek,
     social: {
-        github: 'ASahu16',
-        linkedin: 'a-sahu16',
-        twitter: 'iamsahu16',
-        email: 'asahu.m1608@gmail.com'
-      }
+      github: 'ASahu16',
+      linkedin: 'a-sahu16',
+      twitter: 'iamsahu16',
+      email: 'asahu.m1608@gmail.com'
+    }
   },
   {
     name: 'Arpit Bhatia',
     role: 'Core Member',
     image: Arpit,
-    email: 'arpitbhatia903@gmail.com'
+    social: {
+      github: 'bhatiaarpit',
+      linkedin: 'bhatiaarpit',
+      email: 'arpitbhatia903@gmail.com'
+    }
   },
   {
     name: 'Akshat Vadera',
     role: 'Core Member',
     image: Akshat,
-    social:  {
-        github: 'Vadera007',
-        linkedin: 'akshatvadera',
-        twitter: 'akshat_vad88585',
-        email: 'vaderaakshat0@gmail.com',
-      }
+    social: {
+      github: 'Vadera007',
+      linkedin: 'akshatvadera',
+      twitter: 'akshat_vad88585',
+      email: 'vaderaakshat0@gmail.com',
+    }
   },
 ];
 

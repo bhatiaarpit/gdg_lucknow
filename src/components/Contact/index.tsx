@@ -345,7 +345,7 @@ const ContactPage = () => {
             {/* Team Members */}
             <div className="bg-white rounded-2xl shadow-md p-6 border border-gray-100">
               <h3 className="text-xl font-semibold text-gray-900 mb-6">Meet Our Team</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {teamMembers.map((member, index) => (
                   <div
                     key={index}
@@ -364,17 +364,17 @@ const ContactPage = () => {
                         <Users className="h-8 w-8 text-gray-400" />
                       )}
                     </div>
-                    <h4 className="font-semibold text-gray-900 text-sm">{member.name}</h4>
+                    <h4 className="font-semibold text-gray-900 text-sm mb-1">{member.name}</h4>
                     <p className="text-xs text-gray-600 mb-3">{member.role}</p>
                     {member.social && (
-                      <div className="flex justify-center space-x-2">
+                      <div className="flex justify-center items-center gap-2 flex-wrap">
                         {Object.entries(member.social).map(([platform, handle]) => (
                           <a
                             key={platform}
                             href={getSocialUrl(platform as SocialPlatform, handle as string)}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`p-2 rounded-lg bg-white border border-gray-200 text-gray-600 transition-colors duration-200 ${getSocialColor(platform as SocialPlatform)}`}
+                            className={`p-2 rounded-lg bg-white border border-gray-200 text-gray-600 transition-colors duration-200 hover:scale-105 transform ${getSocialColor(platform as SocialPlatform)} flex items-center justify-center min-w-[36px] min-h-[36px]`}
                             title={`${member.name} on ${platform}`}
                           >
                             {getSocialIcon(platform as SocialPlatform)}
