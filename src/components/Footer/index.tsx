@@ -8,7 +8,6 @@ import {
   Twitter, 
   Linkedin, 
   Instagram,
-  Youtube,
   ExternalLink,
   Heart,
   ArrowRight
@@ -60,13 +59,7 @@ const Footer = () => {
       icon: Instagram, 
       label: 'Instagram',
       color: 'hover:text-pink-500'
-    },
-    { 
-      href: 'https://youtube.com/gdglucknow', 
-      icon: Youtube, 
-      label: 'YouTube',
-      color: 'hover:text-red-500'
-    },
+    }
   ];
 
   const upcomingEvents = [
