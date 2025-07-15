@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Calendar, Users, MapPin, ArrowRight, Play, Code, Lightbulb } from 'lucide-react';
 import Image from 'next/image';
-import gdgLogo from '@/assests/gdgLogo.svg';
+import gdgLogo from '@/assets/gdgLogo.svg';
 
 const Hero = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -93,7 +93,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://chat.whatsapp.com/L5VMIIEiUz90gh5gcOC054?mode=ac_c"
+              href="https://gdg.community.dev/gdg-lucknow/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"

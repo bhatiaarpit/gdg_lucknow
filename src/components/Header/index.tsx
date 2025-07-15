@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
-import gdgLogo from '@/assests/gdglko-logo.png';
+import gdgLogo from '@/assets/gdglko-logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -101,7 +101,7 @@ const Header = () => {
 
             <div className="hidden md:flex items-center space-x-4">
               <a
-                href="https://chat.whatsapp.com/L5VMIIEiUz90gh5gcOC054?mode=ac_c"
+                href="https://gdg.community.dev/gdg-lucknow/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"

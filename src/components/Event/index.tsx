@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Calendar, Search, Filter, Handshake } from 'lucide-react';
+import { StaticImageData } from 'next/image';
 import { categories, upcomingEvents, pastEvents, collaboratedEvents } from '@/Data/Events.js';
 import EventCard from '@/components/EventCard';
 
@@ -24,7 +25,7 @@ type EventType = {
   slidesLink?: string;
   registrationLink?: string;
   collaboratorLogo?: string;
-  image?: string;
+  image?: string | StaticImageData;
 };
 
 type CategoryType = {
@@ -42,7 +43,8 @@ type BaseEventType = {
   maxAttendees: number | string;
   description: string;
   tags: string[];
-  speaker: string;
+  speaker?: string;        // Made optional
+  speakers?: string[];     // Added speakers array
   category: string;
   featured?: boolean;
   collaborator?: string;
@@ -50,7 +52,7 @@ type BaseEventType = {
   slidesLink?: string;
   registrationLink?: string;
   collaboratorLogo?: string;
-  image?: string;
+  image?: string | StaticImageData;
 };
 
 const EventsPage = () => {
@@ -62,7 +64,9 @@ const EventsPage = () => {
     ...event,
     eventType,
     attendees: typeof event.attendees === 'string' ? parseInt(event.attendees) || 0 : event.attendees,
-    maxAttendees: typeof event.maxAttendees === 'string' ? parseInt(event.maxAttendees) || 0 : event.maxAttendees
+    maxAttendees: typeof event.maxAttendees === 'string' ? parseInt(event.maxAttendees) || 0 : event.maxAttendees,
+    // Handle both speaker and speakers properties
+    speaker: event.speaker || (event.speakers && event.speakers.length > 0 ? event.speakers.join(', ') : '')
   });
 
   const getAllEvents = (): EventType[] => {

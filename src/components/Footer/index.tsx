@@ -14,7 +14,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import Image from 'next/image';
-import gdgLogo from '@/assests/gdgLogo.svg'; 
+import gdgLogo from '@/assets/gdgLogo.svg'; 
 
 const Footer = () => {
   const quickLinks = [

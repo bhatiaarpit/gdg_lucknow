@@ -1,6 +1,6 @@
-import Arpit from '../assests/Arpit.png'; 
-import Akshat from '../assests/Akshat.png';
-import Abhishek from '../assests/Abhishek.png';
+import Arpit from '../assets/Arpit.png'; 
+import Akshat from '../assets/Akshat.png';
+import Abhishek from '../assets/Abhishek.png';
 
 export const teamData = {
   organizers: [

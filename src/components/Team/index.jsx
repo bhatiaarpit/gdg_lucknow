@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Users, Star, Award, Heart, ChevronRight, ExternalLink } from 'lucide-react';
-import gdgLogo from '@/assests/gdgLogo.svg';
+import gdgLogo from '@/assets/gdgLogo.svg';
 import Image from 'next/image';
 import { teamData, stats } from '@/Data/Team.js';
 import TeamCard from '@/components/TeamCard';

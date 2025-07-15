@@ -2,7 +2,7 @@
 
 // import { useState } from 'react';
 import Image from 'next/image';
-import gdgLogo from '@/assests/gdgLogo.svg'; 
+import gdgLogo from '@/assets/gdgLogo.svg'; 
 import { Users, Calendar, Heart, Award, ExternalLink, Code, Lightbulb, Share2, Network, Handshake, BookOpen, Star, ChevronRight } from 'lucide-react';
 const About = () => {
   // Sample data - replace with your actual data
