@@ -99,7 +99,7 @@ export const faqs = [
   },
   {
     question: 'Are your events free to attend?',
-    answer: 'Yes, all our events are free to attend! We believe in making technology education accessible to everyone in our community.'
+    answer: 'Most of our events are free to attend as we aim to make technology education accessible to all. However, some special workshops or conferences may have a registration fee.'
   },
   {
     question: 'How can I volunteer or help organize events?',
