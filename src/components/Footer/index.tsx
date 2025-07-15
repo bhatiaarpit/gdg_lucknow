@@ -34,7 +34,6 @@ const Footer = () => {
     { href: '/contact', label: 'Become Volunteer' },
     { href: '/contact', label: 'Speak at Event' },
     { href: '/contact', label: 'Sponsor Us' },
-    { href: '/code-of-conduct', label: 'Code of Conduct' },
   ];
 
   const socialLinks = [
