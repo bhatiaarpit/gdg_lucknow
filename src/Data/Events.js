@@ -1,10 +1,9 @@
 // eventsData.js
-import IWD2025 from '@/assets/events/IWD2025.jpeg';
-import Devfest2024 from '@/assets/events/Devfest2024.jpeg';
-import GoogleIO2024 from '@/assets/events/GoogleIO.jpg';
-import Django2025 from '@/assets/events/1U9A0142.jpeg';
+import IWD2025 from '@/assets/events/iwd.jpg';
+import Devfest2024 from '@/assets/events/devfest.jpeg';
+import GoogleIO2024 from '@/assets/events/googleio.jpg';
+import Django2025 from '@/assets/events/djangomeetup.jpg';
 import BuildwithAI from '@/assets/events/buildwithai.png';
-
 
 export const categories = [
   { id: 'all', name: 'All Events', color: 'bg-gray-100 text-gray-700' },
