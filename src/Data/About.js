@@ -51,63 +51,6 @@ export const values = [
   }
 ];
 
-export const timeline = [
-  {
-    year: '2016',
-    title: 'GDG Lucknow Founded',
-    description: 'Started as a small group of passionate developers wanting to learn Google technologies.',
-    milestone: true
-  },
-  {
-    year: '2017',
-    title: 'First DevFest',
-    description: 'Organized our first DevFest with 200+ attendees and 15 speakers.',
-    milestone: false
-  },
-  {
-    year: '2018',
-    title: 'Women Techmakers Launch',
-    description: 'Launched Women Techmakers Lucknow to support women in technology.',
-    milestone: true
-  },
-  {
-    year: '2019',
-    title: 'Community Growth',
-    description: 'Crossed 1000 members and started regular monthly meetups.',
-    milestone: false
-  },
-  {
-    year: '2020',
-    title: 'Virtual Pivot',
-    description: 'Successfully transitioned to virtual events during pandemic, reaching global audience.',
-    milestone: true
-  },
-  {
-    year: '2021',
-    title: 'Hybrid Events',
-    description: 'Introduced hybrid events combining in-person and virtual experiences.',
-    milestone: false
-  },
-  {
-    year: '2022',
-    title: 'Open Source Focus',
-    description: 'Launched multiple open source initiatives and hacktober fest celebrations.',
-    milestone: true
-  },
-  {
-    year: '2023',
-    title: 'Industry Partnerships',
-    description: 'Established partnerships with local startups and tech companies.',
-    milestone: false
-  },
-  {
-    year: '2024',
-    title: 'Present Day',
-    description: 'Thriving community of 2500+ members with weekly events and workshops.',
-    milestone: true
-  }
-];
-
 export const tabContent = {
   story: {
     title: 'Our Story',
