@@ -1,9 +1,10 @@
-// eventsData.js
 const IWD2025 = '/events/iwd.jpg';
 const Devfest2024 = '/events/devfest.jpeg';
 const GoogleIO2024 = '/events/googleio.jpg';
 const Django2025 = '/events/djangomeetup.jpg';
 const BuildwithAI = '/events/buildwithai.png';
+const DevFest2025 = '/events/devfest2025.png';
+const GoogleIO2025 = '/events/googleio2025.png';
 
 export const categories = [
   { id: 'all', name: 'All Events', color: 'bg-gray-100 text-gray-700' },
@@ -24,7 +25,7 @@ export const upcomingEvents = [
     attendees: 'TBD',
     maxAttendees: 'TBD',
     description: 'TBD',
-    image: '/api/placeholder/400/200',
+    image: DevFest2025,
     speaker: 'TBD',
     tags: ['TBD'],
     registrationLink: '#',
@@ -40,7 +41,7 @@ export const upcomingEvents = [
     attendees: 'TBD',
     maxAttendees: 'TBD',
     description: 'TBD',
-    image: '/api/placeholder/400/200',
+    image: GoogleIO2025,
     speaker: 'TBD',
     tags: ['TBD'],
     registrationLink: '#',
