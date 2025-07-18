@@ -17,8 +17,8 @@ type EventType = {
   date: string;
   time: string;
   location: string;
-  attendees: number;
-  maxAttendees: number;
+  attendees: string; // Changed back to string to match EventCard expectations
+  maxAttendees: string; // Changed back to string to match EventCard expectations
   description: string;
   tags: string[];
   speaker?: string;
@@ -50,7 +50,7 @@ type BaseEventType = {
   description: string;
   tags: string[];
   speaker?: string;
-  speakers?: Array<Speaker | string>; // Fixed: Changed from string[] to Array<Speaker | string>
+  speakers?: Array<Speaker | string>;
   category: string;
   featured?: boolean;
   collaborator?: string;
@@ -69,9 +69,9 @@ const EventsPage = () => {
   const normalizeEvent = (event: BaseEventType, eventType: string): EventType => ({
     ...event,
     eventType,
-    attendees: typeof event.attendees === 'string' ? parseInt(event.attendees) || 0 : event.attendees,
-    maxAttendees: typeof event.maxAttendees === 'string' ? parseInt(event.maxAttendees) || 0 : event.maxAttendees,
-    // Keep speakers as is - don't convert to string since EventCard expects the original format
+    // Convert to string to match EventCard expectations
+    attendees: typeof event.attendees === 'number' ? event.attendees.toString() : event.attendees,
+    maxAttendees: typeof event.maxAttendees === 'number' ? event.maxAttendees.toString() : event.maxAttendees,
     speakers: event.speakers,
     speaker: event.speaker
   });

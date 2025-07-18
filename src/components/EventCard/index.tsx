@@ -23,8 +23,8 @@ interface EventCardProps {
     date: string;
     time: string;
     location: string;
-    attendees: number | string;
-    maxAttendees: number | string;
+    attendees: string;
+    maxAttendees: string;
     description: string;
     tags: string[];
     speaker?: string;
@@ -83,10 +83,8 @@ const EventCard = ({
           );
         }
 
-        // Handle object type: with or without LinkedIn link
-        // Check if LinkedIn link exists and is not '#' or empty
         const hasValidLinkedIn = speaker.linkedin && speaker.linkedin !== '#' && speaker.linkedin.trim() !== '';
-        
+
         return hasValidLinkedIn ? (
           <a
             key={index}
@@ -116,9 +114,8 @@ const EventCard = ({
 
   return (
     <div
-      className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200 overflow-hidden ${
-        event.featured ? 'ring-2 ring-blue-500' : ''
-      }`}
+      className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200 overflow-hidden ${event.featured ? 'ring-2 ring-blue-500' : ''
+        }`}
     >
       {event.featured && (
         <div className="bg-gradient-to-r from-blue-500 to-green-500 text-white text-xs font-semibold px-3 py-1 text-center">
@@ -140,9 +137,8 @@ const EventCard = ({
               src={event.image}
               alt={event.title}
               fill
-              className={`object-cover transition-opacity duration-500 ${
-                imageLoading ? 'opacity-0' : 'opacity-100'
-              }`}
+              className={`object-cover transition-opacity duration-500 ${imageLoading ? 'opacity-0' : 'opacity-100'
+                }`}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               onLoad={() => setImageLoading(false)}
               onError={() => {
@@ -154,9 +150,8 @@ const EventCard = ({
           ) : null}
 
           <div
-            className={`absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center transition-opacity duration-500 ${
-              hasValidImage && !imageLoading ? 'opacity-0' : 'opacity-100'
-            }`}
+            className={`absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center transition-opacity duration-500 ${hasValidImage && !imageLoading ? 'opacity-0' : 'opacity-100'
+              }`}
           >
             <div className="text-gray-500 text-sm font-medium">
               {imageLoading ? 'Loading...' : 'Event Image'}
@@ -170,10 +165,9 @@ const EventCard = ({
 
         <div className="absolute top-4 right-4">
           <span
-            className={`px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm ${
-              categories.find((c) => c.id === event.category)?.color ||
+            className={`px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm ${categories.find((c) => c.id === event.category)?.color ||
               'bg-gray-100 text-gray-700'
-            }`}
+              }`}
           >
             {categories.find((c) => c.id === event.category)?.name || 'Event'}
           </span>
@@ -248,26 +242,50 @@ const EventCard = ({
           </div>
 
           {isEventUpcoming ? (
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 flex items-center space-x-2">
-              <span>Register</span>
-              <ArrowRight className="h-4 w-4" />
-            </button>
+            event.registrationLink && event.registrationLink !== '#' ? (
+              <a
+                href={event.registrationLink}
+                target="_blank"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 flex items-center space-x-2"
+              >
+                <span>Register</span>
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            ) : (
+              <button
+                disabled
+                className="bg-gray-300 text-gray-600 px-4 py-2 rounded-lg text-sm font-semibold flex items-center space-x-2 cursor-not-allowed"
+              >
+                <span>Registration will open soon</span>
+              </button>
+            )
           ) : (
             <div className="flex space-x-2">
               {event.recordingLink && event.recordingLink !== '#' && (
-                <button className="bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 flex items-center space-x-1">
+                <a
+                  href={event.recordingLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 flex items-center space-x-1"
+                >
                   <Play className="h-4 w-4" />
                   <span>Watch</span>
-                </button>
+                </a>
               )}
               {event.slidesLink && event.slidesLink !== '#' && (
-                <button className="bg-gray-600 hover:bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 flex items-center space-x-1">
+                <a
+                  href={event.slidesLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-600 hover:bg-gray-700 text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 flex items-center space-x-1"
+                >
                   <ExternalLink className="h-4 w-4" />
                   <span>Slides</span>
-                </button>
+                </a>
               )}
             </div>
           )}
+
         </div>
       </div>
     </div>

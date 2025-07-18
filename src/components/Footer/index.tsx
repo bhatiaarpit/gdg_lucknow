@@ -5,7 +5,6 @@ import {
   Mail, 
   MapPin, 
   Github, 
-  Twitter, 
   Linkedin, 
   Instagram,
   ExternalLink,
@@ -37,13 +36,7 @@ const Footer = () => {
 
   const socialLinks = [
     { 
-      href: 'https://twitter.com/gdglucknow', 
-      icon: Twitter, 
-      label: 'Twitter',
-      color: 'hover:text-blue-500'
-    },
-    { 
-      href: 'https://linkedin.com/company/gdglucknow', 
+      href: 'https://www.linkedin.com/company/google-developer-groups-lucknow', 
       icon: Linkedin, 
       label: 'LinkedIn',
       color: 'hover:text-blue-600'

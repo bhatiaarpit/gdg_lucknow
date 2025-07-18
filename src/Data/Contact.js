@@ -1,4 +1,4 @@
-import { Mail, MapPin, Twitter, Linkedin, Github, Instagram } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github, Instagram } from 'lucide-react';
 import Arpit from '../assets/Arpit.png';
 import Akshat from '../assets/Akshat.png';
 import Abhishek from '../assets/Abhishek.png';
@@ -32,15 +32,9 @@ export const contactInfo = [
 
 export const socialLinks = [
   {
-    icon: <Twitter className="h-5 w-5" />,
-    name: 'Twitter',
-    url: 'https://twitter.com/gdglucknow',
-    color: 'bg-blue-500 hover:bg-blue-600'
-  },
-  {
     icon: <Linkedin className="h-5 w-5" />,
     name: 'LinkedIn',
-    url: 'https://linkedin.com/company/gdglucknow',
+    url: 'https://www.linkedin.com/company/google-developer-groups-lucknow',
     color: 'bg-blue-700 hover:bg-blue-800'
   },
   {
@@ -65,7 +59,6 @@ export const teamMembers = [
     social: {
       github: 'ASahu16',
       linkedin: 'a-sahu16',
-      twitter: 'iamsahu16',
       email: 'asahu.m1608@gmail.com'
     }
   },
@@ -86,7 +79,6 @@ export const teamMembers = [
     social: {
       github: 'Vadera007',
       linkedin: 'akshatvadera',
-      twitter: 'akshat_vad88585',
       email: 'vaderaakshat0@gmail.com',
     }
   },

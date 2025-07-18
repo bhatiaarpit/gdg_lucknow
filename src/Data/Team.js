@@ -13,7 +13,6 @@ export const teamData = {
       social: {
         github: 'ASahu16',
         linkedin: 'a-sahu16',
-        twitter: 'iamsahu16',
         email: 'asahu.m1608@gmail.com'
       }
     }
@@ -41,7 +40,6 @@ export const teamData = {
       social:  {
         github: 'Vadera007',
         linkedin: 'akshatvadera',
-        twitter: 'akshat_vad88585',
         email: 'vaderaakshat0@gmail.com',
       }
     },

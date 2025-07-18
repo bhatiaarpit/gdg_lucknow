@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import Image from 'next/image';
 
 // Define a more specific type for images
@@ -11,7 +11,6 @@ interface TeamMember {
   social: {
     github?: string;
     linkedin?: string;
-    twitter?: string;
     email?: string;
   };
 }
@@ -88,17 +87,6 @@ const TeamCard: React.FC<TeamCardProps> = ({ member }) => {
             aria-label={`${member.name}'s LinkedIn profile`}
           >
             <Linkedin className="w-4 h-4" />
-          </a>
-        )}
-        {member.social.twitter && (
-          <a
-            href={`https://twitter.com/${member.social.twitter}`}
-            className="text-gray-600 hover:text-blue-400 transition-colors duration-200"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${member.name}'s Twitter profile`}
-          >
-            <Twitter className="w-4 h-4" />
           </a>
         )}
         {member.social.email && (

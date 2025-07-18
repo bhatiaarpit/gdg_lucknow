@@ -1,12 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { Send, MessageCircle, Calendar, Users, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Send, MessageCircle, Calendar, Users, Github, Linkedin, Mail } from 'lucide-react';
 import { inquiryTypes, contactInfo, socialLinks, teamMembers, faqs } from '@/Data/Contact';
 import Image from 'next/image';
 
-// Type definitions for better TypeScript support
-type SocialPlatform = 'github' | 'linkedin' | 'twitter' | 'email';
+type SocialPlatform = 'github' | 'linkedin' | 'email';
 
 interface FormData {
   name: string;
@@ -123,8 +122,6 @@ const ContactPage = () => {
         return <Github className="h-4 w-4" />;
       case 'linkedin':
         return <Linkedin className="h-4 w-4" />;
-      case 'twitter':
-        return <Twitter className="h-4 w-4" />;
       case 'email':
         return <Mail className="h-4 w-4" />;
       default:
@@ -138,8 +135,6 @@ const ContactPage = () => {
         return `https://github.com/${handle}`;
       case 'linkedin':
         return `https://linkedin.com/in/${handle}`;
-      case 'twitter':
-        return `https://twitter.com/${handle}`;
       case 'email':
         return `mailto:${handle}`;
       default:
@@ -153,8 +148,6 @@ const ContactPage = () => {
         return 'hover:text-gray-900';
       case 'linkedin':
         return 'hover:text-blue-600';
-      case 'twitter':
-        return 'hover:text-blue-400';
       case 'email':
         return 'hover:text-red-600';
       default:
