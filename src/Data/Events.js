@@ -11,7 +11,7 @@ const DevFest2023 = '/events/devfest2023.jpg';
 const IWD2023 = '/events/iwd2023.jpg';
 const DevFest2022 = '/events/devfest2022.jpg';
 const AndroidStudyJam2022 = '/events/android2022.jpg';
-const DevFestIndia2021 = '/events/devfest2021.jpg';
+const DevFestIndia2021 = '/events/devfest2021.png';
 const FlutterFestival2022 = '/events/flutter2022.jpg';
 const IWDPreEvent2022 = '/events/iwdpre2022.jpg';
 const IWDIndia2022 = '/events/iwdindia2022.jpg';
@@ -154,10 +154,10 @@ export const pastEvents = [
     description: 'An empowering event under the Women Techmakers "Impact the Future" campaign, celebrating women\'s achievements in tech and advocating for gender equity.',
     image: IWD2024,
     speakers: [
-      { name: 'Rishiraj Acharya', linkedin: 'https://www.linkedin.com/in/rishiraj-acharya/' },
+      { name: 'Rishiraj Acharya', linkedin: 'https://www.linkedin.com/in/rishirajacharya/' },
       { name: 'Vasundhara Shukla', linkedin: 'https://www.linkedin.com/in/vasundhara-shukla/' },
-      { name: 'Pankaj Rai', linkedin: 'https://www.linkedin.com/in/pankaj-rai-firebase/' },
-      { name: 'Shruti Tiwari', linkedin: 'https://www.linkedin.com/in/shruti-tiwari-wtm/' },
+      { name: 'Pankaj Rai', linkedin: 'https://www.linkedin.com/in/pankajrai16/' },
+      { name: 'Shruti Tiwari', linkedin: 'https://www.linkedin.com/in/shruti-tiwari/' },
       { name: 'Vishal Kumar', linkedin: 'https://www.linkedin.com/in/vishal-barnwal/' }
     ],
     tags: ['WomenInTech', 'AI', 'Android', 'Firebase', 'Golang', 'Personal Branding'],
