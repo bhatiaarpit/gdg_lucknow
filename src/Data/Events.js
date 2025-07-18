@@ -13,6 +13,7 @@ const AndroidStudyJam2022 = '/events/android2022.png';
 const DevFestIndia2021 = '/events/devfest2021.png';
 const AIDay2024 = '/events/aiday2024.png';
 const GenAI2024 = '/events/genai2024.png';
+const HackToCrack2024 = '/events/hacktocrack2024.png';
 
 export const categories = [
   { id: 'all', name: 'All Events', color: 'bg-gray-100 text-gray-700' },
@@ -299,5 +300,19 @@ export const collaboratedEvents = [
     ],
     tags: ['AI', 'Generative AI', 'LLMs', 'Cybersecurity', 'Visual AI', 'Community'],
     collaborator: 'TFUG Lucknow, GDG Lucknow, Hunto AI'
-  }
+  },
+  {
+  id: 23,
+  title: 'Hack To Crack 1.0: An AI/ML Hackathon',
+  date: '2024-05-23',
+  time: '10:00 AM',
+  location: 'Online + Onsite (TFUG Lucknow HQ)',
+  category: 'hackathon',
+  attendees: '33',
+  maxAttendees: '50',
+  description: 'Hack To Crack 1.0 was a 24-hour AI/ML hackathon organized by TFUG Lucknow in collaboration with GDG Lucknow and Lucknow AI Labs. It focused on solving real-world challenges across domains like computer vision, NLP, and audio processing. 9 teams participated and built impactful projects ranging from fraud detection systems to document intelligence tools.',
+  image: HackToCrack2024,
+  tags: ['Hackathon', 'AI', 'Machine Learning', 'NLP', 'Computer Vision', 'Speech Recognition'],
+  collaborator: 'TFUG Lucknow, GDG Lucknow, Lucknow AI Labs'
+}
 ];

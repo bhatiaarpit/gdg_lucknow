@@ -2,7 +2,7 @@ import { Mail, MapPin, Linkedin, Github, Instagram } from 'lucide-react';
 import Arpit from '../assets/Arpit.png';
 import Akshat from '../assets/Akshat.png';
 import Abhishek from '../assets/Abhishek.png';
-
+import whatsappIcon from '@/assets/whatsapp-icon.svg';
 
 export const inquiryTypes = [
   { value: 'general', label: 'General Inquiry' },
@@ -35,19 +35,29 @@ export const socialLinks = [
     icon: <Linkedin className="h-5 w-5" />,
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/company/google-developer-groups-lucknow',
-    color: 'bg-blue-700 hover:bg-blue-800'
+    color: 'bg-blue-700 hover:bg-blue-800',
+    type: 'lucide'
   },
   {
     icon: <Github className="h-5 w-5" />,
     name: 'GitHub',
     url: 'https://github.com/gdglucknow',
-    color: 'bg-gray-800 hover:bg-gray-900'
+    color: 'bg-gray-800 hover:bg-gray-900',
+    type: 'lucide'
   },
   {
     icon: <Instagram className="h-5 w-5" />,
     name: 'Instagram',
     url: 'https://instagram.com/gdglucknow',
-    color: 'bg-pink-500 hover:bg-pink-600'
+    color: 'bg-pink-500 hover:bg-pink-600',
+    type: 'lucide'
+  },
+  {
+    icon: whatsappIcon,
+    name: 'WhatsApp',
+    url: 'https://chat.whatsapp.com/L5VMIIEiUz90gh5gcOC054?mode=ac_c',
+    color: 'bg-green-500 hover:bg-green-600',
+    type: 'image'
   }
 ];
 

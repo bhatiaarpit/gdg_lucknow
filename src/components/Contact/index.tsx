@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Send, MessageCircle, Calendar, Users, Github, Linkedin, Mail } from 'lucide-react';
+import { Send, MessageCircle, Calendar, Users, Github, Linkedin, Mail} from 'lucide-react';
 import { inquiryTypes, contactInfo, socialLinks, teamMembers, faqs } from '@/Data/Contact';
 import Image from 'next/image';
 
@@ -16,6 +16,32 @@ interface FormData {
 }
 
 type SubmitStatus = '' | 'success' | 'error';
+
+interface ContactInfo {
+  icon: React.ReactNode;
+  title: string;
+  value: string;
+  description: string;
+  link?: string;
+}
+
+interface SocialLink {
+  icon: React.ReactNode | string;
+  name: string;
+  url: string;
+  color: string;
+  type: 'image' | 'lucide';
+}
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface InquiryType {
+  value: string;
+  label: string;
+}
 
 const ContactPage = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -81,7 +107,7 @@ const ContactPage = () => {
     }
   };
 
-  // Status message JSX (replace the existing success message in your form)
+  // Status message JSX
   const StatusMessage = () => {
     if (submitStatus === 'success') {
       return (
@@ -153,6 +179,21 @@ const ContactPage = () => {
       default:
         return 'hover:text-gray-600';
     }
+  };
+
+  const renderSocialIcon = (social: SocialLink) => {
+    if (social.type === 'image' && typeof social.icon === 'string') {
+      return (
+        <Image
+          src={social.icon}
+          alt={social.name}
+          width={20}
+          height={20}
+          className="h-5 w-5"
+        />
+      );
+    }
+    return social.icon;
   };
 
   return (
@@ -230,7 +271,7 @@ const ContactPage = () => {
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
-                  {inquiryTypes.map(type => (
+                  {(inquiryTypes as InquiryType[]).map(type => (
                     <option key={type.value} value={type.value}>
                       {type.label}
                     </option>
@@ -291,7 +332,7 @@ const ContactPage = () => {
           <div className="space-y-8">
             {/* Contact Info Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {contactInfo.map((info, index) => (
+              {(contactInfo as ContactInfo[]).map((info, index) => (
                 <div key={index} className="bg-white rounded-xl shadow-lg p-[15px] border border-gray-200 hover:shadow-xl transition-shadow duration-300">
                   <div className="flex items-start space-x-4">
                     <div className="p-3 bg-blue-100 rounded-lg">
@@ -320,7 +361,7 @@ const ContactPage = () => {
             <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Follow us on social media</h3>
               <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
+                {(socialLinks as SocialLink[]).map((social, index) => (
                   <a
                     key={index}
                     href={social.url}
@@ -329,7 +370,7 @@ const ContactPage = () => {
                     className={`p-3 rounded-lg text-white transition-colors duration-200 ${social.color}`}
                     title={social.name}
                   >
-                    {social.icon}
+                    {renderSocialIcon(social)}
                   </a>
                 ))}
               </div>
@@ -390,7 +431,7 @@ const ContactPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {faqs.map((faq, index) => (
+            {(faqs as FAQ[]).map((faq, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
                 <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
@@ -404,21 +445,22 @@ const ContactPage = () => {
           <h2 className="text-3xl font-bold text-white mb-4">Ready to join our community?</h2>
           <p className="text-xl text-white mb-6">Don&apos;t miss out on our upcoming events and resources</p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
+            <a
+              href="/events"
+              className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+            >
               <Calendar className="h-5 w-5" />
-              <a href="/events">
-                <span>View Events</span>
-              </a>
-            </button>
-            <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
+              <span>View Events</span>
+            </a>
+            <a
+              href="https://chat.whatsapp.com/L5VMIIEiUz90gh5gcOC054?mode=ac_c"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+            >
               <MessageCircle className="h-5 w-5" />
-              <a
-                href="https://chat.whatsapp.com/L5VMIIEiUz90gh5gcOC054?mode=ac_c"
-                target="_blank"
-              >
-                Join Our Community
-              </a>
-            </button>
+              <span>Join Our Community</span>
+            </a>
           </div>
         </div>
       </div>

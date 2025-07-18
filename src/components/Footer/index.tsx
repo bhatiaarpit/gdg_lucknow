@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import gdgLogo from '@/assets/gdgLogo.svg'; 
+import whatsappIcon from '@/assets/whatsapp-icon2.svg';
 
 const Footer = () => {
   const quickLinks = [
@@ -39,19 +40,29 @@ const Footer = () => {
       href: 'https://www.linkedin.com/company/google-developer-groups-lucknow', 
       icon: Linkedin, 
       label: 'LinkedIn',
-      color: 'hover:text-blue-600'
+      color: 'hover:text-blue-600',
+      type: 'lucide'
     },
     { 
       href: 'https://github.com/gdglucknow', 
       icon: Github, 
       label: 'GitHub',
-      color: 'hover:text-gray-900'
+      color: 'hover:text-gray-900',
+      type: 'lucide'
     },
     { 
       href: 'https://instagram.com/gdglucknow', 
       icon: Instagram, 
       label: 'Instagram',
-      color: 'hover:text-pink-500'
+      color: 'hover:text-pink-500',
+      type: 'lucide'
+    },
+    { 
+      href: 'https://chat.whatsapp.com/L5VMIIEiUz90gh5gcOC054?mode=ac_c', 
+      icon: whatsappIcon,
+      label: 'WhatsApp',
+      color: 'hover:text-green-500',
+      type: 'image'
     }
   ];
 
@@ -190,7 +201,17 @@ const Footer = () => {
                     className={`text-gray-400 ${social.color} transition-colors duration-200 p-2 rounded-full hover:bg-white`}
                     aria-label={social.label}
                   >
-                    <social.icon className="h-5 w-5" />
+                    {social.type === 'image' ? (
+                      <Image
+                        src={social.icon}
+                        alt={social.label}
+                        width={20}
+                        height={20}
+                        className="h-5 w-5"
+                      />
+                    ) : (
+                      <social.icon className="h-5 w-5" />
+                    )}
                   </a>
                 ))}
               </div>
