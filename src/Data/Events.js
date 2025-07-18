@@ -5,19 +5,12 @@ const Django2025 = '/events/djangomeetup.jpg';
 const BuildwithAI = '/events/buildwithai.png';
 const DevFest2025 = '/events/devfest2025.png';
 const GoogleIO2025 = '/events/googleio2025.png';
-const IWD2024 = '/events/iwd2024.jpg';
-const StartupSuccessDays2023 = '/events/startup2023.jpg';
-const DevFest2023 = '/events/devfest2023.jpg';
-const IWD2023 = '/events/iwd2023.jpg';
-const DevFest2022 = '/events/devfest2022.jpg';
-const AndroidStudyJam2022 = '/events/android2022.jpg';
+const IWD2024 = '/events/iwd2024.png';
+const StartupSuccessDays2023 = '/events/startup2023.png';
+const DevFest2023 = '/events/devfest2023.png';
+const DevFest2022 = '/events/devfest2022.png';
+const AndroidStudyJam2022 = '/events/android2022.png';
 const DevFestIndia2021 = '/events/devfest2021.png';
-const FlutterFestival2022 = '/events/flutter2022.jpg';
-const IWDPreEvent2022 = '/events/iwdpre2022.jpg';
-const IWDIndia2022 = '/events/iwdindia2022.jpg';
-const PlayAcademy2021 = '/events/playacademy2021.jpg';
-const CloudCertification2021 = '/events/cloud2021.jpg';
-const PlayAcademyGrowth2022 = '/events/playgrowth2022.jpg';
 
 export const categories = [
   { id: 'all', name: 'All Events', color: 'bg-gray-100 text-gray-700' },
@@ -195,22 +188,6 @@ export const pastEvents = [
     tags: ['AI', 'Android', 'Flutter', 'Cloud', 'DevOps', 'Firebase', 'ML', 'WomenInTech'],
   },
   {
-    id: 10,
-    title: "International Women's Day Lucknow 2023",
-    date: '2023-03-08',
-    time: '9:00 AM',
-    location: 'Institution of Engineers (Lucknow chapter)',
-    category: 'celebration',
-    attendees: '150',
-    maxAttendees: '150',
-    description: 'A festive gathering under the "DigitAll" theme—focused on digital literacy for marginalised women. Featured cultural programs and practical sessions on digital rights and financial independence.',
-    image: IWD2023,
-    speakers: [
-      { name: 'Women Empowerment Leaders', linkedin: '#' }
-    ],
-    tags: ['WomenInTech', 'Digital Literacy', 'Financial Independence', 'Cultural Programs'],
-  },
-  {
     id: 11,
     title: 'DevFest Lucknow 2022',
     date: '2022-10-29',
@@ -244,54 +221,6 @@ export const pastEvents = [
     tags: ['Android', 'Mobile Development', 'Kotlin', 'Study Jam'],
   },
   {
-    id: 13,
-    title: 'Flutter Festival Lucknow 2022',
-    date: '2022-02-26',
-    time: '3:00 PM',
-    location: 'GDG Lucknow Community Venue',
-    category: 'workshop',
-    attendees: '42',
-    maxAttendees: '50',
-    description: 'A community-led learning event featuring an introduction to Flutter and Dart fundamentals, with hands‑on workshops covering Dart basics, variables, functions, JSON handling, and classes.',
-    image: FlutterFestival2022,
-    speakers: [
-      { name: 'Local Flutter Experts', linkedin: '#' }
-    ],
-    tags: ['Flutter', 'Dart', 'Mobile Development', 'Cross-platform'],
-  },
-  {
-    id: 14,
-    title: 'IWD Pre-event GDG Lucknow 2022',
-    date: '2022-03-12',
-    time: '4:00 PM',
-    location: 'GDG Lucknow Community Venue',
-    category: 'meetup',
-    attendees: '67',
-    maxAttendees: '70',
-    description: 'A pre-International Women\'s Day gathering to foster career growth, inclusion, and community among women and allies.',
-    image: IWDPreEvent2022,
-    speakers: [
-      { name: 'Industry Professionals', linkedin: '#' }
-    ],
-    tags: ['WomenInTech', 'Career Development', 'Networking', 'Inclusion'],
-  },
-  {
-    id: 15,
-    title: 'International Women\'s Day India Summit 2022',
-    date: '2022-04-02',
-    time: '3:00 PM',
-    location: 'Online / Virtual across India',
-    category: 'celebration',
-    attendees: '500',
-    maxAttendees: '1000',
-    description: 'A two-day virtual summit uniting Women Techmakers ambassadors, developers, and allies from across India under the theme "Progress Not Perfection".',
-    image: IWDIndia2022,
-    speakers: [
-      { name: 'WTM Ambassadors', linkedin: '#' }
-    ],
-    tags: ['WomenInTech', 'Virtual Summit', 'Progress', 'Empowerment'],
-  },
-  {
     id: 16,
     title: 'DevFest India 2021',
     date: '2021-10-22',
@@ -306,55 +235,7 @@ export const pastEvents = [
       { name: '50+ GDG Chapter Experts', linkedin: '#' }
     ],
     tags: ['Android', 'Web', 'Flutter', 'Cloud', 'ML', 'Virtual Event'],
-  },
-  {
-    id: 17,
-    title: 'Google Play Academy Study Jam – Store Listing Workshop',
-    date: '2021-11-27',
-    time: '4:00 PM',
-    location: 'GDG Lucknow Community Venue',
-    category: 'studyjam',
-    attendees: '100',
-    maxAttendees: '100',
-    description: 'A hands-on workshop focused on optimizing Google Play Store listings, crafting effective app descriptions, and using Play Console experiments.',
-    image: PlayAcademy2021,
-    speakers: [
-      { name: 'Google Play Experts', linkedin: '#' }
-    ],
-    tags: ['Google Play', 'App Store Optimization', 'Mobile Publishing'],
-  },
-  {
-    id: 18,
-    title: 'Road to Google Cloud Certification India',
-    date: '2021-11-13',
-    time: '6:00 PM',
-    location: 'GDG Lucknow Community Venue',
-    category: 'studyjam',
-    attendees: '75',
-    maxAttendees: '100',
-    description: 'A 6‑week guided certification prep series for Google Cloud certifications including Associate Cloud Engineer, Professional Cloud Architect, and more.',
-    image: CloudCertification2021,
-    speakers: [
-      { name: 'Google Cloud Experts', linkedin: '#' }
-    ],
-    tags: ['Google Cloud', 'Certification', 'Cloud Architecture', 'Professional Development'],
-  },
-  {
-    id: 19,
-    title: 'Play Academy Study Jam – Sustainable Business Growth',
-    date: '2022-02-12',
-    time: '4:00 PM',
-    location: 'GDG Lucknow Community Venue',
-    category: 'studyjam',
-    attendees: '50',
-    maxAttendees: '60',
-    description: 'A workshop helping Android developers move beyond user acquisition toward sustainable engagement and long-term growth strategies.',
-    image: PlayAcademyGrowth2022,
-    speakers: [
-      { name: 'Business Growth Experts', linkedin: '#' }
-    ],
-    tags: ['Google Play', 'Business Growth', 'User Engagement', 'App Development'],
-  },
+  }
 ];
 
 export const collaboratedEvents = [
