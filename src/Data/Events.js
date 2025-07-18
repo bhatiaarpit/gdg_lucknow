@@ -61,10 +61,13 @@ export const pastEvents = [
     maxAttendees: '100',
     description: 'Go-to place for learning the latest AI tools and integrating them into your projects seamlessly.',
     image: BuildwithAI,
-    speakers: ['Imran Roshan', 'Uzma Mansoori'],
+    speakers: [
+      { name: 'Imran Roshan', linkedin: 'https://www.linkedin.com/in/imranfosec/' },
+      { name: 'Uzma Mansoori', linkedin: 'https://www.linkedin.com/in/uzmamansoori/' }
+    ],
     tags: ['ML', 'Python', 'AI'],
-    recordingLink: '#',
-    slidesLink: '#',
+    // recordingLink: '#',
+    // slidesLink: '#',
   },
   {
     id: 6,
@@ -77,10 +80,13 @@ export const pastEvents = [
     maxAttendees: '150',
     description: 'The future of tech isn’t written yet—women are holding the pen',
     image: IWD2025,
-    speakers: ['Arti Verma', 'Uzma Mansoori', 'Sarita Nirjhra', 'Vandana Sharma'],
+    speakers: [
+      { name: 'Arti Verma', linkedin: '#' },
+      { name: 'Uzma Mansoori', linkedin: 'https://www.linkedin.com/in/uzmamansoori/' },
+      { name: 'Sarita Nirjhra', linkedin: 'https://www.linkedin.com/in/sarita-nirjhra-996856167/' },
+      { name: 'Vandana Sharma', linkedin: 'https://www.linkedin.com/in/vandanastartup/' }
+    ],
     tags: ['WomenInTech', 'ML', 'Python', 'AI'],
-    recordingLink: '#',
-    slidesLink: '#',
   },
   {
     id: 7,
@@ -95,17 +101,15 @@ export const pastEvents = [
       "Imagine a place where cutting-edge innovation meets passionate minds, where industry leaders share the stage with rising stars, and where the next big idea could be born. That's DevFest Lucknow for you!",
     image: Devfest2024,
     speakers: [
-      'Anurag Sinha',
-      'Vishal Kumar',
-      'Snigdha Kashyap',
-      'Geeta Kakrani',
-      'Navodita Srivastava',
-      'Nitin Tiwari',
-      'Saurabh Mishra',
+      { name: 'Anurag Sinha', linkedin: 'https://www.linkedin.com/in/anuragsinha111/' },
+      { name: 'Vishal Kumar', linkedin: 'https://www.linkedin.com/in/vishal-barnwal/' },
+      { name: 'Snigdha Kashyap', linkedin: 'https://www.linkedin.com/in/snigdha-kashyap/' },
+      { name: 'Geeta Kakrani', linkedin: 'https://www.linkedin.com/in/geetakakrani/' },
+      { name: 'Navodita Srivastava', linkedin: 'https://www.linkedin.com/in/navodita-srivastava/' },
+      { name: 'Nitin Tiwari', linkedin: 'https://www.linkedin.com/in/tiwari-nitin/' },
+      { name: 'Saurabh Mishra', linkedin: 'https://www.linkedin.com/in/connectsaurabhmishra/' }
     ],
-    tags: ['ML', 'Python', 'AI'],
-    recordingLink: '#',
-    slidesLink: '#',
+    tags: ['ML', 'Python', 'AI']
   },
   {
     id: 8,
@@ -119,14 +123,12 @@ export const pastEvents = [
     description: 'Dive into the future of tech with Google I/O Extended Lucknow!',
     image: GoogleIO2024,
     speakers: [
-      'Vanshita Singh',
-      'Mritunjay Sharma',
-      'Aryendra Prakash Singh',
-      'Akash Verma',
+      { name: 'Vanshita Singh', linkedin: 'https://www.linkedin.com/in/vanshify/' },
+      { name: 'Mritunjay Sharma', linkedin: 'https://www.linkedin.com/in/mritunjay394/' },
+      { name: 'Aryendra Prakash Singh', linkedin: 'https://www.linkedin.com/in/hashtagaps/' },
+      { name: 'Akash Verma', linkedin: 'https://www.linkedin.com/in/therockakash/' }
     ],
-    tags: ['ML', 'Python', 'AI'],
-    recordingLink: '#',
-    slidesLink: '#',
+    tags: ['ML', 'Python', 'AI']
   },
 ];
 
@@ -142,10 +144,10 @@ export const collaboratedEvents = [
     maxAttendees: '100',
     description: 'Annual tech summit bringing together industry leaders and developers',
     image: Django2025,
-    speaker: 'Multiple Industry Leaders',
+    speakers: [
+      { name: 'Multiple Industry Leaders', linkedin: '#' }
+    ],
     tags: ['Technology', 'Innovation', 'Networking'],
-    recordingLink: '#',
-    slidesLink: '#',
     collaborator: 'Django India',
   },
 ];
