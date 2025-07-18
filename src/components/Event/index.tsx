@@ -6,6 +6,11 @@ import { StaticImageData } from 'next/image';
 import { categories, upcomingEvents, pastEvents, collaboratedEvents } from '@/Data/Events.js';
 import EventCard from '@/components/EventCard';
 
+interface Speaker {
+  name: string;
+  linkedin: string;
+}
+
 type EventType = {
   id: number;
   title: string;
@@ -16,7 +21,8 @@ type EventType = {
   maxAttendees: number;
   description: string;
   tags: string[];
-  speaker: string;
+  speaker?: string;
+  speakers?: Array<Speaker | string>;
   category: string;
   featured?: boolean;
   eventType?: string;
@@ -43,8 +49,8 @@ type BaseEventType = {
   maxAttendees: number | string;
   description: string;
   tags: string[];
-  speaker?: string;        // Made optional
-  speakers?: string[];     // Added speakers array
+  speaker?: string;
+  speakers?: Array<Speaker | string>; // Fixed: Changed from string[] to Array<Speaker | string>
   category: string;
   featured?: boolean;
   collaborator?: string;
@@ -65,8 +71,9 @@ const EventsPage = () => {
     eventType,
     attendees: typeof event.attendees === 'string' ? parseInt(event.attendees) || 0 : event.attendees,
     maxAttendees: typeof event.maxAttendees === 'string' ? parseInt(event.maxAttendees) || 0 : event.maxAttendees,
-    // Handle both speaker and speakers properties
-    speaker: event.speaker || (event.speakers && event.speakers.length > 0 ? event.speakers.join(', ') : '')
+    // Keep speakers as is - don't convert to string since EventCard expects the original format
+    speakers: event.speakers,
+    speaker: event.speaker
   });
 
   const getAllEvents = (): EventType[] => {
