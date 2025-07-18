@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Send, MessageCircle, Calendar, Users, Github, Linkedin, Mail} from 'lucide-react';
 import { inquiryTypes, contactInfo, socialLinks, teamMembers, faqs } from '@/Data/Contact';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 type SocialPlatform = 'github' | 'linkedin' | 'email';
 
@@ -25,12 +25,14 @@ interface ContactInfo {
   link?: string;
 }
 
-interface SocialLink {
-  icon: React.ReactNode | string;
+// Removed unused SocialLink interface
+
+interface ImportedSocialLink {
+  icon: React.ReactNode | string; // Changed from 'any' to more specific type
   name: string;
   url: string;
   color: string;
-  type: 'image' | 'lucide';
+  type: string;
 }
 
 interface FAQ {
@@ -41,6 +43,15 @@ interface FAQ {
 interface InquiryType {
   value: string;
   label: string;
+}
+
+interface TeamMember {
+  name: string;
+  role: string;
+  image?: string | StaticImageData;
+  social?: {
+    [key in SocialPlatform]?: string;
+  };
 }
 
 const ContactPage = () => {
@@ -181,19 +192,27 @@ const ContactPage = () => {
     }
   };
 
-  const renderSocialIcon = (social: SocialLink) => {
-    if (social.type === 'image' && typeof social.icon === 'string') {
+  const renderSocialIcon = (social: ImportedSocialLink) => {
+    if (social.type === 'image') {
+      // Handle both string URLs and imported SVG assets
       return (
         <Image
-          src={social.icon}
+          src={social.icon as string}
           alt={social.name}
           width={20}
           height={20}
-          className="h-5 w-5"
+          className="h-5 w-5 filter brightness-0 invert"
         />
       );
     }
-    return social.icon;
+    
+    // Check if social.icon is already a valid React element
+    if (React.isValidElement(social.icon)) {
+      return social.icon;
+    }
+    
+    // Fallback: return null if icon is not valid
+    return null;
   };
 
   return (
@@ -271,7 +290,7 @@ const ContactPage = () => {
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
-                  {(inquiryTypes as InquiryType[]).map(type => (
+                  {Array.isArray(inquiryTypes) && inquiryTypes.map((type: InquiryType) => (
                     <option key={type.value} value={type.value}>
                       {type.label}
                     </option>
@@ -332,7 +351,7 @@ const ContactPage = () => {
           <div className="space-y-8">
             {/* Contact Info Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {(contactInfo as ContactInfo[]).map((info, index) => (
+              {Array.isArray(contactInfo) && contactInfo.map((info: ContactInfo, index: number) => (
                 <div key={index} className="bg-white rounded-xl shadow-lg p-[15px] border border-gray-200 hover:shadow-xl transition-shadow duration-300">
                   <div className="flex items-start space-x-4">
                     <div className="p-3 bg-blue-100 rounded-lg">
@@ -361,7 +380,7 @@ const ContactPage = () => {
             <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Follow us on social media</h3>
               <div className="flex space-x-4">
-                {(socialLinks as SocialLink[]).map((social, index) => (
+                {Array.isArray(socialLinks) && socialLinks.map((social: ImportedSocialLink, index: number) => (
                   <a
                     key={index}
                     href={social.url}
@@ -380,7 +399,7 @@ const ContactPage = () => {
             <div className="bg-white rounded-2xl shadow-md p-6 border border-gray-100">
               <h3 className="text-xl font-semibold text-gray-900 mb-6">Meet Our Team</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {teamMembers.map((member, index) => (
+                {Array.isArray(teamMembers) && teamMembers.map((member: TeamMember, index: number) => (
                   <div
                     key={index}
                     className="bg-gray-50 p-4 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow duration-300"
@@ -431,7 +450,7 @@ const ContactPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {(faqs as FAQ[]).map((faq, index) => (
+            {Array.isArray(faqs) && faqs.map((faq: FAQ, index: number) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
                 <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
