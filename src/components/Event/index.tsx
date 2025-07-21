@@ -5,6 +5,7 @@ import { Calendar, Search, Filter, Handshake } from 'lucide-react';
 import { StaticImageData } from 'next/image';
 import { categories, upcomingEvents, pastEvents, collaboratedEvents } from '@/Data/Events.js';
 import EventCard from '@/components/EventCard';
+import EventHero from '@/components/EventHero';
 
 interface Speaker {
   name: string;
@@ -114,22 +115,7 @@ const EventsPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-green-600  bg-clip-text text-transparent">
-                Community Events
-              </span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Join us for workshops, meetups, and conferences. Learn from industry experts and connect with fellow developers.
-            </p>
-          </div>
-        </div>
-      </div>
-
+      <EventHero/>
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Tab Navigation */}

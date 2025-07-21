@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Calendar, Users, MapPin, ArrowRight, Play, Code, Lightbulb } from 'lucide-react';
+import { Calendar, Users, MapPin, ExternalLink, Play, Code, Lightbulb } from 'lucide-react';
 import Image from 'next/image';
-import gdgLogo from '@/assets/gdgLogo.svg';
+import gdgLogo from '@/assets/gdg.png';
 
 const Hero = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -47,66 +47,55 @@ const Hero = () => {
 
   return (
     <section className="relative overflow-hidden bg-white">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-blue-50/30">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-100 rounded-full blur-3xl animate-pulse opacity-40"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-green-100 rounded-full blur-3xl animate-pulse opacity-30 animation-delay-1000"></div>
-        <div className="absolute top-1/2 right-1/3 w-48 h-48 bg-red-100 rounded-full blur-3xl animate-pulse opacity-35 animation-delay-500"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-yellow-100 rounded-full blur-3xl animate-pulse opacity-25 animation-delay-1500"></div>
-      </div>
-
-      {/* Main content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
-        {/* Hero Header */}
-        <div className="text-center space-y-8 mb-16">
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="w-24 h-24 flex items-center justify-center bg-white rounded-full overflow-hidden border-1 border-black shadow-lg">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className={`text-center space-y-8 mb-16 transition-all duration-1000 `}>
+          <div className="flex justify-center m-0">
+            <div className="relative group">
+              <div className="flex items-center justify-center bg-white border-gray-100 transition-all">
                 <Image
                   src={gdgLogo}
-                  alt="GDG Logo"
-                  width={96}
-                  height={96}
+                  alt="GDG Lucknow Logo"
+                  width={100}
+                  height={100}
                   priority
                   className="object-contain"
                 />
               </div>
-              <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
-                <div className="w-2 h-2 bg-white rounded-full"></div>
-              </div>
             </div>
           </div>
 
+          {/* Improved title hierarchy */}
           <div className="space-y-6">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-slate-900 tracking-tight">
-              <span className="block text-blue-600 mb-2">Google Developers Group</span>
-              <span className="block text-slate-800">Lucknow</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-700 font-semibold max-w-4xl mx-auto leading-relaxed">
-              Empowering developers and fostering innovation in the vibrant tech community of Lucknow
+            <div className="space-y-2">
+              <p className="text-sm font-semibold text-blue-600 uppercase tracking-wide">Welcome to</p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 tracking-tight">
+                <span className="text-blue-600">Google Developers Group</span>
+                <br />
+                <span className="text-gray-800">Lucknow</span>
+              </h1>
+            </div>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Join Lucknow&apos;s most active developer community. Learn, build, and grow with Google technologies.
             </p>
-            {/* <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Join our passionate community of developers, designers, and technology enthusiasts. Learn cutting-edge Google technologies, participate in engaging workshops, network with industry experts, and contribute to meaningful projects that shape the future of technology.
-            </p> */}
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* Clearer call-to-action */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="https://gdg.community.dev/gdg-lucknow/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              className="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 min-w-[200px] justify-center"
             >
-              <span>Join Our Community</span>
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+              <span>Join Community</span>
+              <ExternalLink className="h-5 w-5 group-hover:scale-110 transition-transform" />
             </a>
             <Link
               href="/events"
-              className="border-2 border-green-600 text-green-600 bg-white hover:bg-green-600 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              className="group border-2 border-gray-300 text-gray-700 bg-white hover:border-blue-600 hover:text-blue-600 px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 min-w-[200px] justify-center"
             >
-              <Play className="h-5 w-5" />
-              <span>Explore Events</span>
+              <Play className="h-5 w-5 group-hover:scale-110 transition-transform" />
+              <span>View Events</span>
             </Link>
           </div>
         </div>
@@ -157,17 +146,6 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <style jsx>{`
-        .animation-delay-500 {
-          animation-delay: 0.5s;
-        }
-        .animation-delay-1000 {
-          animation-delay: 1s;
-        }
-        .animation-delay-1500 {
-          animation-delay: 1.5s;
-        }
-      `}</style>
     </section>
   );
 };

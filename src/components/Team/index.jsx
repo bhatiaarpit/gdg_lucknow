@@ -2,10 +2,9 @@
 
 import { useState } from 'react';
 import { Users, Star, Award, Heart, ChevronRight, ExternalLink } from 'lucide-react';
-import gdgLogo from '@/assets/gdgLogo.svg';
-import Image from 'next/image';
 import { teamData, stats } from '@/Data/Team.js';
 import TeamCard from '@/components/TeamCard';
+import TeamCarousel from '@/components/TeamCarousel';
 
 const Team = () => {
   const [activeTab, setActiveTab] = useState('organizers');
@@ -72,36 +71,12 @@ const Team = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-green-50 py-20">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-100/20 to-green-100/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-8">
-            <div className="flex justify-center mb-6">
-              <div className="w-24 h-24 flex items-center justify-center bg-white rounded-full overflow-hidden border-1 border-black shadow-lg">
-                <Image
-                  src={gdgLogo}
-                  alt="GDG Logo"
-                  width={96}
-                  height={96}
-                  priority
-                  className="object-contain"
-                />
-              </div>
-            </div>
-
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900">
-              Meet Our <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">Team</span>
-            </h1>
-
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              The passionate individuals who make GDG Lucknow a thriving community. From organizers to volunteers, each member contributes to our mission of empowering developers.
-            </p>
-          </div>
-        </div>
-      </section>
-
+      <TeamCarousel/>
+      <p className="text-2xl text-gray-700 md:max-w-5xl mx-auto text-center md:my-8 p-[2rem]">
+        The passionate individuals who make GDG Lucknow a thriving community. From organizers to volunteers, each member contributes to our mission of empowering developers.
+      </p>
       {/* Stats Section */}
       <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -126,7 +101,7 @@ const Team = () => {
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center mb-6">
-            <div className="bg-white rounded-2xl p-2 shadow-lg overflow-x-auto">
+            <div className="bg-white rounded-lg p-1 shadow-sm border border-gray-200">
               <div className="flex flex-nowrap gap-2">
                 {Object.keys(tabContent).map((tab) => (
                   <button
