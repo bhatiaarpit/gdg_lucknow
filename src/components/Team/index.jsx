@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Users, Star, Award, Heart, ChevronRight, ExternalLink } from 'lucide-react';
 import { teamData, stats } from '@/Data/Team.js';
 import TeamCard from '@/components/TeamCard';
+import Link from 'next/link';
 import TeamCarousel from '@/components/TeamCarousel';
 
 const Team = () => {
