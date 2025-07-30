@@ -149,7 +149,7 @@ const Team = () => {
               <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300 flex items-center justify-center space-x-2">
                 <Link
                   href='/contact'
-                  className="text-white bg-white text-blue-600 text-sm flex items-center space-x-2 group"
+                  className="bg-white text-blue-600 text-sm flex items-center space-x-2 group"
                 >
                   <span>Become a volunteer</span>
                   <ExternalLink className="h-5 w-5" />
