@@ -15,7 +15,7 @@ interface Speaker {
   name: string;
   linkedin: string;
 }
-
+//interface
 interface EventCardProps {
   event: {
     id: number;
