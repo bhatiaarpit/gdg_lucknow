@@ -3,51 +3,37 @@
 import gdgLogo from '@/assets/gdgLogo.svg';
 import Image from 'next/image';
 
+// Import volunteer images
+import Volunteer1 from '@/assets/volunteer/volunteer1.jpg';
+import Volunteer2 from '@/assets/volunteer/volunteer2.jpg';
+import Volunteer3 from '@/assets/volunteer/volunteer3.jpg';
+import Volunteer4 from '@/assets/volunteer/volunteer4.jpg';
+import Volunteer5 from '@/assets/volunteer/volunteer5.jpg';
+import Volunteer6 from '@/assets/volunteer/volunteer6.jpg';
+import Volunteer7 from '@/assets/volunteer/volunteer7.jpg';
+import Volunteer8 from '@/assets/volunteer/volunteer8.jpg';
+import Volunteer9 from '@/assets/volunteer/volunteer9.jpg';
+import Volunteer10 from '@/assets/volunteer/volunteer10.jpg';
+import Volunteer11 from '@/assets/volunteer/volunteer11.jpg';
+import Volunteer12 from '@/assets/volunteer/volunteer12.jpg';
+import Volunteer13 from '@/assets/volunteer/volunteer13.jpg';
+import Volunteer14 from '@/assets/volunteer/volunteer14.jpg';
+import Volunteer15 from '@/assets/volunteer/volunteer15.jpg';
+import Volunteer16 from '@/assets/volunteer/volunteer16.jpg';
+import Volunteer17 from '@/assets/volunteer/volunteer17.jpg';
+import Volunteer18 from '@/assets/volunteer/volunteer18.jpg';
+import Volunteer19 from '@/assets/volunteer/volunteer19.jpg';
+import Volunteer20 from '@/assets/volunteer/volunteer20.jpg';
+
 const TeamCarousel = () => {
-  // Dummy image data for 6 columns using Unsplash
+  // Updated image data with shuffled volunteer images
   const imageColumns = [
-    [
-      'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=150&h=200&fit=crop',
-      'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=150&h=180&fit=crop',
-      'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=150&h=220&fit=crop',
-      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=190&fit=crop',
-      'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=150&h=210&fit=crop',
-    ],
-    [
-      'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=150&h=210&fit=crop',
-      'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=195&fit=crop',
-      'https://images.unsplash.com/photo-1573496774426-fe3db3dd1731?w=150&h=185&fit=crop',
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=205&fit=crop',
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=150&h=200&fit=crop',
-    ],
-    [
-      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=190&fit=crop',
-      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=220&fit=crop',
-      'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?w=150&h=180&fit=crop',
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=200&fit=crop',
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=195&fit=crop',
-    ],
-    [
-      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=200&fit=crop',
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=185&fit=crop',
-      'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=215&fit=crop',
-      'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=150&h=190&fit=crop',
-      'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=205&fit=crop',
-    ],
-    [
-      'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=150&h=205&fit=crop',
-      'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=150&h=200&fit=crop',
-      'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=150&h=180&fit=crop',
-      'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=195&fit=crop',
-      'https://images.unsplash.com/photo-1573497161161-c3e73707e25c?w=150&h=210&fit=crop',
-    ],
-    [
-      'https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=150&h=195&fit=crop',
-      'https://images.unsplash.com/photo-1590086782792-42dd2350140d?w=150&h=220&fit=crop',
-      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=185&fit=crop',
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=200&fit=crop',
-      'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&h=190&fit=crop',
-    ],
+    [Volunteer1, Volunteer7, Volunteer3, Volunteer12, Volunteer5],
+    [Volunteer8, Volunteer2, Volunteer14, Volunteer6, Volunteer10],
+    [Volunteer11, Volunteer4, Volunteer9, Volunteer15, Volunteer13],
+    [Volunteer16, Volunteer20, Volunteer18, Volunteer1, Volunteer17],
+    [Volunteer19, Volunteer3, Volunteer7, Volunteer5, Volunteer8],
+    [Volunteer6, Volunteer12, Volunteer2, Volunteer14, Volunteer4],
   ];
 
   return (
@@ -75,7 +61,7 @@ const TeamCarousel = () => {
                 >
                   <Image
                     src={image}
-                    alt={`Team member ${imageIndex}`}
+                    alt={`Volunteer ${imageIndex}`}
                     width={150}
                     height={180 + (imageIndex % 4) * 15}
                     className="w-full h-full object-cover"
