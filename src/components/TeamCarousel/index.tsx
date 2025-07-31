@@ -26,7 +26,6 @@ import Volunteer19 from '@/assets/volunteer/volunteer19.jpg';
 import Volunteer20 from '@/assets/volunteer/volunteer20.jpg';
 
 const TeamCarousel = () => {
-  // Updated image data with shuffled volunteer images
   const imageColumns = [
     [Volunteer1, Volunteer7, Volunteer3, Volunteer12, Volunteer5],
     [Volunteer8, Volunteer2, Volunteer14, Volunteer6, Volunteer10],
