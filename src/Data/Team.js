@@ -64,7 +64,7 @@ export const stats = [
   { 
     icon: 'Users', 
     label: 'Team Members', 
-    value: '12+', 
+    value: '30+', 
     color: 'text-blue-600', 
     bg: 'bg-blue-50' 
   },
