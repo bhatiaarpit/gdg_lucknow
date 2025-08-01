@@ -77,7 +77,7 @@ const About = () => {
             </h1>
             
             <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed px-4">
-              Google Developer Group Lucknow is a vibrant, volunteer-driven tech community established in 2021 with a mission to empower developers, designers, students, and tech enthusiasts across Uttar Pradesh.
+              Google Developer Groups Lucknow is a vibrant, volunteer-driven tech community established in 2021 with a mission to empower developers, designers, students, and tech enthusiasts across Uttar Pradesh.
             </p>
           </div>
         </div>
