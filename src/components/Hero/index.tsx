@@ -69,7 +69,7 @@ const Hero = () => {
             <div className="space-y-2">
               <p className="text-sm font-semibold text-blue-600 uppercase tracking-wide">Welcome to</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 tracking-tight">
-                <span className="text-blue-600">Google Developers Group</span>
+                <span className="text-blue-600">Google Developer Groups</span>
                 <br />
                 <span className="text-gray-800">Lucknow</span>
               </h1>
