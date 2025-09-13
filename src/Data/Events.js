@@ -26,7 +26,7 @@ export const categories = [
 export const upcomingEvents = [
   {
     id: 1,
-    title: 'Nirmāṇa: Build What&apos Next -  2025',
+    title: 'Nirmāṇa - 2025',
     date: '2025-09-28',
     time: '10:00 AM',
     location: 'Amity University, Lucknow',
