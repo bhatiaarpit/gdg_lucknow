@@ -4,7 +4,7 @@ const GoogleIO2024 = '/events/googleio.jpg';
 const Django2025 = '/events/djangomeetup.jpg';
 const BuildwithAI = '/events/buildwithai.png';
 const DevFest2025 = '/events/devfest2025.png';
-const GoogleIO2025 = '/events/googleio2025.png';
+const Nirmana2025 = '/events/nirmana2025.png';
 const IWD2024 = '/events/iwd2024.png';
 const StartupSuccessDays2023 = '/events/startup2023.png';
 const DevFest2023 = '/events/devfest2023.png';
@@ -26,18 +26,18 @@ export const categories = [
 export const upcomingEvents = [
   {
     id: 1,
-    title: 'Google IO Extended 2025',
-    date: 'TBD',
+    title: 'Nirmāṇa: Build What&apos Next -  2025',
+    date: '2025-09-28',
     time: '10:00 AM',
-    location: 'TBD',
+    location: 'Amity University, Lucknow',
     category: 'meetup',
     attendees: 'TBD',
     maxAttendees: 'TBD',
-    description: 'TBD',
-    image: GoogleIO2025,
+    description: 'This year, Nirmāṇa puts the spotlight on Artificial Intelligence and Cloud Computing - exploring how these technologies are transforming industries and redefining the way we build.',
+    image: Nirmana2025,
     speaker: 'TBD',
     tags: ['AI', 'Android', 'Cloud', 'Gemini', 'Web', 'ML'],
-    registrationLink: '#',
+    registrationLink: 'https://www.commudle.com/communities/gdg-lucknow/events/nirma-a-2025-building-what-s-next',
     featured: true,
   },
   {
