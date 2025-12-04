@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
-import gdgLogo from '@/assets/gdglko-logo.png';
+import gdgLogo from '@/assets/gdgfulllogo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
