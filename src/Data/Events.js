@@ -24,41 +24,56 @@ export const categories = [
 ];
 
 export const upcomingEvents = [
+];
+
+export const pastEvents = [
   {
     id: 1,
-    title: 'Nirmāṇa - 2025',
-    date: '2025-09-28',
+    title: 'DevFest 2025',
+    date: '2025-11-16',
     time: '10:00 AM',
-    location: 'Amity University, Lucknow',
-    category: 'meetup',
-    attendees: 'TBD',
-    maxAttendees: 'TBD',
-    description: 'This year, Nirmāṇa puts the spotlight on Artificial Intelligence and Cloud Computing - exploring how these technologies are transforming industries and redefining the way we build.',
-    image: Nirmana2025,
-    speaker: 'TBD',
-    tags: ['AI', 'Android', 'Cloud', 'Gemini', 'Web', 'ML'],
-    registrationLink: 'https://www.commudle.com/communities/gdg-lucknow/events/nirma-a-2025-building-what-s-next',
+    location: 'Hometel, Alambagh, Lucknow',
+    category: 'conference',
+    attendees: '399',
+    maxAttendees: '400+',
+    description: 'This year, DevFest Lucknow 2025 brings together the brightest minds in technology to explore the frontiers of Generative AI, Multi-Platform Development, and Sustainable Cloud Solutions. We are moving beyond the theoretical to focus on Applied Innovation—equipping developers with the tools and insights needed to build smarter, faster, and more impactful applications for the real world.',
+    image: DevFest2025,
+    speakers: [
+      { name: 'Rishiraj Acharya', linkedin: 'https://www.linkedin.com/in/rishirajacharya/' },
+      { name: 'Pawan Kumar', linkedin: 'https://www.linkedin.com/in/imthepk/' },
+      { name: 'Jay Thakkar', linkedin: 'https://www.linkedin.com/in/akajammythakkar/' },
+      { name: 'Sumit Kumar', linkedin: 'https://www.linkedin.com/in/sumit-kumar-ab2059132/' },
+      { name: 'Shivam Joshi', linkedin: 'https://www.linkedin.com/in/the-shivamjoshi/' },
+      { name: 'Saurabh Saha', linkedin: 'https://www.linkedin.com/in/saurabhsaha/' },
+      { name: 'Ashutosh Bhakare', linkedin: 'https://www.linkedin.com/in/abhakare/' },
+      { name: 'Vrijraj Singh', linkedin: 'https://www.linkedin.com/in/vrijrajsingh/' },
+      { name: 'Rakshita Gupta', linkedin: 'https://www.linkedin.com/in/guptarakshita/' },
+      { name: 'Pankaj Rai', linkedin: 'https://www.linkedin.com/in/pankajrai16/' },
+      { name: 'Arpan Garg', linkedin: 'https://www.linkedin.com/in/arpansac/' }
+    ],
+    tags: ['AI', 'Android', 'Cloud', 'Flutter', 'Gemini', 'Web', 'ML'],
     featured: true,
   },
   {
     id: 2,
-    title: 'DevFest 2025',
-    date: 'TBD',
+    title: 'Nirmāṇa - 2025',
+    date: '2025-09-28',
     time: '10:00 AM',
-    location: 'TBD',
-    category: 'conference',
-    attendees: 'TBD',
-    maxAttendees: 'TBD',
-    description: 'TBD',
-    image: DevFest2025,
-    speaker: 'TBD',
-    tags: ['AI', 'Android', 'Cloud', 'Flutter', 'Gemini', 'Web', 'ML'],
-    registrationLink: '#',
+    location: 'La Martinière College, Lucknow',
+    category: 'meetup',
+    attendees: '204',
+    maxAttendees: '220',
+    description: 'This year, Nirmāṇa puts the spotlight on Artificial Intelligence and Cloud Computing - exploring how these technologies are transforming industries and redefining the way we build.',
+    image: Nirmana2025,
+    speakers: [
+      { name: 'Prateek Mishra', linkedin: 'https://www.linkedin.com/in/pr0pm/' },
+      { name: 'Saurabh Saha', linkedin: 'https://www.linkedin.com/in/saurabhsaha/' },
+      { name: 'Ayush Shukla', linkedin: 'https://www.linkedin.com/in/ayush-shukla-15957a196/' },
+      { name: 'Venkatesh Chaturvedi', linkedin: 'https://www.linkedin.com/in/blaster4385/' }
+    ],
+    tags: ['AI', 'Android', 'Cloud', 'Gemini', 'Web', 'ML'],
     featured: true,
   },
-];
-
-export const pastEvents = [
   {
     id: 3,
     title: 'Build with AI',
@@ -312,6 +327,11 @@ export const collaboratedEvents = [
   maxAttendees: '50',
   description: 'Hack To Crack 1.0 was a 24-hour AI/ML hackathon organized by TFUG Lucknow in collaboration with GDG Lucknow and Lucknow AI Labs. It focused on solving real-world challenges across domains like computer vision, NLP, and audio processing. 9 teams participated and built impactful projects ranging from fraud detection systems to document intelligence tools.',
   image: HackToCrack2024,
+  speakers: [
+    { name: 'Ankit Pal', linkedin: 'https://www.linkedin.com/in/aadityaura/' },
+      { name: 'Prashant Shukla', linkedin: 'https://www.linkedin.com/in/prashant-shukla-67b55a68' },
+      { name: 'Abhishek Sahu', linkedin: 'https://www.linkedin.com/in/a-sahu16/' }
+  ],
   tags: ['Hackathon', 'AI', 'Machine Learning', 'NLP', 'Computer Vision', 'Speech Recognition'],
   collaborator: 'TFUG Lucknow, GDG Lucknow, Lucknow AI Labs'
 }

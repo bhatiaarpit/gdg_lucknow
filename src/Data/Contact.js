@@ -2,6 +2,7 @@ import { Mail, MapPin, Linkedin, Github, Instagram } from 'lucide-react';
 import Arpit from '../assets/Arpit.png';
 import Akshat from '../assets/Akshat.png';
 import Abhishek from '../assets/Abhishek.png';
+import Ishika from '../assets/Ishika.png';
 import whatsappIcon from '@/assets/whatsapp-icon.svg';
 
 export const inquiryTypes = [
@@ -90,6 +91,16 @@ export const teamMembers = [
       github: 'Vadera007',
       linkedin: 'akshatvadera',
       email: 'vaderaakshat0@gmail.com',
+    }
+  },
+  {
+    name: 'Ishika Bhatnagar',
+    role: 'Core Member',
+    image: Ishika,
+    social: {
+      github: 'ishika1323',
+      linkedin: 'ishika-bhatnagar-67020a17b',
+      email: 'ishikabhatnagar23@gmail.com',
     }
   },
 ];
