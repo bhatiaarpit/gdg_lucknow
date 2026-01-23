@@ -66,7 +66,7 @@ const Footer = () => {
     }
   ];
 
-  const upcomingEvents = [
+  const upcomingEvents: Array<{ title: string; date: string; type: string }> = [
     //{
       //title: '',
       //date: '',
