@@ -67,11 +67,11 @@ const Footer = () => {
   ];
 
   const upcomingEvents = [
-    {
-      title: 'DevFest Lucknow 2025',
-      date: 'TO BE ANNOUNCED',
-      type: 'Meetup'
-    }
+    //{
+      //title: '',
+      //date: '',
+      //type: ''
+    //}
   ];
 
   return (
