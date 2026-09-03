@@ -1,11 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Send, MessageCircle, Calendar, Users, Github, Linkedin, Mail} from 'lucide-react';
-import { inquiryTypes, contactInfo, socialLinks, teamMembers, faqs } from '@/Data/Contact';
-import Image, { StaticImageData } from 'next/image';
-
-type SocialPlatform = 'github' | 'linkedin' | 'email';
+import { Send, MessageCircle, Calendar, MapPin } from 'lucide-react';
+import { inquiryTypes, contactInfo, socialLinks, faqs } from '@/Data/Contact';
+import Image from 'next/image';
 
 interface FormData {
   name: string;
@@ -43,15 +41,6 @@ interface FAQ {
 interface InquiryType {
   value: string;
   label: string;
-}
-
-interface TeamMember {
-  name: string;
-  role: string;
-  image?: string | StaticImageData;
-  social?: {
-    [key in SocialPlatform]?: string;
-  };
 }
 
 const ContactPage = () => {
@@ -151,45 +140,6 @@ const ContactPage = () => {
     }
 
     return null;
-  };
-
-  const getSocialIcon = (platform: SocialPlatform) => {
-    switch (platform) {
-      case 'github':
-        return <Github className="h-4 w-4" />;
-      case 'linkedin':
-        return <Linkedin className="h-4 w-4" />;
-      case 'email':
-        return <Mail className="h-4 w-4" />;
-      default:
-        return null;
-    }
-  };
-
-  const getSocialUrl = (platform: SocialPlatform, handle: string) => {
-    switch (platform) {
-      case 'github':
-        return `https://github.com/${handle}`;
-      case 'linkedin':
-        return `https://linkedin.com/in/${handle}`;
-      case 'email':
-        return `mailto:${handle}`;
-      default:
-        return '#';
-    }
-  };
-
-  const getSocialColor = (platform: SocialPlatform) => {
-    switch (platform) {
-      case 'github':
-        return 'hover:text-gray-900';
-      case 'linkedin':
-        return 'hover:text-blue-600';
-      case 'email':
-        return 'hover:text-red-600';
-      default:
-        return 'hover:text-gray-600';
-    }
   };
 
   const renderSocialIcon = (social: ImportedSocialLink) => {
@@ -395,49 +345,27 @@ const ContactPage = () => {
               </div>
             </div>
 
-            {/* Team Members */}
-            <div className="bg-white rounded-2xl shadow-md p-6 border border-gray-100">
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">Meet Our Team</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {Array.isArray(teamMembers) && teamMembers.map((member: TeamMember, index: number) => (
-                  <div
-                    key={index}
-                    className="bg-gray-50 p-4 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow duration-300"
-                  >
-                    <div className="w-20 h-20 bg-gray-200 rounded-lg mx-auto mb-3 overflow-hidden flex items-center justify-center">
-                      {member.image ? (
-                        <Image
-                          src={member.image}
-                          alt={member.name}
-                          width={80}
-                          height={80}
-                          className="object-cover w-full h-full rounded-lg"
-                        />
-                      ) : (
-                        <Users className="h-8 w-8 text-gray-400" />
-                      )}
-                    </div>
-                    <h4 className="font-semibold text-gray-900 text-sm mb-1">{member.name}</h4>
-                    <p className="text-xs text-gray-600 mb-3">{member.role}</p>
-                    {member.social && (
-                      <div className="flex justify-center items-center gap-2 flex-wrap">
-                        {Object.entries(member.social).map(([platform, handle]) => (
-                          <a
-                            key={platform}
-                            href={getSocialUrl(platform as SocialPlatform, handle as string)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`p-2 rounded-lg bg-white border border-gray-200 text-gray-600 transition-colors duration-200 hover:scale-105 transform ${getSocialColor(platform as SocialPlatform)} flex items-center justify-center min-w-[36px] min-h-[36px]`}
-                            title={`${member.name} on ${platform}`}
-                          >
-                            {getSocialIcon(platform as SocialPlatform)}
-                          </a>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
+            {/* Location Map */}
+            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Find us in Lucknow</h3>
+              <div className="rounded-lg overflow-hidden border border-gray-200">
+                <iframe
+                  title="Map of Lucknow showing Rumi Darwaza"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=80.8822%2C26.8512%2C80.9422%2C26.8912&layer=mapnik&marker=26.8712%2C80.9122"
+                  className="w-full h-72 border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
+              <a
+                href="https://www.openstreetmap.org/?mlat=26.8712&mlon=80.9122#map=15/26.8712/80.9122"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center space-x-2 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors duration-200"
+              >
+                <MapPin className="h-4 w-4" />
+                <span> Lucknow</span>
+              </a>
             </div>
           </div>
         </div>

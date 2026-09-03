@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Briefcase, GraduationCap } from 'lucide-react';
 import Image from 'next/image';
 
 // Define a more specific type for images
@@ -8,6 +8,9 @@ interface TeamMember {
   image?: ImageSource;
   name: string;
   role: string;
+  company?: string;
+  status?: string;
+  about?: string;
   social: {
     github?: string;
     linkedin?: string;
@@ -59,10 +62,30 @@ const TeamCard: React.FC<TeamCardProps> = ({ member }) => {
         />
       </div>
 
-      {/* Name and Role */}
+      {/* Name, Org Tag, and About */}
       <div className="py-4 px-3">
         <h3 className="text-gray-900 font-semibold text-lg">{member.name}</h3>
-        <p className="text-gray-500 text-sm">{member.role}</p>
+        {member.company && (
+          <div className="mt-1.5 flex items-center justify-center">
+            <span
+              className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                member.status === 'Professional'
+                  ? 'bg-blue-50 text-blue-700 border border-blue-200/60'
+                  : 'bg-purple-50 text-purple-700 border border-purple-200/60'
+              }`}
+            >
+              {member.status === 'Professional' ? (
+                <Briefcase className="w-3 h-3 mr-1.5 flex-shrink-0" />
+              ) : (
+                <GraduationCap className="w-3 h-3 mr-1.5 flex-shrink-0" />
+              )}
+              {member.company}
+            </span>
+          </div>
+        )}
+        {member.about && (
+          <p className="text-gray-600 text-xs mt-2 leading-relaxed">{member.about}</p>
+        )}
       </div>
 
       {/* Social Icons */}

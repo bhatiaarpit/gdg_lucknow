@@ -14,6 +14,13 @@ const DevFestIndia2021 = '/events/devfest2021.png';
 const AIDay2024 = '/events/aiday2024.png';
 const GenAI2024 = '/events/genai2024.png';
 const HackToCrack2024 = '/events/hacktocrack2024.png';
+const ProductBuildersDay2026 = '/events/productbuildersday2026.png'; // TODO: Replace with actual image
+const AgenticPremierLeague2026 = '/events/agenticpremierleague2026.png'; // TODO: Replace with actual image
+// const ReframingPMF2026 = '/events/reframingpmf2026.png'; // TODO: Replace with actual image
+const AIBeyondApps2026 = '/events/aibeyondapps2026.png'; // TODO: Replace with actual image
+const IWDBuilderMode2026 = '/events/iwdbuildermode2026.png'; // TODO: Replace with actual image
+// const AIDayStartups2026 = '/events/aidaystartups2026.png'; // TODO: Replace with actual image
+const CodeForCommunities2026 = '/events/codeforcommunities2026.png'; // TODO: Replace with actual image
 
 export const categories = [
   { id: 'all', name: 'All Events', color: 'bg-gray-100 text-gray-700' },
@@ -24,9 +31,165 @@ export const categories = [
 ];
 
 export const upcomingEvents = [
+  {
+    id: 31,
+    title: 'Nirmāṇa - 2026',
+    date: 'TBD',
+    time: 'TBD',
+    location: 'Lucknow',
+    category: 'meetup',
+    attendees: 'TBD',
+    maxAttendees: 'TBD',
+    description: 'The next edition of Nirmāṇa returns to Lucknow. Details on the theme, venue, and speaker lineup will be announced soon.',
+    image: Nirmana2025,
+    speakers: [
+      { name: 'To be announced', linkedin: '#' }
+    ],
+    tags: ['AI', 'Cloud', 'Community'],
+    featured: true,
+  },
+  {
+    id: 32,
+    title: 'DevFest 2026',
+    date: 'TBD',
+    time: 'TBD',
+    location: 'Lucknow',
+    category: 'conference',
+    attendees: 'TBD',
+    maxAttendees: 'TBD',
+    description: 'GDG Lucknow’s flagship annual developer festival returns for 2026. Details on the theme, venue, and speaker lineup will be announced soon.',
+    image: DevFest2025,
+    speakers: [
+      { name: 'To be announced', linkedin: '#' }
+    ],
+    tags: ['AI', 'Android', 'Cloud', 'Web', 'ML'],
+    featured: true,
+  },
 ];
 
 export const pastEvents = [
+  {
+    id: 26,
+    title: 'Build with AI: Code for Communities – Community Run & AI Builders Meetup',
+    date: '2026-07-04',
+    time: '6:00 AM',
+    location: 'Lucknow (Invite-Only Community Mixer)',
+    category: 'meetup',
+    attendees: '50+',
+    maxAttendees: '60',
+    description: 'An exclusive morning meetup combining physical wellness with deep-tech product strategy. Featuring a 2-3 km community run followed by networking breakfast and an AI Builders Roundtable discussion on building MVPs with AI, transitioning hackathon prototypes to production-ready applications, and leveraging AI tools for accelerated development.',
+    image: CodeForCommunities2026,
+    speakers: [
+      { name: 'Abhishek Sahu', linkedin: 'https://www.linkedin.com/in/a-sahu16/' }
+    ],
+    tags: ['AI', 'Community', 'Build with AI', 'Startups', 'Product Strategy'],
+  },
+  /*
+  {
+    id: 27,
+    title: 'AI Day for Startups India 2026',
+    date: '2026-06-11',
+    time: '10:00 AM',
+    location: 'Lucknow',
+    category: 'conference',
+    attendees: '120+',
+    maxAttendees: '150',
+    description: 'Designed for Indian startups to accelerate from experimentation to execution. Focused on integrating Agentic AI workflows, Multimodal AI, Sovereign AI, and Edge Intelligence to help founders and engineering leads scale AI-native applications.',
+    image: AIDayStartups2026,
+    speakers: [
+      { name: 'Industry AI Leaders & GDEs', linkedin: '#' }
+    ],
+    tags: ['Startups', 'AI', 'Agentic AI', 'Google Cloud', 'Multimodal AI'],
+    featured: true,
+  },
+  */
+  {
+    id: 25,
+    title: 'Build with AI: Agentic Premier League',
+    date: '2026-05-22',
+    time: '10:00 AM',
+    location: 'GDG Lucknow Community (Online + Offline)',
+    category: 'hackathon',
+    attendees: '100+',
+    maxAttendees: '200',
+    description: 'A builder league combining the energy of cricket with AI innovation. Participants competed solo or in teams of up to 4, building autonomous AI agents and AI-driven solutions using agentic workflows and Google Gemini. The event featured phased rounds — Auction (Applications), Qualifier, Wild Card Watch Party, Semi-Finals, and Finals — spread across May 2026.',
+    image: AgenticPremierLeague2026,
+    speakers: [
+      { name: 'Abhishek Sahu', linkedin: 'https://www.linkedin.com/in/a-sahu16/' }
+    ],
+    tags: ['AI', 'Agentic AI', 'Gemini', 'Hackathon', 'Build with AI', 'Google Cloud'],
+    featured: true,
+  },
+  {
+    id: 24,
+    title: 'Product Builders Day',
+    date: '2026-03-28',
+    time: '10:00 AM',
+    location: 'Central Auditorium Complex, Integral University, Kursi Road, Dashauli, Lucknow',
+    category: 'workshop',
+    attendees: '150+',
+    maxAttendees: '200',
+    description: 'A dynamic gathering designed for students, developers, startups, and product enthusiasts — bridging the gap between technical coding skills and building scalable, real-world solutions. The event centered on product thinking, AI-powered development, and hands-on learning, with workshops on transitioning from developer to founder and building AI-powered apps with Gemini Code Assist.',
+    image: ProductBuildersDay2026,
+    speakers: [
+      { name: 'Dr. Nida Fatima', linkedin: '#' },
+      { name: 'Alok Pandey', linkedin: '#' },
+      { name: 'Ashish Mishra', linkedin: '#' },
+      { name: 'Namrata More', linkedin: '#' },
+      { name: 'Ashutosh S. Bhakare', linkedin: 'https://www.linkedin.com/in/abhakare/' }
+    ],
+    tags: ['Product Thinking', 'AI', 'Gemini', 'Entrepreneurship', 'Fintech', 'Community'],
+  },
+  {
+    id: 28,
+    title: "Builder Mode: HER Edition | International Women's Day Lucknow 2026",
+    date: '2026-03-07',
+    time: '10:00 AM',
+    location: 'Lucknow',
+    category: 'meetup',
+    attendees: '150+',
+    maxAttendees: '180',
+    description: "Celebrating International Women's Day under the Women Techmakers initiative. A dedicated gathering to amplify, enable, and celebrate women builders in product, design, and AI through technical keynotes, mentoring sessions, and community networking.",
+    image: IWDBuilderMode2026,
+    speakers: [
+      { name: 'Women Techmakers Leaders', linkedin: '#' }
+    ],
+    tags: ['WomenInTech', 'WTM', 'AI', 'Product', 'Diversity & Inclusion'],
+  },
+  {
+    id: 29,
+    title: "AI Beyond Apps: Exploring India's Invisible Intelligence Layer",
+    date: '2026-02-27',
+    time: '10:00 AM',
+    location: 'Lucknow',
+    category: 'conference',
+    attendees: '180+',
+    maxAttendees: '200',
+    description: "A deep-dive conference exploring how AI is evolving into a foundational infrastructure layer across governance, public services, healthcare, and economic growth in India, bringing together policymakers, AI practitioners, and researchers.",
+    image: AIBeyondApps2026,
+    speakers: [
+      { name: 'AI Policy & Infrastructure Experts', linkedin: '#' }
+    ],
+    tags: ['AI Infrastructure', 'Public Sector', 'Deep Tech', 'Policy', 'Governance'],
+  },
+  /*
+  {
+    id: 30,
+    title: 'Reframing Product–Market Fit: How AI Turns Signals into Strategy',
+    date: '2026-02-20',
+    time: '10:00 AM',
+    location: 'Lucknow',
+    category: 'workshop',
+    attendees: '100+',
+    maxAttendees: '120',
+    description: 'An interactive workshop exploring Product-Market Fit as a continuous learning loop. Learn how AI tools decode user behavior, analyze market feedback, and transform data signals into actionable product strategy.',
+    image: ReframingPMF2026,
+    speakers: [
+      { name: 'Product Leaders & AI Strategists', linkedin: '#' }
+    ],
+    tags: ['Product Management', 'AI', 'Strategy', 'Startups', 'Analytics'],
+  },
+  */
   {
     id: 1,
     title: 'DevFest 2025',
@@ -317,22 +480,22 @@ export const collaboratedEvents = [
     collaborator: 'TFUG Lucknow, GDG Lucknow, Hunto AI'
   },
   {
-  id: 23,
-  title: 'Hack To Crack 1.0: An AI/ML Hackathon',
-  date: '2024-05-23',
-  time: '10:00 AM',
-  location: 'Online + Onsite (TFUG Lucknow HQ)',
-  category: 'hackathon',
-  attendees: '33',
-  maxAttendees: '50',
-  description: 'Hack To Crack 1.0 was a 24-hour AI/ML hackathon organized by TFUG Lucknow in collaboration with GDG Lucknow and Lucknow AI Labs. It focused on solving real-world challenges across domains like computer vision, NLP, and audio processing. 9 teams participated and built impactful projects ranging from fraud detection systems to document intelligence tools.',
-  image: HackToCrack2024,
-  speakers: [
-    { name: 'Ankit Pal', linkedin: 'https://www.linkedin.com/in/aadityaura/' },
+    id: 23,
+    title: 'Hack To Crack 1.0: An AI/ML Hackathon',
+    date: '2024-05-23',
+    time: '10:00 AM',
+    location: 'Online + Onsite (TFUG Lucknow HQ)',
+    category: 'hackathon',
+    attendees: '33',
+    maxAttendees: '50',
+    description: 'Hack To Crack 1.0 was a 24-hour AI/ML hackathon organized by TFUG Lucknow in collaboration with GDG Lucknow and Lucknow AI Labs. It focused on solving real-world challenges across domains like computer vision, NLP, and audio processing. 9 teams participated and built impactful projects ranging from fraud detection systems to document intelligence tools.',
+    image: HackToCrack2024,
+    speakers: [
+      { name: 'Ankit Pal', linkedin: 'https://www.linkedin.com/in/aadityaura/' },
       { name: 'Prashant Shukla', linkedin: 'https://www.linkedin.com/in/prashant-shukla-67b55a68' },
       { name: 'Abhishek Sahu', linkedin: 'https://www.linkedin.com/in/a-sahu16/' }
-  ],
-  tags: ['Hackathon', 'AI', 'Machine Learning', 'NLP', 'Computer Vision', 'Speech Recognition'],
-  collaborator: 'TFUG Lucknow, GDG Lucknow, Lucknow AI Labs'
-}
+    ],
+    tags: ['Hackathon', 'AI', 'Machine Learning', 'NLP', 'Computer Vision', 'Speech Recognition'],
+    collaborator: 'TFUG Lucknow, GDG Lucknow, Lucknow AI Labs'
+  }
 ];

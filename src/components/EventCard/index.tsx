@@ -186,20 +186,24 @@ const EventCard = ({
             <Calendar className="h-4 w-4 mr-2 text-blue-600" />
             <span className="text-sm">{formatDate(event.date)}</span>
           </div>
-          <div className="flex items-center text-gray-600">
-            <Clock className="h-4 w-4 mr-2 text-green-600" />
-            <span className="text-sm">{event.time}</span>
-          </div>
+          {event.time && event.time !== 'TBD' && (
+            <div className="flex items-center text-gray-600">
+              <Clock className="h-4 w-4 mr-2 text-green-600" />
+              <span className="text-sm">{event.time}</span>
+            </div>
+          )}
           <div className="flex items-center text-gray-600">
             <MapPin className="h-4 w-4 mr-2 text-red-600" />
             <span className="text-sm">{event.location}</span>
           </div>
-          <div className="flex items-center text-gray-600">
-            <Users className="h-4 w-4 mr-2 text-yellow-600" />
-            <span className="text-sm">
-              {event.attendees} / {event.maxAttendees} attendees
-            </span>
-          </div>
+          {event.attendees && event.attendees !== 'TBD' && (
+            <div className="flex items-center text-gray-600">
+              <Users className="h-4 w-4 mr-2 text-yellow-600" />
+              <span className="text-sm">
+                {event.attendees} / {event.maxAttendees} attendees
+              </span>
+            </div>
+          )}
         </div>
 
         {(isCollaborated || event.eventType === 'collaborated') &&

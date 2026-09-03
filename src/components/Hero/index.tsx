@@ -1,48 +1,18 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
-import { Calendar, Users, MapPin, ExternalLink, Play, Code, Lightbulb } from 'lucide-react';
+import { Calendar, Users, MapPin, ExternalLink, Snowflake, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import gdgLogo from '@/assets/gdg.png';
+import { categories, upcomingEvents } from '@/Data/Events.js';
+import EventCard from '@/components/EventCard';
 
 const Hero = () => {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const heroStats = [
     { icon: Users, label: 'Community Members', value: '2,500+', color: 'text-blue-600' },
     { icon: Calendar, label: 'Events Hosted', value: '15+', color: 'text-green-600' },
     { icon: MapPin, label: 'Years Active', value: '4+', color: 'text-red-600' },
-  ];
-
-  const features = [
-    {
-      icon: Code,
-      title: 'Learn & Build',
-      description: 'Hands-on workshops and coding sessions with latest Google technologies',
-      color: 'blue',
-      bgColor: 'bg-blue-50',
-      textColor: 'text-blue-600',
-      borderColor: 'border-blue-200'
-    },
-    {
-      icon: Users,
-      title: 'Connect & Network',
-      description: 'Meet like-minded developers and build lasting professional relationships',
-      color: 'green',
-      bgColor: 'bg-green-50',
-      textColor: 'text-green-600',
-      borderColor: 'border-green-200'
-    },
-    {
-      icon: Lightbulb,
-      title: 'Innovate & Share',
-      description: 'Share your ideas, contribute to open source, and shape the future',
-      color: 'yellow',
-      bgColor: 'bg-yellow-50',
-      textColor: 'text-yellow-600',
-      borderColor: 'border-yellow-200'
-    }
   ];
 
   return (
@@ -90,13 +60,15 @@ const Hero = () => {
               <span>Join Community</span>
               <ExternalLink className="h-5 w-5 group-hover:scale-110 transition-transform" />
             </a>
-            <Link
-              href="/events"
+            <a
+              href="https://forms.gle/oLp2sUWyYPUnnd2T7"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group border-2 border-gray-300 text-gray-700 bg-white hover:border-blue-600 hover:text-blue-600 px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 min-w-[200px] justify-center"
             >
-              <Play className="h-5 w-5 group-hover:scale-110 transition-transform" />
-              <span>View Events</span>
-            </Link>
+              <Snowflake className="h-5 w-5 group-hover:scale-110 transition-transform" />
+              <span>Winter Arc Volunteer</span>
+            </a>
           </div>
         </div>
 
@@ -118,33 +90,39 @@ const Hero = () => {
           ))}
         </div>
 
-        {/* Features Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className={`relative p-8 rounded-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer border-2 ${hoveredCard === index
-                  ? `${feature.bgColor} ${feature.borderColor} shadow-2xl`
-                  : 'bg-white border-gray-200 hover:shadow-xl'
-                }`}
-              onMouseEnter={() => setHoveredCard(index)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <div className={`inline-flex p-3 rounded-full mb-6 transition-all duration-300 ${hoveredCard === index ? 'bg-white shadow-lg' : feature.bgColor
-                }`}>
-                <feature.icon className={`h-8 w-8 ${feature.textColor}`} />
-              </div>
-
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                {feature.title}
-              </h3>
-
-              <p className="text-gray-600 leading-relaxed">
-                {feature.description}
+        {/* Upcoming Events Section */}
+        {upcomingEvents.length > 0 && (
+          <div>
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold text-gray-900 mb-3">Upcoming Events</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                What we are building next. Save the date &mdash; full details drop soon.
               </p>
             </div>
-          ))}
-        </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {upcomingEvents.map(event => (
+                <EventCard
+                  key={event.id}
+                  event={event}
+                  isUpcoming={true}
+                  isCollaborated={false}
+                  categories={categories}
+                />
+              ))}
+            </div>
+
+            <div className="flex justify-center mt-10">
+              <Link
+                href="/events"
+                className="group inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-semibold"
+              >
+                <span>See all events</span>
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
