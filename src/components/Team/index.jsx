@@ -1,15 +1,11 @@
 'use client';
 
-import { useState } from 'react';
-import { Users, Star, Award, Heart, ChevronRight, ExternalLink } from 'lucide-react';
-import { teamData, stats } from '@/Data/Team.js';
+import { Users, Star, Award, Heart, ExternalLink } from 'lucide-react';
+import { teamMembers, stats } from '@/Data/Team.js';
 import TeamCard from '@/components/TeamCard';
-import Link from 'next/link';
 import TeamCarousel from '@/components/TeamCarousel';
 
 const Team = () => {
-  const [activeTab, setActiveTab] = useState('organizers');
-
   const iconMap = {
     Users,
     Star,
@@ -19,7 +15,7 @@ const Team = () => {
 
   const getGridClasses = (itemCount) => {
     if (itemCount === 1) {
-      return "grid grid-cols-1 justify-items-center max-w-sm mx-auto justify-items-center";
+      return "grid grid-cols-1 justify-items-center max-w-sm mx-auto";
     } else if (itemCount === 2) {
       return "grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto justify-items-center";
     } else if (itemCount === 3) {
@@ -29,46 +25,6 @@ const Team = () => {
     } else {
       return "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center";
     }
-  };
-
-  const tabContent = {
-    organizers: (
-      <div className="space-y-8">
-        <div className="text-center mb-8">
-        </div>
-        <div className={getGridClasses(teamData.organizers.length)}>
-          {teamData.organizers.map((member, index) => (
-            <TeamCard key={member.id || `${member.name}-${index}`} member={member} />
-          ))}
-        </div>
-      </div>
-    ),
-    coreTeam: (
-      <div className="space-y-8">
-        <div className="text-center mb-8">
-        </div>
-        <div className={getGridClasses(teamData.coreTeam.length)}>
-          {teamData.coreTeam.map((member, index) => (
-            <TeamCard key={member.id || `${member.name}-${index}`} member={member} />
-          ))}
-        </div>
-      </div>
-    ),
-    // volunteers: (
-    //   <div className="space-y-8">
-    //     <div className="text-center mb-8">
-    //       <h3 className="text-2xl font-bold text-gray-900 mb-4">Volunteers</h3>
-    //       <p className="text-gray-600 max-w-2xl mx-auto">
-    //         Amazing students and professionals who dedicate their time to help our community thrive.
-    //       </p>
-    //     </div>
-    //     <div className={getGridClasses(teamData.volunteers.length)}>
-    //       {teamData.volunteers.map((member, index) => (
-    //         <TeamCard key={member.id || `${member.name}-${index}`} member={member} />
-    //       ))}
-    //     </div>
-    //   </div>
-    // )
   };
 
   return (
@@ -98,33 +54,15 @@ const Team = () => {
         </div>
       </section>
 
-      {/* Main Content Tabs */}
+      {/* Our Team Section */}
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center mb-6">
-            <div className="bg-white rounded-lg p-1 shadow-sm border border-gray-200">
-              <div className="flex flex-nowrap gap-2">
-                {Object.keys(tabContent).map((tab) => (
-                  <button
-                    key={`tab-${tab}`}
-                    onClick={() => setActiveTab(tab)}
-                    className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
-                      activeTab === tab
-                        ? 'bg-blue-600 text-white shadow-lg'
-                        : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
-                    }`}
-                  >
-                    {tab === 'organizers' && 'Organizers'}
-                    {tab === 'coreTeam' && 'Core Team'}
-                    {tab === 'volunteers' && 'Volunteers'}
-                  </button>
-                ))}
-              </div>
+          <div className="space-y-8">
+            <div className={getGridClasses(teamMembers.length)}>
+              {teamMembers.map((member, index) => (
+                <TeamCard key={`${member.name}-${index}`} member={member} />
+              ))}
             </div>
-          </div>
-
-          <div className="bg-white rounded-2xl p-2">
-            {tabContent[activeTab]}
           </div>
         </div>
       </section>
@@ -142,19 +80,19 @@ const Team = () => {
             </h2>
 
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              We're always looking for passionate individuals who want to contribute to the tech community. Whether you're a developer, designer, or just someone who loves organizing events, there's a place for you.
+              We&apos;re always looking for passionate individuals who want to contribute to the tech community. Whether you&apos;re a developer, designer, or just someone who loves organizing events, there&apos;s a place for you.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="border-2 bg border-white text-white px-8 py-4 rounded-xl font-semibold bg-white text-blue-600 flex items-center justify-center space-x-2">
-                <Link
-                  href='/contact'
-                  className="text-blue-600 text-sm flex items-center space-x-2 group"
-                >
-                  <span>Become a volunteer</span>
-                  <ExternalLink className="h-5 w-5" />
-                </Link>
-              </button>
+              <a
+                href="https://forms.gle/oLp2sUWyYPUnnd2T7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-2 border-white bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-sm flex items-center justify-center space-x-2 group"
+              >
+                <span>Become a volunteer</span>
+                <ExternalLink className="h-5 w-5" />
+              </a>
             </div>
           </div>
         </div>

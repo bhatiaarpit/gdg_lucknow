@@ -1,6 +1,5 @@
 import { Mail, MapPin, Linkedin, Github, Instagram } from 'lucide-react';
 import Arpit from '../assets/Arpit.png';
-import Akshat from '../assets/Akshat.png';
 import Abhishek from '../assets/Abhishek.png';
 import Ishika from '../assets/Ishika.png';
 import whatsappIcon from '@/assets/whatsapp-icon.svg';
@@ -81,16 +80,6 @@ export const teamMembers = [
       github: 'bhatiaarpit',
       linkedin: 'bhatiaarpit',
       email: 'arpitbhatia903@gmail.com'
-    }
-  },
-  {
-    name: 'Akshat Vadera',
-    role: 'Core Member',
-    image: Akshat,
-    social: {
-      github: 'Vadera007',
-      linkedin: 'akshatvadera',
-      email: 'vaderaakshat0@gmail.com',
     }
   },
   {
