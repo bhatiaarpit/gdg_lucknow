@@ -72,14 +72,14 @@ const ResourcesPage = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
               <span className="bg-gradient-to-r from-blue-600 via-green-600 to-red-600 bg-clip-text text-transparent">
                 Learning Resources
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="mx-auto max-w-3xl text-base text-gray-600 sm:text-xl">
               Access our curated collection of tutorials, documentation, tools, and templates to accelerate your learning journey.
             </p>
           </div>
@@ -87,13 +87,13 @@ const ResourcesPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         {/* Tab Navigation */}
         <div className="flex justify-center mb-8">
-          <div className="bg-white rounded-lg p-1 shadow-sm border border-gray-200">
+          <div className="grid w-full max-w-2xl grid-cols-3 rounded-lg border border-gray-200 bg-white p-1 shadow-sm">
             <button
               onClick={() => setActiveTab('all')}
-              className={`px-6 py-3 rounded-md font-semibold transition-all duration-200 ${
+              className={`rounded-md px-2 py-3 text-xs font-semibold transition-all duration-200 sm:px-6 sm:text-base ${
                 activeTab === 'all'
                   ? 'bg-blue-600 text-white shadow-sm'
                   : 'text-gray-600 hover:text-gray-900'
@@ -103,7 +103,7 @@ const ResourcesPage = () => {
             </button>
             <button
               onClick={() => setActiveTab('featured')}
-              className={`px-6 py-3 rounded-md font-semibold transition-all duration-200 ${
+              className={`rounded-md px-2 py-3 text-xs font-semibold transition-all duration-200 sm:px-6 sm:text-base ${
                 activeTab === 'featured'
                   ? 'bg-blue-600 text-white shadow-sm'
                   : 'text-gray-600 hover:text-gray-900'
@@ -113,7 +113,7 @@ const ResourcesPage = () => {
             </button>
             <button
               onClick={() => setActiveTab('recent')}
-              className={`px-6 py-3 rounded-md font-semibold transition-all duration-200 ${
+              className={`rounded-md px-2 py-3 text-xs font-semibold transition-all duration-200 sm:px-6 sm:text-base ${
                 activeTab === 'recent'
                   ? 'bg-blue-600 text-white shadow-sm'
                   : 'text-gray-600 hover:text-gray-900'
@@ -137,12 +137,12 @@ const ResourcesPage = () => {
             />
           </div>
           
-          <div className="relative">
+          <div className="relative w-full md:w-auto">
             <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
             <select
               value={selectedCategory}
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSelectedCategory(e.target.value)}
-              className="pl-10 pr-8 py-3 text-black border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white min-w-[200px]"
+              className="w-full appearance-none rounded-lg border border-gray-200 bg-white py-3 pl-10 pr-8 text-black focus:border-transparent focus:ring-2 focus:ring-blue-500 md:min-w-[200px]"
             >
               {categories.map((category: Category) => (
                 <option key={category.id} value={category.id}>
@@ -154,7 +154,7 @@ const ResourcesPage = () => {
         </div>
 
         {/* Resources Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {filteredResources().map((resource: Resource) => (
             <ResourceCard key={resource.id} resource={resource} />
           ))}

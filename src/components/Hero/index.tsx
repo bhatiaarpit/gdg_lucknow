@@ -13,7 +13,6 @@ import {
   ChevronRight,
   Code2,
   ExternalLink,
-  Globe2,
   Lightbulb,
   Rocket,
   Users,
@@ -45,13 +44,6 @@ const Hero = () => {
       description: 'Work on exciting projects and open source',
       bg: 'bg-yellow-50',
       color: 'text-[#F9AB00]',
-    },
-    {
-      icon: Globe2,
-      title: 'Powered by Google',
-      description: 'Resources, technologies and global support',
-      bg: 'bg-red-50',
-      color: 'text-[#EA4335]',
     },
   ];
 
@@ -118,7 +110,7 @@ const Hero = () => {
       {/* HERO */}
       {/* ====================================================== */}
 
-      <div className="relative min-h-[780px] overflow-hidden">
+      <div className="relative overflow-hidden lg:min-h-[780px]">
         {/* BACKGROUND */}
 
         <div className="pointer-events-none absolute inset-0">
@@ -150,18 +142,20 @@ const Hero = () => {
             z-10
             mx-auto
             grid
-            min-h-[690px]
+            min-h-0
             w-full
             max-w-[1660px]
             grid-cols-1
             items-center
-            px-6
-            pb-[130px]
-            pt-[90px]
+            px-4
+            pb-8
+            pt-14
 
             sm:px-10
+            sm:pt-20
 
             lg:grid-cols-[42%_58%]
+            lg:min-h-[690px]
             lg:px-[5.5vw]
             lg:pb-[130px]
             lg:pt-[70px]
@@ -182,13 +176,13 @@ const Hero = () => {
             <h1
               className="
                 max-w-[650px]
-                text-[52px]
+                text-[42px]
                 font-bold
                 leading-[1.01]
                 tracking-[-0.052em]
                 text-[#182033]
 
-                sm:text-[64px]
+                sm:text-[58px]
 
                 lg:text-[64px]
 
@@ -209,10 +203,10 @@ const Hero = () => {
 
             <p
               className="
-                mt-7
+                mt-5
                 max-w-[590px]
-                text-[17px]
-                leading-[1.9]
+                text-base
+                leading-relaxed
                 text-[#536079]
 
                 xl:text-[18px]
@@ -304,8 +298,8 @@ const Hero = () => {
           <div
             className="
               relative
-              mt-14
-              min-h-[520px]
+              mt-8
+              min-h-[430px]
               w-full
 
               lg:mt-0
@@ -319,16 +313,17 @@ const Hero = () => {
               className="
                 pointer-events-none
                 absolute
-                left-[57%]
+                left-1/2
                 top-[2%]
-                h-[490px]
-                w-[490px]
+                h-[360px]
+                w-[360px]
                 -translate-x-1/2
                 rounded-full
                 bg-[#eef6ff]
 
-                sm:h-[560px]
-                sm:w-[560px]
+                sm:left-[57%]
+                sm:h-[500px]
+                sm:w-[500px]
 
                 lg:h-[555px]
                 lg:w-[555px]
@@ -338,20 +333,77 @@ const Hero = () => {
               "
             />
 
+            {/* RUMI GATE */}
+
+            <div
+              className="
+                absolute
+                bottom-2
+                left-1/2
+                z-10
+                w-[155%]
+                max-w-[1010px]
+                -translate-x-1/2
+
+                sm:bottom-[4px]
+                sm:left-[58%]
+                sm:w-[108%]
+
+                lg:w-[108%]
+
+                xl:w-[111%]
+
+                2xl:w-[115%]
+              "
+            >
+              <Image
+                src={rumiGate}
+                alt="Rumi Gate, landmark of Lucknow"
+                priority
+                placeholder="blur"
+                sizes="(max-width: 1024px) 100vw, 1000px"
+                className="h-auto w-full mix-blend-multiply"
+                style={{
+                  maskImage: `
+                    radial-gradient(
+                      ellipse 72% 70% at 52% 53%,
+                      black 44%,
+                      rgba(0,0,0,.96) 58%,
+                      rgba(0,0,0,.62) 72%,
+                      transparent 92%
+                    )
+                  `,
+                  WebkitMaskImage: `
+                    radial-gradient(
+                      ellipse 72% 70% at 52% 53%,
+                      black 44%,
+                      rgba(0,0,0,.96) 58%,
+                      rgba(0,0,0,.62) 72%,
+                      transparent 92%
+                    )
+                  `,
+                }}
+              />
+            </div>
+
             {/* second very subtle ring */}
 
             <div
               className="
                 pointer-events-none
                 absolute
-                left-[57%]
+                left-1/2
                 top-[7%]
-                h-[460px]
-                w-[460px]
+                h-[330px]
+                w-[330px]
                 -translate-x-1/2
                 rounded-full
                 border
                 border-blue-100/40
+
+                sm:left-[57%]
+                sm:h-[460px]
+                sm:w-[460px]
 
                 lg:h-[510px]
                 lg:w-[510px]
@@ -409,59 +461,6 @@ const Hero = () => {
                 backgroundSize: '13px 13px',
               }}
             />
-
-            {/* ================================================= */}
-            {/* RUMI GATE */}
-            {/* ================================================= */}
-
-            <div
-              className="
-                absolute
-                bottom-[4px]
-                left-[58%]
-                z-10
-                w-[118%]
-                max-w-[1010px]
-                -translate-x-1/2
-
-                sm:w-[108%]
-
-                lg:w-[108%]
-
-                xl:w-[111%]
-
-                2xl:w-[115%]
-              "
-            >
-              <Image
-                src={rumiGate}
-                alt="Rumi Gate, landmark of Lucknow"
-                priority
-                placeholder="blur"
-                sizes="(max-width: 1024px) 100vw, 1000px"
-                className="h-auto w-full mix-blend-multiply"
-                style={{
-                  maskImage: `
-                    radial-gradient(
-                      ellipse 72% 70% at 52% 53%,
-                      black 44%,
-                      rgba(0,0,0,.96) 58%,
-                      rgba(0,0,0,.62) 72%,
-                      transparent 92%
-                    )
-                  `,
-                  WebkitMaskImage: `
-                    radial-gradient(
-                      ellipse 72% 70% at 52% 53%,
-                      black 44%,
-                      rgba(0,0,0,.96) 58%,
-                      rgba(0,0,0,.62) 72%,
-                      transparent 92%
-                    )
-                  `,
-                }}
-              />
-            </div>
 
             {/* BLUE CODE */}
 
@@ -593,14 +592,18 @@ const Hero = () => {
 
         <div
           className="
-            absolute
-            bottom-[28px]
-            left-1/2
+            relative
             z-40
-            w-[calc(100%-40px)]
+            mx-auto
+            mb-7
+            w-[calc(100%-32px)]
             max-w-[1300px]
-            -translate-x-1/2
 
+            lg:absolute
+            lg:bottom-[28px]
+            lg:left-1/2
+            lg:mb-0
+            lg:-translate-x-1/2
             lg:w-[73%]
 
             xl:w-[74%]
@@ -621,7 +624,7 @@ const Hero = () => {
 
               sm:grid-cols-2
 
-              lg:grid-cols-4
+              lg:grid-cols-3
             "
           >
             {features.map((feature, index) => {
@@ -632,11 +635,16 @@ const Hero = () => {
                   key={feature.title}
                   className={`
                     flex
-                    min-h-[128px]
+                    min-h-[112px]
                     items-center
+                    justify-center
                     gap-4
-                    px-7
-                    py-5
+                    px-5
+                    py-4
+
+                    sm:min-h-[128px]
+                    sm:px-7
+                    sm:py-5
 
                     ${
                       index > 0

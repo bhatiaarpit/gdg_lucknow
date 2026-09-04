@@ -169,14 +169,14 @@ const ContactPage = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
               <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
                 Get in Touch
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="mx-auto max-w-3xl text-base text-gray-600 sm:text-xl">
               Have questions, ideas, or want to collaborate? We&apos;d love to hear from you. Reach out to our team and join our growing community.
             </p>
           </div>
@@ -184,10 +184,10 @@ const ContactPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Contact Form */}
-          <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
+          <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-lg sm:p-8">
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Send us a message</h2>
               <p className="text-gray-600">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
@@ -388,9 +388,9 @@ const ContactPage = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 bg-gradient-to-r from-blue-600 to-green-600 rounded-xl p-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to join our community?</h2>
-          <p className="text-xl text-white mb-6">Don&apos;t miss out on our upcoming events and resources</p>
+        <div className="mt-12 rounded-xl bg-gradient-to-r from-blue-600 to-green-600 p-5 text-center sm:mt-16 sm:p-8">
+          <h2 className="mb-4 text-2xl font-bold text-white sm:text-3xl">Ready to join our community?</h2>
+          <p className="mb-6 text-base text-white sm:text-xl">Don&apos;t miss out on our upcoming events and resources</p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <a
               href="/events"

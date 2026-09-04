@@ -44,7 +44,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ member }) => {
   const imageUrl = getImageSrc(member.image);
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden w-64 text-center border border-gray-200">
+    <div className="w-full max-w-64 overflow-hidden rounded-lg border border-gray-200 bg-white text-center shadow-md">
       {/* Top Image */}
       <div className="w-full h-72 relative">
         <Image

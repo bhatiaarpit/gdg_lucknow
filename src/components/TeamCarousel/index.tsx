@@ -74,7 +74,7 @@ const TeamCarousel = () => {
       </div>
 
       {/* Foreground Content */}
-      <section className="relative py-16">
+      <section className="relative py-12 sm:py-16">
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8">
@@ -91,7 +91,7 @@ const TeamCarousel = () => {
               </div>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl">
+            <h1 className="text-3xl font-bold text-white drop-shadow-2xl sm:text-5xl md:text-7xl">
               Meet Our Team
             </h1>
           </div>

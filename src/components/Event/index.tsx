@@ -117,7 +117,7 @@ const EventsPage = () => {
     <div className="min-h-screen bg-gray-50">
       <EventHero/>
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         {/* Tab Navigation */}
         <div className="flex justify-center mb-8">
           <div className="bg-white rounded-lg p-1 shadow-sm border border-gray-200 w-full max-w-4xl">
@@ -176,7 +176,7 @@ const EventsPage = () => {
         </div>
 
         {/* Search and Filter */}
-        <div className="flex flex-col md:flex-row gap-4 mb-8">
+        <div className="mb-8 flex flex-col gap-4 md:flex-row">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
             <input
@@ -188,12 +188,12 @@ const EventsPage = () => {
             />
           </div>
           
-          <div className="relative">
+          <div className="relative w-full md:w-auto">
             <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="pl-10 pr-8 py-3 border border-gray-200 rounded-lg text-black focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white min-w-[200px]"
+              className="w-full appearance-none rounded-lg border border-gray-200 bg-white py-3 pl-10 pr-8 text-black focus:border-transparent focus:ring-2 focus:ring-blue-500 md:min-w-[200px]"
             >
               <option value="all">All Categories</option>
               {categories.map((category: CategoryType) => (
@@ -206,7 +206,7 @@ const EventsPage = () => {
         </div>
 
         {/* Events Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {activeTab === 'all' 
             ? filteredEvents(getAllEvents()).map(event => (
                 event.eventType === 'upcoming' ? (
