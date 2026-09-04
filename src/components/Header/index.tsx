@@ -54,7 +54,6 @@ const Header = () => {
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
     { href: '/events', label: 'Events' },
     { href: '/team', label: 'Team' },
     { href: '/contact', label: 'Contact' },
@@ -66,7 +65,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-white shadow-sm sticky top-0 z-[1]">
+      <header className="sticky top-0 z-50 bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center">
@@ -122,7 +121,7 @@ const Header = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ease-in-out ${
+        className={`fixed inset-0 z-[60] md:hidden transition-opacity duration-300 ease-in-out ${
           isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >

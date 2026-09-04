@@ -250,6 +250,7 @@ const EventCard = ({
               <a
                 href={event.registrationLink}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 flex items-center space-x-2"
               >
                 <span>Register</span>
