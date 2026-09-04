@@ -72,14 +72,14 @@ export const ResourceCard = ({ resource }: ResourceCardProps) => {
         </div>
       )}
       
-      <div className="p-6">
+      <div className="p-5 sm:p-6">
         <div className="flex items-start justify-between mb-4">
-          <div className="flex items-center space-x-3">
+          <div className="flex min-w-0 items-center space-x-3">
             <div className="p-2 bg-blue-100 rounded-lg">
               {getResourceIcon(resource.type)}
             </div>
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 leading-tight">{resource.title}</h3>
+            <div className="min-w-0">
+              <h3 className="break-words text-lg font-bold leading-tight text-gray-900 sm:text-xl">{resource.title}</h3>
               <p className="text-sm text-gray-500 mt-1">by {resource.author}</p>
             </div>
           </div>
@@ -99,8 +99,8 @@ export const ResourceCard = ({ resource }: ResourceCardProps) => {
           ))}
         </div>
 
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-4 text-sm text-gray-500">
+        <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500">
             <div className="flex items-center space-x-1">
               <Eye className="h-4 w-4" />
               <span>{resource.views}</span>
@@ -122,7 +122,7 @@ export const ResourceCard = ({ resource }: ResourceCardProps) => {
         </div>
 
         <div className="border-t pt-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <span className="text-sm text-gray-500">
               {formatDate(resource.publishedDate)}
             </span>

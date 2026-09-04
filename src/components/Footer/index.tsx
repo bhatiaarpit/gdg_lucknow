@@ -229,7 +229,7 @@ const Footer = ({ showCommunityBanner = false }: FooterProps) => {
             width={1465}
             height={145}
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-auto w-full opacity-30"
+            className="pointer-events-none absolute bottom-0 left-1/2 h-[120px] w-auto max-w-none -translate-x-1/2 opacity-40 sm:h-[145px] xl:inset-x-0 xl:left-auto xl:h-auto xl:w-full xl:translate-x-0"
           />
 
           <div className="relative mx-auto max-w-7xl px-4 pt-14 pb-44 sm:px-6 lg:px-8">
@@ -302,7 +302,7 @@ const Footer = ({ showCommunityBanner = false }: FooterProps) => {
 
                   <a
                     href={`mailto:${CONTACT_EMAIL}`}
-                    className="flex items-center gap-3 text-sm text-slate-300 transition-colors hover:text-white"
+                    className="flex items-center gap-3 break-all text-sm text-slate-300 transition-colors hover:text-white"
                   >
                     <Mail className="h-4 w-4 shrink-0 text-blue-400" />
                     <span>{CONTACT_EMAIL}</span>

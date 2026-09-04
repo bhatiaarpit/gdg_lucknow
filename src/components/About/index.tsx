@@ -86,7 +86,7 @@ const About = () => {
       {/* Stats Section */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-6 lg:gap-8">
             {stats.map((stat, index) => {
               const IconComponent = iconMap[stat.icon as keyof typeof iconMap];
               return (

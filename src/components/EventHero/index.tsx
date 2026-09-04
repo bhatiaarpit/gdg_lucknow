@@ -32,14 +32,14 @@ const EventHero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="mb-4 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             <span className="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
               Community Events
             </span>
           </h1>
-          <p className="text-xl text-[#4a5565] max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-base text-[#4a5565] sm:text-xl">
             Join us for workshops, meetups, and conferences. Learn from industry experts and connect with fellow developers.
           </p>
         </div>
