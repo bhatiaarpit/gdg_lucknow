@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { Calendar, Search, Filter, Handshake } from 'lucide-react';
 import { StaticImageData } from 'next/image';
 import { categories, upcomingEvents, pastEvents, collaboratedEvents } from '@/Data/Events.js';
-import EventCard from '@/components/EventCard';
 import EventHero from '@/components/EventHero';
+import UpcomingEventCard from '@/components/UpcomingEventCard';
 
 interface Speaker {
   name: string;
@@ -209,39 +209,45 @@ const EventsPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {activeTab === 'all' 
             ? filteredEvents(getAllEvents()).map(event => (
-                <EventCard 
-                  key={event.id} 
-                  event={event} 
-                  isUpcoming={event.eventType === 'upcoming'} 
-                  isCollaborated={event.eventType === 'collaborated'}
-                  categories={categories}
-                />
+                event.eventType === 'upcoming' ? (
+                  <UpcomingEventCard
+                    key={event.id}
+                    event={event}
+                    categories={categories}
+                  />
+                ) : (
+                  <UpcomingEventCard
+                    key={event.id}
+                    event={event}
+                    isPast
+                    isCollaborated={event.eventType === 'collaborated'}
+                    categories={categories}
+                  />
+                )
               ))
             : activeTab === 'upcoming' 
             ? filteredEvents(upcomingEvents.map(event => normalizeEvent(event, 'upcoming'))).map(event => (
-                <EventCard 
-                  key={event.id} 
-                  event={event} 
-                  isUpcoming={true} 
-                  isCollaborated={false}
+                <UpcomingEventCard
+                  key={event.id}
+                  event={event}
                   categories={categories}
                 />
               ))
             : activeTab === 'past'
             ? filteredEvents(pastEvents.map(event => normalizeEvent(event, 'past'))).map(event => (
-                <EventCard 
+                <UpcomingEventCard
                   key={event.id} 
                   event={event} 
-                  isUpcoming={false} 
+                  isPast
                   isCollaborated={false}
                   categories={categories}
                 />
               ))
             : filteredEvents(collaboratedEvents.map(event => normalizeEvent(event, 'collaborated'))).map(event => (
-                <EventCard 
+                <UpcomingEventCard
                   key={event.id} 
                   event={event} 
-                  isUpcoming={false} 
+                  isPast
                   isCollaborated={true}
                   categories={categories}
                 />

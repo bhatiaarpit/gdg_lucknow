@@ -1,3 +1,6 @@
+import Nirmana2026 from '@/assets/Nirmana_2026.jpeg';
+import DevFest2026 from '@/assets/DevFest_2026.jpeg';
+
 const IWD2025 = '/events/iwd.jpg';
 const Devfest2024 = '/events/devfest.jpeg';
 const GoogleIO2024 = '/events/googleio.jpg';
@@ -41,11 +44,15 @@ export const upcomingEvents = [
     attendees: 'TBD',
     maxAttendees: 'TBD',
     description: 'The next edition of Nirmāṇa returns to Lucknow. Details on the theme, venue, and speaker lineup will be announced soon.',
-    image: Nirmana2025,
+    image: Nirmana2026,
     speakers: [
       { name: 'To be announced', linkedin: '#' }
     ],
     tags: ['AI', 'Cloud', 'Community'],
+    // Registration unlocks by itself: once the real date and location are
+    // set above and a registrationLink is added here, the card button flips
+    // from "Registration Coming Soon" to a live "Register Now" link.
+    registrationLink: '',
     featured: true,
   },
   {
@@ -58,11 +65,15 @@ export const upcomingEvents = [
     attendees: 'TBD',
     maxAttendees: 'TBD',
     description: 'GDG Lucknow’s flagship annual developer festival returns for 2026. Details on the theme, venue, and speaker lineup will be announced soon.',
-    image: DevFest2025,
+    image: DevFest2026,
     speakers: [
       { name: 'To be announced', linkedin: '#' }
     ],
     tags: ['AI', 'Android', 'Cloud', 'Web', 'ML'],
+    // Registration unlocks by itself: once the real date and location are
+    // set above and a registrationLink is added here, the card button flips
+    // from "Registration Coming Soon" to a live "Register Now" link.
+    registrationLink: '',
     featured: true,
   },
 ];
