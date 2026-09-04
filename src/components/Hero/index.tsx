@@ -13,7 +13,6 @@ import {
   ChevronRight,
   Code2,
   ExternalLink,
-  Globe2,
   Lightbulb,
   Rocket,
   Users,
@@ -45,13 +44,6 @@ const Hero = () => {
       description: 'Work on exciting projects and open source',
       bg: 'bg-yellow-50',
       color: 'text-[#F9AB00]',
-    },
-    {
-      icon: Globe2,
-      title: 'Powered by Google',
-      description: 'Resources, technologies and global support',
-      bg: 'bg-red-50',
-      color: 'text-[#EA4335]',
     },
   ];
 
@@ -338,6 +330,57 @@ const Hero = () => {
               "
             />
 
+            {/* RUMI GATE */}
+
+            <div
+              className="
+                absolute
+                bottom-[4px]
+                left-[58%]
+                z-10
+                w-[118%]
+                max-w-[1010px]
+                -translate-x-1/2
+
+                sm:w-[108%]
+
+                lg:w-[108%]
+
+                xl:w-[111%]
+
+                2xl:w-[115%]
+              "
+            >
+              <Image
+                src={rumiGate}
+                alt="Rumi Gate, landmark of Lucknow"
+                priority
+                placeholder="blur"
+                sizes="(max-width: 1024px) 100vw, 1000px"
+                className="h-auto w-full mix-blend-multiply"
+                style={{
+                  maskImage: `
+                    radial-gradient(
+                      ellipse 72% 70% at 52% 53%,
+                      black 44%,
+                      rgba(0,0,0,.96) 58%,
+                      rgba(0,0,0,.62) 72%,
+                      transparent 92%
+                    )
+                  `,
+                  WebkitMaskImage: `
+                    radial-gradient(
+                      ellipse 72% 70% at 52% 53%,
+                      black 44%,
+                      rgba(0,0,0,.96) 58%,
+                      rgba(0,0,0,.62) 72%,
+                      transparent 92%
+                    )
+                  `,
+                }}
+              />
+            </div>
+
             {/* second very subtle ring */}
 
             <div
@@ -409,59 +452,6 @@ const Hero = () => {
                 backgroundSize: '13px 13px',
               }}
             />
-
-            {/* ================================================= */}
-            {/* RUMI GATE */}
-            {/* ================================================= */}
-
-            <div
-              className="
-                absolute
-                bottom-[4px]
-                left-[58%]
-                z-10
-                w-[118%]
-                max-w-[1010px]
-                -translate-x-1/2
-
-                sm:w-[108%]
-
-                lg:w-[108%]
-
-                xl:w-[111%]
-
-                2xl:w-[115%]
-              "
-            >
-              <Image
-                src={rumiGate}
-                alt="Rumi Gate, landmark of Lucknow"
-                priority
-                placeholder="blur"
-                sizes="(max-width: 1024px) 100vw, 1000px"
-                className="h-auto w-full mix-blend-multiply"
-                style={{
-                  maskImage: `
-                    radial-gradient(
-                      ellipse 72% 70% at 52% 53%,
-                      black 44%,
-                      rgba(0,0,0,.96) 58%,
-                      rgba(0,0,0,.62) 72%,
-                      transparent 92%
-                    )
-                  `,
-                  WebkitMaskImage: `
-                    radial-gradient(
-                      ellipse 72% 70% at 52% 53%,
-                      black 44%,
-                      rgba(0,0,0,.96) 58%,
-                      rgba(0,0,0,.62) 72%,
-                      transparent 92%
-                    )
-                  `,
-                }}
-              />
-            </div>
 
             {/* BLUE CODE */}
 
@@ -621,7 +611,7 @@ const Hero = () => {
 
               sm:grid-cols-2
 
-              lg:grid-cols-4
+              lg:grid-cols-3
             "
           >
             {features.map((feature, index) => {
@@ -634,6 +624,7 @@ const Hero = () => {
                     flex
                     min-h-[128px]
                     items-center
+                    justify-center
                     gap-4
                     px-7
                     py-5

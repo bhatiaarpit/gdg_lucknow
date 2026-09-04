@@ -147,7 +147,11 @@ const FooterLinkList = ({ links }: { links: FooterLink[] }) => (
   </ul>
 );
 
-const Footer = () => {
+type FooterProps = {
+  showCommunityBanner?: boolean;
+};
+
+const Footer = ({ showCommunityBanner = false }: FooterProps) => {
   const [email, setEmail] = useState('');
 
   const nextEvent = upcomingEvents[0];
@@ -177,43 +181,45 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-gradient-to-r from-slate-50 via-white to-slate-50 p-6 shadow-lg shadow-gray-900/5 sm:p-8">
-            <GateOutline className="pointer-events-none absolute bottom-0 right-4 hidden h-[94%] w-auto text-blue-300/60 lg:block" />
+      {showCommunityBanner && (
+        <div className="bg-white">
+          <div className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
+            <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-gradient-to-r from-slate-50 via-white to-slate-50 p-6 shadow-lg shadow-gray-900/5 sm:p-8">
+              <GateOutline className="pointer-events-none absolute bottom-0 right-4 hidden h-[94%] w-auto text-blue-300/60 lg:block" />
 
-            <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-600">
-                  <Users className="h-6 w-6" />
+              <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                    <Users className="h-6 w-6" />
+                  </div>
+
+                  <div className="max-w-xl">
+                    <h2 className="text-2xl font-bold tracking-[-0.02em] text-gray-950 sm:text-3xl">
+                      Ready to be part of something{' '}
+                      <span className="text-blue-600">great?</span>
+                    </h2>
+
+                    <p className="mt-2 text-sm leading-relaxed text-gray-600 sm:text-base">
+                      Join GDG Lucknow and start your journey with a community
+                      that learns, builds, and grows together.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="max-w-xl">
-                  <h2 className="text-2xl font-bold tracking-[-0.02em] text-gray-950 sm:text-3xl">
-                    Ready to be part of something{' '}
-                    <span className="text-blue-600">great?</span>
-                  </h2>
-
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600 sm:text-base">
-                    Join GDG Lucknow and start your journey with a community
-                    that learns, builds, and grows together.
-                  </p>
-                </div>
+                <a
+                  href={WHATSAPP_COMMUNITY}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-blue-600 px-7 py-4 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/25 lg:mr-56"
+                >
+                  <span>Join Community</span>
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
               </div>
-
-              <a
-                href={WHATSAPP_COMMUNITY}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-blue-600 px-7 py-4 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/25 lg:mr-56"
-              >
-                <span>Join Community</span>
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       <div className="bg-[#0d1b31]">
         <div className="relative overflow-hidden">
