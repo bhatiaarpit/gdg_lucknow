@@ -122,155 +122,26 @@ const Hero = () => {
           <div className="absolute left-[35%] top-[80px] h-[560px] w-[900px] rounded-full bg-sky-50/40 blur-[110px]" />
         </div>
 
-        <div
-          className="
-            relative
-            z-10
-            mx-auto
-            grid
-            min-h-0
-            w-full
-            max-w-[1280px]
-            grid-cols-1
-            items-center
-            gap-2
-            px-5
-            pb-8
-            pt-12
-
-            sm:px-8
-            sm:pt-16
-
-            lg:grid-cols-[42%_58%]
-            lg:min-h-[600px]
-            lg:gap-6
-            lg:px-10
-            lg:pb-[90px]
-            lg:pt-14
-
-            xl:px-14
-          "
-        >
-          <div
-            className="
-              relative
-              z-30
-              flex
-              flex-col
-              items-center
-              text-center
-
-              lg:items-start
-              lg:text-left
-              lg:-translate-y-2
-            "
-          >
-            <h1
-              className="
-                mx-auto
-                max-w-[560px]
-                text-[34px]
-                font-bold
-                leading-[1.05]
-                tracking-[-0.045em]
-                text-[#182033]
-
-                sm:text-[46px]
-
-                lg:mx-0
-                lg:max-w-[560px]
-                lg:text-[54px]
-
-                xl:text-[60px]
-
-                2xl:text-[66px]
-              "
-            >
+        <div className="relative z-10 mx-auto grid min-h-0 w-full max-w-[1280px] grid-cols-1 items-center gap-2 px-5 pb-8 pt-12 sm:px-8 sm:pt-16 lg:grid-cols-[42%_58%] lg:min-h-[600px] lg:gap-6 lg:px-10 lg:pb-[90px] lg:pt-14 xl:px-14">
+          <div className="relative z-30 top-[64px] sm:top-0 flex flex-col items-center text-center lg:items-start lg:text-left lg:-translate-y-2">
+            <h1 className="mx-auto max-w-[560px] text-[34px] font-bold leading-[1.05] tracking-[-0.045em] text-[#182033] sm:text-[46px] lg:mx-0 lg:max-w-[560px] lg:text-[54px] xl:text-[60px] 2xl:text-[66px]">
               Build. Learn.
               <br />
               Grow. <span className="text-[#246BFD]">Together.</span>
             </h1>
 
-            <p
-              className="
-                mx-auto
-                mt-4
-                max-w-[480px]
-                text-[15px]
-                leading-relaxed
-                text-[#536079]
-
-                sm:mt-5
-                sm:max-w-[540px]
-                sm:text-base
-
-                lg:mx-0
-                lg:max-w-[520px]
-
-                xl:text-[17px]
-              "
-            >
+            <p className="mx-auto mt-4 max-w-[480px] text-[15px] leading-relaxed text-[#536079] sm:mt-5 sm:max-w-[540px] sm:text-base lg:mx-0 lg:max-w-[520px] xl:text-[17px]">
               GDG Lucknow is a community of developers, innovators,
               <br className="hidden 2xl:block" />
               and dreamers building the future with Google technologies.
             </p>
 
-            <div
-              className="
-                mt-7
-                flex
-                w-full
-                max-w-[420px]
-                flex-row
-                justify-center
-                gap-3
-
-                sm:mt-8
-                sm:max-w-none
-                sm:gap-4
-
-                lg:w-auto
-                lg:justify-start
-              "
-            >
+            <div className="mt-7 flex w-full max-w-[420px] flex-row justify-center gap-3 sm:mt-8 sm:max-w-none sm:gap-4 lg:w-auto lg:justify-start">
               <a
                 href="https://gdg.community.dev/gdg-lucknow/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="
-                  group
-                  inline-flex
-                  h-12
-                  flex-1
-                  items-center
-                  justify-center
-                  gap-2
-                  whitespace-nowrap
-                  rounded-[10px]
-                  bg-[#1769ff]
-                  px-4
-                  text-[13px]
-                  font-semibold
-                  text-white
-                  shadow-[0_10px_24px_rgba(23,105,255,.18)]
-                  transition-all
-                  duration-300
-
-                  hover:-translate-y-1
-                  hover:bg-[#075ee9]
-                  hover:shadow-[0_14px_30px_rgba(23,105,255,.25)]
-
-                  sm:h-14
-                  sm:flex-none
-                  sm:gap-3
-                  sm:px-7
-                  sm:text-[15px]
-
-                  lg:h-[54px]
-                  lg:gap-5
-                  lg:px-[26px]
-                  lg:text-[16px]
-                "
+                className="group inline-flex h-12 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-[10px] bg-[#1769ff] px-4 text-[13px] font-semibold text-white shadow-[0_10px_24px_rgba(23,105,255,.18)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#075ee9] hover:shadow-[0_14px_30px_rgba(23,105,255,.25)] sm:h-14 sm:flex-none sm:gap-3 sm:px-7 sm:text-[15px] lg:h-[54px] lg:gap-5 lg:px-[26px] lg:text-[16px]"
               >
                 Join Community
                 <ExternalLink className="h-4 w-4 sm:h-[17px] sm:w-[17px]" />
@@ -280,42 +151,7 @@ const Hero = () => {
                 href="https://forms.gle/oLp2sUWyYPUnnd2T7"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="
-                  group
-                  inline-flex
-                  h-12
-                  flex-1
-                  items-center
-                  justify-center
-                  gap-2
-                  whitespace-nowrap
-                  rounded-[10px]
-                  border
-                  border-[#d9e0ea]
-                  bg-white
-                  px-4
-                  text-[13px]
-                  font-semibold
-                  text-[#1769ff]
-                  shadow-[0_2px_5px_rgba(15,23,42,.04)]
-                  transition-all
-                  duration-300
-
-                  hover:-translate-y-1
-                  hover:border-blue-200
-                  hover:shadow-lg
-
-                  sm:h-14
-                  sm:flex-none
-                  sm:gap-3
-                  sm:px-7
-                  sm:text-[15px]
-
-                  lg:h-[54px]
-                  lg:gap-6
-                  lg:px-[26px]
-                  lg:text-[16px]
-                "
+                className="group inline-flex h-12 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-[10px] border border-[#d9e0ea] bg-white px-4 text-[13px] font-semibold text-[#1769ff] shadow-[0_2px_5px_rgba(15,23,42,.04)] transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg sm:h-14 sm:flex-none sm:gap-3 sm:px-7 sm:text-[15px] lg:h-[54px] lg:gap-6 lg:px-[26px] lg:text-[16px]"
               >
                 Join the Winter Arc
                 <ExternalLink className="h-4 w-4 text-[#4f5b6f] sm:h-[17px] sm:w-[17px]" />
@@ -327,66 +163,10 @@ const Hero = () => {
             </div>
           </div>
 
-          <div
-            className="
-              relative
-              mt-10
-              min-h-[380px]
-              w-full
+          <div className="relative min-h-[380px] w-full sm:mt-8 sm:min-h-[460px] lg:mt-0 lg:h-[540px] lg:min-h-0 xl:h-[560px]">
+            <div className="pointer-events-none absolute left-1/2 top-[2%] h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-[#eef6ff] sm:h-[430px] sm:w-[430px] lg:h-[500px] lg:w-[500px] xl:h-[540px] xl:w-[540px]" />
 
-              sm:mt-8
-              sm:min-h-[460px]
-
-              lg:mt-0
-              lg:h-[540px]
-              lg:min-h-0
-
-              xl:h-[560px]
-            "
-          >
-            <div
-              className="
-                pointer-events-none
-                absolute
-                left-1/2
-                top-[2%]
-                h-[300px]
-                w-[300px]
-                -translate-x-1/2
-                rounded-full
-                bg-[#eef6ff]
-
-                sm:h-[430px]
-                sm:w-[430px]
-
-                lg:h-[500px]
-                lg:w-[500px]
-
-                xl:h-[540px]
-                xl:w-[540px]
-              "
-            />
-
-            <div
-              className="
-                absolute
-                bottom-2
-                left-1/2
-                z-10
-                w-[150%]
-                max-w-[880px]
-                -translate-x-1/2
-
-                sm:bottom-[4px]
-                sm:w-[106%]
-
-                lg:w-[106%]
-
-                xl:w-[109%]
-
-                2xl:w-[112%]
-              "
-            >
+            <div className="absolute bottom-2 left-1/2 z-10 w-[150%] max-w-[880px] -translate-x-1/2 sm:bottom-[4px] sm:w-[106%] lg:w-[106%] xl:w-[109%] 2xl:w-[112%]">
               <Image
                 src={rumiGate}
                 alt="Rumi Gate, landmark of Lucknow"
@@ -419,53 +199,11 @@ const Hero = () => {
               />
             </div>
 
-            <div
-              className="
-                pointer-events-none
-                absolute
-                left-1/2
-                top-[7%]
-                h-[280px]
-                w-[280px]
-                -translate-x-1/2
-                rounded-full
-                border
-                border-blue-100/40
-
-                sm:left-[57%]
-                sm:h-[400px]
-                sm:w-[400px]
-
-                lg:h-[460px]
-                lg:w-[460px]
-
-                xl:h-[500px]
-                xl:w-[500px]
-              "
-            />
+            <div className="pointer-events-none absolute left-1/2 top-[7%] h-[280px] w-[280px] -translate-x-1/2 rounded-full border border-blue-100/40 sm:left-[57%] sm:h-[400px] sm:w-[400px] lg:h-[460px] lg:w-[460px] xl:h-[500px] xl:w-[500px]" />
 
             <svg
               viewBox="0 0 90 50"
-              className="
-                pointer-events-none
-                absolute
-                right-[4%]
-                top-[8%]
-                block
-                h-9
-                w-16
-                text-[#cbd8ea]
-
-                sm:right-[8%]
-                sm:top-[12%]
-                sm:h-11
-                sm:w-20
-
-                lg:right-[9%]
-                lg:top-[18%]
-                lg:h-14
-                lg:w-24
-              "
+              className="pointer-events-none absolute right-[4%] top-[8%] block h-9 w-16 text-[#cbd8ea] sm:right-[8%] sm:top-[12%] sm:h-11 sm:w-20 lg:right-[9%] lg:top-[18%] lg:h-14 lg:w-24"
             >
               <path
                 d="M11 39h57c7 0 12-4 12-10s-5-10-12-10h-3C62 12 56 8 48 8c-10 0-17 6-19 15-2-2-5-3-9-3-7 0-13 5-13 11 0 5 4 8 10 8Z"
@@ -477,26 +215,7 @@ const Hero = () => {
 
             <svg
               viewBox="0 0 90 50"
-              className="
-                pointer-events-none
-                absolute
-                left-[2%]
-                top-[14%]
-                block
-                h-8
-                w-14
-                text-[#cbd8ea]
-
-                sm:left-[3%]
-                sm:top-[18%]
-                sm:h-10
-                sm:w-16
-
-                lg:left-[4%]
-                lg:top-[25%]
-                lg:h-12
-                lg:w-20
-              "
+              className="pointer-events-none absolute left-[2%] top-[14%] block h-8 w-14 text-[#cbd8ea] sm:left-[3%] sm:top-[18%] sm:h-10 sm:w-16 lg:left-[4%] lg:top-[25%] lg:h-12 lg:w-20"
             >
               <path
                 d="M11 39h57c7 0 12-4 12-10s-5-10-12-10h-3C62 12 56 8 48 8c-10 0-17 6-19 15-2-2-5-3-9-3-7 0-13 5-13 11 0 5 4 8 10 8Z"
@@ -508,25 +227,7 @@ const Hero = () => {
 
             <svg
               viewBox="0 0 90 50"
-              className="
-                pointer-events-none
-                absolute
-                right-[14%]
-                top-[30%]
-                hidden
-                h-9
-                w-16
-                text-blue-200
-
-                sm:block
-                sm:right-[18%]
-                sm:top-[33%]
-
-                lg:right-[23%]
-                lg:top-[37%]
-                lg:h-12
-                lg:w-20
-              "
+              className="pointer-events-none absolute right-[14%] top-[30%] hidden h-9 w-16 text-blue-200 sm:block sm:right-[18%] sm:top-[33%] lg:right-[23%] lg:top-[37%] lg:h-12 lg:w-20"
             >
               <path
                 d="M11 39h57c7 0 12-4 12-10s-5-10-12-10h-3C62 12 56 8 48 8c-10 0-17 6-19 15-2-2-5-3-9-3-7 0-13 5-13 11 0 5 4 8 10 8Z"
@@ -537,23 +238,7 @@ const Hero = () => {
             </svg>
 
             <div
-              className="
-                pointer-events-none
-                absolute
-                left-[8%]
-                top-[24%]
-                hidden
-                h-[50px]
-                w-[80px]
-                opacity-[0.25]
-
-                sm:block
-
-                lg:left-[14%]
-                lg:top-[29%]
-                lg:h-[75px]
-                lg:w-[115px]
-              "
+              className="pointer-events-none absolute left-[8%] top-[24%] hidden h-[50px] w-[80px] opacity-[0.25] sm:block lg:left-[14%] lg:top-[29%] lg:h-[75px] lg:w-[115px]"
               style={{
                 backgroundImage:
                   "radial-gradient(circle, #4285F4 1.5px, transparent 1.6px)",
@@ -561,98 +246,15 @@ const Hero = () => {
               }}
             />
 
-            <div
-              className="
-                absolute
-                left-[8%]
-                top-[32%]
-                z-20
-                flex
-                h-9
-                w-9
-                -rotate-[3deg]
-                items-center
-                justify-center
-                rounded-xl
-                bg-[#4285F4]
-                text-white
-                shadow-[0_10px_20px_rgba(66,133,244,.28)]
-
-                sm:left-[12%]
-                sm:top-[35%]
-                sm:h-12
-                sm:w-12
-                sm:rounded-2xl
-
-                lg:left-[15%]
-                lg:top-[37%]
-                lg:h-[58px]
-                lg:w-[58px]
-              "
-            >
+            <div className="absolute left-[8%] top-[32%] z-20 flex h-9 w-9 -rotate-[3deg] items-center justify-center rounded-xl bg-[#4285F4] text-white shadow-[0_10px_20px_rgba(66,133,244,.28)] sm:left-[12%] sm:top-[35%] sm:h-12 sm:w-12 sm:rounded-2xl lg:left-[15%] lg:top-[37%] lg:h-[58px] lg:w-[58px]">
               <Code2 className="h-4 w-4 sm:h-5 sm:w-5 lg:h-7 lg:w-7" />
             </div>
 
-            <div
-              className="
-                absolute
-                bottom-[16%]
-                left-[7%]
-                z-20
-                flex
-                h-9
-                w-9
-                rotate-[-2deg]
-                items-center
-                justify-center
-                rounded-xl
-                bg-[#FBBC04]
-                text-white
-                shadow-[0_10px_18px_rgba(251,188,4,.25)]
-
-                sm:bottom-[15%]
-                sm:left-[11%]
-                sm:h-12
-                sm:w-12
-                sm:rounded-2xl
-
-                lg:left-[14%]
-                lg:h-[58px]
-                lg:w-[58px]
-              "
-            >
+            <div className="absolute bottom-[16%] left-[7%] z-20 flex h-9 w-9 rotate-[-2deg] items-center justify-center rounded-xl bg-[#FBBC04] text-white shadow-[0_10px_18px_rgba(251,188,4,.25)] sm:bottom-[15%] sm:left-[11%] sm:h-12 sm:w-12 sm:rounded-2xl lg:left-[14%] lg:h-[58px] lg:w-[58px]">
               <Lightbulb className="h-4 w-4 sm:h-5 sm:w-5 lg:h-7 lg:w-7" />
             </div>
 
-            <div
-              className="
-                absolute
-                right-[3%]
-                top-[48%]
-                z-20
-                flex
-                h-9
-                w-9
-                rotate-[4deg]
-                items-center
-                justify-center
-                rounded-xl
-                bg-[#34A853]
-                text-white
-                shadow-[0_10px_20px_rgba(52,168,83,.25)]
-
-                sm:right-[6%]
-                sm:top-[50%]
-                sm:h-12
-                sm:w-12
-                sm:rounded-2xl
-
-                lg:right-[5%]
-                lg:top-[51%]
-                lg:h-[58px]
-                lg:w-[58px]
-              "
-            >
+            <div className="absolute right-[3%] top-[48%] z-20 flex h-9 w-9 rotate-[4deg] items-center justify-center rounded-xl bg-[#34A853] text-white shadow-[0_10px_20px_rgba(52,168,83,.25)] sm:right-[6%] sm:top-[50%] sm:h-12 sm:w-12 sm:rounded-2xl lg:right-[5%] lg:top-[51%] lg:h-[58px] lg:w-[58px]">
               <Braces className="h-4 w-4 sm:h-5 sm:w-5 lg:h-7 lg:w-7" />
             </div>
           </div>
@@ -662,18 +264,7 @@ const Hero = () => {
           aria-hidden="true"
           viewBox="0 0 1800 260"
           preserveAspectRatio="none"
-          className="
-            pointer-events-none
-            absolute
-            bottom-[40px]
-            left-1/2
-            z-20
-            hidden
-            h-[220px]
-            w-[115%]
-            -translate-x-1/2
-            lg:block
-          "
+          className="pointer-events-none absolute bottom-[40px] left-1/2 z-20 hidden h-[220px] w-[115%] -translate-x-1/2 lg:block"
         >
           {Array.from({ length: 12 }).map((_, index) => {
             const offset = index * 9;
@@ -704,89 +295,18 @@ const Hero = () => {
           })}
         </svg>
 
-        <div
-          className="
-            relative
-            z-40
-            mx-auto
-            mb-7
-            w-[calc(100%-32px)]
-            max-w-[1200px]
-
-            lg:absolute
-            lg:bottom-[20px]
-            lg:left-1/2
-            lg:mb-0
-            lg:-translate-x-1/2
-            lg:w-[76%]
-
-            xl:w-[74%]
-
-            2xl:max-w-[1220px]
-          "
-        >
-          <div
-            className="
-              grid
-              overflow-hidden
-              rounded-[22px]
-              border
-              border-slate-100
-              bg-white/95
-              shadow-[0_15px_40px_rgba(15,23,42,.07)]
-              backdrop-blur-xl
-
-              sm:grid-cols-2
-
-              lg:grid-cols-3
-            "
-          >
+        <div className="relative z-40 mx-auto mb-7 w-[calc(100%-32px)] max-w-[1200px] lg:absolute lg:bottom-[20px] lg:left-1/2 lg:mb-0 lg:-translate-x-1/2 lg:w-[76%] xl:w-[74%] 2xl:max-w-[1220px]">
+          <div className="grid overflow-hidden rounded-[22px] border border-slate-100 bg-white shadow-lg shadow-gray-900/5 transition-all duration-300 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => {
               const Icon = feature.icon;
 
               return (
                 <div
                   key={feature.title}
-                  className={`
-                    flex
-                    min-h-[104px]
-                    items-center
-                    justify-center
-                    gap-4
-                    px-5
-                    py-4
-
-                    sm:min-h-[118px]
-                    sm:px-7
-                    sm:py-5
-
-                    ${index > 0 ? "border-t border-slate-100 sm:border-t-0" : ""
-                    }
-
-                    ${index === 1 ? "sm:border-l sm:border-slate-100" : ""}
-
-                    ${index >= 2
-                      ? "sm:border-t sm:border-slate-100 lg:border-t-0"
-                      : ""
-                    }
-
-                    ${index === 2 || index === 3
-                      ? "lg:border-l lg:border-slate-100"
-                      : ""
-                    }
-                  `}
+                  className={`flex min-h-[104px] items-center justify-center gap-4 px-5 py-4 sm:min-h-[118px] sm:px-7 sm:py-5 ${index > 0 ? "border-t border-slate-100 sm:border-t-0" : ""} ${index === 1 ? "sm:border-l sm:border-slate-100" : ""} ${index >= 2 ? "sm:border-t sm:border-slate-100 lg:border-t-0" : ""} ${index === 2 || index === 3 ? "lg:border-l lg:border-slate-100" : ""}`}
                 >
                   <div
-                    className={`
-                      flex
-                      h-[50px]
-                      w-[50px]
-                      shrink-0
-                      items-center
-                      justify-center
-                      rounded-full
-                      ${feature.bg}
-                    `}
+                    className={`flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full ${feature.bg}`}
                   >
                     <Icon className={`h-6 w-6 ${feature.color}`} />
                   </div>
@@ -879,8 +399,9 @@ const Hero = () => {
             <div
               ref={scrollerRef}
               onScroll={syncScrollState}
-              className={`flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${hasOverflow ? "" : "justify-center-safe"
-                }`}
+              className={`flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
+                hasOverflow ? "" : "justify-center-safe"
+              }`}
             >
               {upcomingEvents.map((event) => (
                 <div
@@ -901,10 +422,11 @@ const Hero = () => {
                     onClick={() => scrollToIndex(index)}
                     aria-label={`Go to ${event.title}`}
                     aria-current={index === activeIndex}
-                    className={`h-2 rounded-full transition-all duration-300 ${index === activeIndex
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      index === activeIndex
                         ? "w-6 bg-blue-600"
                         : "w-2 bg-gray-300 hover:bg-gray-400"
-                      }`}
+                    }`}
                   />
                 ))}
               </div>
