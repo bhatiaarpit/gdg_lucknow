@@ -57,7 +57,7 @@ const EventCard = ({
   const [imageLoading, setImageLoading] = useState(true);
 
   const formatDate = (dateString: string) => {
-    if (dateString === 'TBD') return 'To Be Determined';
+    if (dateString === 'TBA') return 'To Be Determined';
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {
       weekday: 'long',
@@ -69,8 +69,8 @@ const EventCard = ({
 
   const now = new Date();
   const eventDate =
-    event.date === 'TBD' ? new Date('2099-12-31') : new Date(event.date);
-  const isEventUpcoming = eventDate >= now || event.date === 'TBD';
+    event.date === 'TBA' ? new Date('2099-12-31') : new Date(event.date);
+  const isEventUpcoming = eventDate >= now || event.date === 'TBA';
 
   const renderSpeakers = () => {
     if (event.speakers && Array.isArray(event.speakers)) {
@@ -103,12 +103,12 @@ const EventCard = ({
       });
     }
 
-    return <span className="text-gray-700">{event.speaker || 'TBD'}</span>;
+    return <span className="text-gray-700">{event.speaker || 'TBA'}</span>;
   };
 
   const hasValidImage =
     event.image &&
-    event.image !== 'TBD' &&
+    event.image !== 'TBA' &&
     event.image !== '/api/placeholder/400/200' &&
     !imageError;
 
@@ -186,7 +186,7 @@ const EventCard = ({
             <Calendar className="h-4 w-4 mr-2 text-blue-600" />
             <span className="text-sm">{formatDate(event.date)}</span>
           </div>
-          {event.time && event.time !== 'TBD' && (
+          {event.time && event.time !== 'TBA' && (
             <div className="flex items-center text-gray-600">
               <Clock className="h-4 w-4 mr-2 text-green-600" />
               <span className="text-sm">{event.time}</span>
@@ -196,7 +196,7 @@ const EventCard = ({
             <MapPin className="h-4 w-4 mr-2 text-red-600" />
             <span className="text-sm">{event.location}</span>
           </div>
-          {event.attendees && event.attendees !== 'TBD' && (
+          {event.attendees && event.attendees !== 'TBA' && (
             <div className="flex items-center text-gray-600">
               <Users className="h-4 w-4 mr-2 text-yellow-600" />
               <span className="text-sm">

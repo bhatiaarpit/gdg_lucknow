@@ -67,7 +67,7 @@ const accents: Record<
 };
 
 const isFilled = (value?: string) =>
-  Boolean(value && value !== 'TBD' && value !== '#' && value.trim() !== '');
+  Boolean(value && value !== 'TBA' && value !== '#' && value.trim() !== '');
 
 const UpcomingEventCard = ({
   event,
@@ -95,7 +95,7 @@ const UpcomingEventCard = ({
         day: eventDate.toLocaleDateString('en-US', { day: '2-digit' }),
         month: eventDate.toLocaleDateString('en-US', { month: 'short' }),
       }
-    : { day: 'TBD', month: 'date' };
+    : { day: 'TBA', month: 'date' };
 
   const dateLabel = eventDate
     ? eventDate.toLocaleDateString('en-GB', {

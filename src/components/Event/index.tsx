@@ -84,12 +84,12 @@ const EventsPage = () => {
       ...collaboratedEvents.map((event): EventType => normalizeEvent(event, 'collaborated'))
     ];
     return allEvents.sort((a, b) => {
-      const dateA = a.date === 'TBD' ? new Date('2099-12-31') : new Date(a.date);
-      const dateB = b.date === 'TBD' ? new Date('2099-12-31') : new Date(b.date);
+      const dateA = a.date === 'TBA' ? new Date('2099-12-31') : new Date(a.date);
+      const dateB = b.date === 'TBA' ? new Date('2099-12-31') : new Date(b.date);
       const now = new Date();
 
-      const isUpcomingA = dateA >= now || a.date === 'TBD';
-      const isUpcomingB = dateB >= now || b.date === 'TBD';
+      const isUpcomingA = dateA >= now || a.date === 'TBA';
+      const isUpcomingB = dateB >= now || b.date === 'TBA';
 
       if (isUpcomingA && !isUpcomingB) return -1;
       if (!isUpcomingA && isUpcomingB) return 1;

@@ -37,12 +37,12 @@ export const upcomingEvents = [
   {
     id: 31,
     title: 'Nirmāṇa - 2026',
-    date: 'TBD',
-    time: 'TBD',
+    date: 'TBA',
+    time: 'TBA',
     location: 'Lucknow',
     category: 'meetup',
-    attendees: 'TBD',
-    maxAttendees: 'TBD',
+    attendees: 'TBA',
+    maxAttendees: 'TBA',
     description: 'The next edition of Nirmāṇa returns to Lucknow. Details on the theme, venue, and speaker lineup will be announced soon.',
     image: Nirmana2026,
     speakers: [
@@ -58,12 +58,12 @@ export const upcomingEvents = [
   {
     id: 32,
     title: 'DevFest 2026',
-    date: 'TBD',
-    time: 'TBD',
+    date: 'TBA',
+    time: 'TBA',
     location: 'Lucknow',
     category: 'conference',
-    attendees: 'TBD',
-    maxAttendees: 'TBD',
+    attendees: 'TBA',
+    maxAttendees: 'TBA',
     description: 'GDG Lucknow’s flagship annual developer festival returns for 2026. Details on the theme, venue, and speaker lineup will be announced soon.',
     image: DevFest2026,
     speakers: [
