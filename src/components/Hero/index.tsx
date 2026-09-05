@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 import {
   ArrowRight,
@@ -16,34 +16,34 @@ import {
   Lightbulb,
   Rocket,
   Users,
-} from 'lucide-react';
+} from "lucide-react";
 
-import rumiGate from '@/assets/rumi-gate.png';
-import { categories, upcomingEvents } from '@/Data/Events.js';
-import UpcomingEventCard from '@/components/UpcomingEventCard';
+import rumiGate from "@/assets/rumi-gate.png";
+import { categories, upcomingEvents } from "@/Data/Events.js";
+import UpcomingEventCard from "@/components/UpcomingEventCard";
 
 const Hero = () => {
   const features = [
     {
       icon: Users,
-      title: 'Community Driven',
-      description: 'Learn, connect and grow with like-minded people',
-      bg: 'bg-blue-50',
-      color: 'text-[#4285F4]',
+      title: "Community Driven",
+      description: "Learn, connect and grow with like-minded people",
+      bg: "bg-blue-50",
+      color: "text-[#4285F4]",
     },
     {
       icon: CalendarDays,
-      title: 'Events & Workshops',
-      description: 'Hands-on sessions and real-world learning',
-      bg: 'bg-green-50',
-      color: 'text-[#34A853]',
+      title: "Events & Workshops",
+      description: "Hands-on sessions and real-world learning",
+      bg: "bg-green-50",
+      color: "text-[#34A853]",
     },
     {
       icon: Rocket,
-      title: 'Build & Contribute',
-      description: 'Work on exciting projects and open source',
-      bg: 'bg-yellow-50',
-      color: 'text-[#F9AB00]',
+      title: "Build & Contribute",
+      description: "Work on exciting projects and open source",
+      bg: "bg-yellow-50",
+      color: "text-[#F9AB00]",
     },
   ];
 
@@ -82,10 +82,10 @@ const Hero = () => {
   useEffect(() => {
     syncScrollState();
 
-    window.addEventListener('resize', syncScrollState);
+    window.addEventListener("resize", syncScrollState);
 
     return () => {
-      window.removeEventListener('resize', syncScrollState);
+      window.removeEventListener("resize", syncScrollState);
     };
   }, [syncScrollState]);
 
@@ -96,7 +96,7 @@ const Hero = () => {
 
     scroller.scrollTo({
       left: index * getStep(scroller),
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -106,35 +106,21 @@ const Hero = () => {
 
   return (
     <section className="relative overflow-hidden bg-white">
-      {/* ====================================================== */}
-      {/* HERO */}
-      {/* ====================================================== */}
-
-      <div className="relative overflow-hidden lg:min-h-[780px]">
-        {/* BACKGROUND */}
-
+      <div className="relative overflow-hidden lg:min-h-[700px]">
         <div className="pointer-events-none absolute inset-0">
-          {/* very subtle grid */}
-
           <div
             className="absolute inset-0 opacity-[0.018]"
             style={{
               backgroundImage:
-                'linear-gradient(#4285F4 1px, transparent 1px), linear-gradient(90deg, #4285F4 1px, transparent 1px)',
-              backgroundSize: '62px 62px',
+                "linear-gradient(#4285F4 1px, transparent 1px), linear-gradient(90deg, #4285F4 1px, transparent 1px)",
+              backgroundSize: "62px 62px",
             }}
           />
-
-          {/* right blue ambience */}
 
           <div className="absolute -right-[220px] top-0 h-[720px] w-[900px] rounded-full bg-blue-50/70 blur-[90px]" />
 
           <div className="absolute left-[35%] top-[80px] h-[560px] w-[900px] rounded-full bg-sky-50/40 blur-[110px]" />
         </div>
-
-        {/* ==================================================== */}
-        {/* MAIN HERO CONTENT */}
-        {/* ==================================================== */}
 
         <div
           className="
@@ -144,72 +130,84 @@ const Hero = () => {
             grid
             min-h-0
             w-full
-            max-w-[1660px]
+            max-w-[1280px]
             grid-cols-1
             items-center
-            px-4
+            gap-2
+            px-5
             pb-8
-            pt-14
+            pt-12
 
-            sm:px-10
-            sm:pt-20
+            sm:px-8
+            sm:pt-16
 
             lg:grid-cols-[42%_58%]
-            lg:min-h-[690px]
-            lg:px-[5.5vw]
-            lg:pb-[130px]
-            lg:pt-[70px]
+            lg:min-h-[600px]
+            lg:gap-6
+            lg:px-10
+            lg:pb-[90px]
+            lg:pt-14
 
-            xl:px-[6.7vw]
+            xl:px-14
           "
         >
-          {/* ================================================== */}
-          {/* LEFT SIDE */}
-          {/* ================================================== */}
+          <div
+            className="
+              relative
+              z-30
+              flex
+              flex-col
+              items-center
+              text-center
 
-          <div className="relative z-30 lg:-translate-y-3">
-            {/* BADGE */}
-
-
-            {/* HEADING */}
-
+              lg:items-start
+              lg:text-left
+              lg:-translate-y-2
+            "
+          >
             <h1
               className="
-                max-w-[650px]
-                text-[42px]
+                mx-auto
+                max-w-[560px]
+                text-[34px]
                 font-bold
-                leading-[1.01]
-                tracking-[-0.052em]
+                leading-[1.05]
+                tracking-[-0.045em]
                 text-[#182033]
 
-                sm:text-[58px]
+                sm:text-[46px]
 
-                lg:text-[64px]
+                lg:mx-0
+                lg:max-w-[560px]
+                lg:text-[54px]
 
-                xl:text-[70px]
+                xl:text-[60px]
 
-                2xl:text-[76px]
+                2xl:text-[66px]
               "
             >
               Build. Learn.
               <br />
-              Grow.{' '}
-              <span className="text-[#246BFD]">
-                Together.
-              </span>
+              Grow. <span className="text-[#246BFD]">Together.</span>
             </h1>
-
-            {/* DESCRIPTION */}
 
             <p
               className="
-                mt-5
-                max-w-[590px]
-                text-base
+                mx-auto
+                mt-4
+                max-w-[480px]
+                text-[15px]
                 leading-relaxed
                 text-[#536079]
 
-                xl:text-[18px]
+                sm:mt-5
+                sm:max-w-[540px]
+                sm:text-base
+
+                lg:mx-0
+                lg:max-w-[520px]
+
+                xl:text-[17px]
               "
             >
               GDG Lucknow is a community of developers, innovators,
@@ -217,9 +215,24 @@ const Hero = () => {
               and dreamers building the future with Google technologies.
             </p>
 
-            {/* CTAS */}
+            <div
+              className="
+                mt-7
+                flex
+                w-full
+                max-w-[420px]
+                flex-row
+                justify-center
+                gap-3
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                sm:mt-8
+                sm:max-w-none
+                sm:gap-4
+
+                lg:w-auto
+                lg:justify-start
+              "
+            >
               <a
                 href="https://gdg.community.dev/gdg-lucknow/"
                 target="_blank"
@@ -227,14 +240,16 @@ const Hero = () => {
                 className="
                   group
                   inline-flex
-                  h-[58px]
+                  h-12
+                  flex-1
                   items-center
                   justify-center
-                  gap-5
+                  gap-2
+                  whitespace-nowrap
                   rounded-[10px]
                   bg-[#1769ff]
-                  px-[30px]
-                  text-[16px]
+                  px-4
+                  text-[13px]
                   font-semibold
                   text-white
                   shadow-[0_10px_24px_rgba(23,105,255,.18)]
@@ -244,11 +259,21 @@ const Hero = () => {
                   hover:-translate-y-1
                   hover:bg-[#075ee9]
                   hover:shadow-[0_14px_30px_rgba(23,105,255,.25)]
+
+                  sm:h-14
+                  sm:flex-none
+                  sm:gap-3
+                  sm:px-7
+                  sm:text-[15px]
+
+                  lg:h-[54px]
+                  lg:gap-5
+                  lg:px-[26px]
+                  lg:text-[16px]
                 "
               >
                 Join Community
-
-                <ExternalLink className="h-[17px] w-[17px]" />
+                <ExternalLink className="h-4 w-4 sm:h-[17px] sm:w-[17px]" />
               </a>
 
               <a
@@ -258,16 +283,18 @@ const Hero = () => {
                 className="
                   group
                   inline-flex
-                  h-[58px]
+                  h-12
+                  flex-1
                   items-center
                   justify-center
-                  gap-6
+                  gap-2
+                  whitespace-nowrap
                   rounded-[10px]
                   border
                   border-[#d9e0ea]
                   bg-white
-                  px-[30px]
-                  text-[16px]
+                  px-4
+                  text-[13px]
                   font-semibold
                   text-[#1769ff]
                   shadow-[0_2px_5px_rgba(15,23,42,.04)]
@@ -277,64 +304,68 @@ const Hero = () => {
                   hover:-translate-y-1
                   hover:border-blue-200
                   hover:shadow-lg
+
+                  sm:h-14
+                  sm:flex-none
+                  sm:gap-3
+                  sm:px-7
+                  sm:text-[15px]
+
+                  lg:h-[54px]
+                  lg:gap-6
+                  lg:px-[26px]
+                  lg:text-[16px]
                 "
               >
                 Join the Winter Arc
-
-                <ExternalLink className="h-[17px] w-[17px] text-[#4f5b6f]" />
+                <ExternalLink className="h-4 w-4 text-[#4f5b6f] sm:h-[17px] sm:w-[17px]" />
               </a>
             </div>
 
-            {/* PEOPLE */}
-
             <div className="mt-9 flex items-center gap-4">
-              <div className="flex -space-x-[7px]">
-              </div>
+              <div className="flex -space-x-[7px]"></div>
             </div>
           </div>
-
-          {/* ================================================== */}
-          {/* RIGHT VISUAL */}
-          {/* ================================================== */}
 
           <div
             className="
               relative
-              mt-8
-              min-h-[430px]
+              mt-10
+              min-h-[380px]
               w-full
 
+              sm:mt-8
+              sm:min-h-[460px]
+
               lg:mt-0
-              lg:h-[610px]
+              lg:h-[540px]
               lg:min-h-0
+
+              xl:h-[560px]
             "
           >
-            {/* BIG PALE BLUE CIRCLE */}
-
             <div
               className="
                 pointer-events-none
                 absolute
                 left-1/2
                 top-[2%]
-                h-[360px]
-                w-[360px]
+                h-[300px]
+                w-[300px]
                 -translate-x-1/2
                 rounded-full
                 bg-[#eef6ff]
 
-                sm:h-[500px]
-                sm:w-[500px]
+                sm:h-[430px]
+                sm:w-[430px]
 
-                lg:h-[555px]
-                lg:w-[555px]
+                lg:h-[500px]
+                lg:w-[500px]
 
-                xl:h-[610px]
-                xl:w-[610px]
+                xl:h-[540px]
+                xl:w-[540px]
               "
             />
-
-            {/* RUMI GATE */}
 
             <div
               className="
@@ -342,18 +373,18 @@ const Hero = () => {
                 bottom-2
                 left-1/2
                 z-10
-                w-[155%]
-                max-w-[1010px]
+                w-[150%]
+                max-w-[880px]
                 -translate-x-1/2
 
                 sm:bottom-[4px]
-                sm:w-[108%]
+                sm:w-[106%]
 
-                lg:w-[108%]
+                lg:w-[106%]
 
-                xl:w-[111%]
+                xl:w-[109%]
 
-                2xl:w-[115%]
+                2xl:w-[112%]
               "
             >
               <Image
@@ -361,7 +392,7 @@ const Hero = () => {
                 alt="Rumi Gate, landmark of Lucknow"
                 priority
                 placeholder="blur"
-                sizes="(max-width: 1024px) 100vw, 1000px"
+                sizes="(max-width: 1024px) 100vw, 900px"
                 className="h-auto w-full mix-blend-multiply"
                 style={{
                   maskImage: `
@@ -388,38 +419,53 @@ const Hero = () => {
               />
             </div>
 
-            {/* second very subtle ring */}
-
             <div
               className="
                 pointer-events-none
                 absolute
                 left-1/2
                 top-[7%]
-                h-[330px]
-                w-[330px]
+                h-[280px]
+                w-[280px]
                 -translate-x-1/2
                 rounded-full
                 border
                 border-blue-100/40
 
                 sm:left-[57%]
-                sm:h-[460px]
-                sm:w-[460px]
+                sm:h-[400px]
+                sm:w-[400px]
 
-                lg:h-[510px]
-                lg:w-[510px]
+                lg:h-[460px]
+                lg:w-[460px]
 
-                xl:h-[560px]
-                xl:w-[560px]
+                xl:h-[500px]
+                xl:w-[500px]
               "
             />
 
-            {/* CLOUDS */}
-
             <svg
               viewBox="0 0 90 50"
-              className="pointer-events-none absolute right-[9%] top-[18%] hidden h-14 w-24 text-[#cbd8ea] xl:block"
+              className="
+                pointer-events-none
+                absolute
+                right-[4%]
+                top-[8%]
+                block
+                h-9
+                w-16
+                text-[#cbd8ea]
+
+                sm:right-[8%]
+                sm:top-[12%]
+                sm:h-11
+                sm:w-20
+
+                lg:right-[9%]
+                lg:top-[18%]
+                lg:h-14
+                lg:w-24
+              "
             >
               <path
                 d="M11 39h57c7 0 12-4 12-10s-5-10-12-10h-3C62 12 56 8 48 8c-10 0-17 6-19 15-2-2-5-3-9-3-7 0-13 5-13 11 0 5 4 8 10 8Z"
@@ -431,7 +477,26 @@ const Hero = () => {
 
             <svg
               viewBox="0 0 90 50"
-              className="pointer-events-none absolute left-[4%] top-[25%] hidden h-12 w-20 text-[#cbd8ea] lg:block"
+              className="
+                pointer-events-none
+                absolute
+                left-[2%]
+                top-[14%]
+                block
+                h-8
+                w-14
+                text-[#cbd8ea]
+
+                sm:left-[3%]
+                sm:top-[18%]
+                sm:h-10
+                sm:w-16
+
+                lg:left-[4%]
+                lg:top-[25%]
+                lg:h-12
+                lg:w-20
+              "
             >
               <path
                 d="M11 39h57c7 0 12-4 12-10s-5-10-12-10h-3C62 12 56 8 48 8c-10 0-17 6-19 15-2-2-5-3-9-3-7 0-13 5-13 11 0 5 4 8 10 8Z"
@@ -443,7 +508,25 @@ const Hero = () => {
 
             <svg
               viewBox="0 0 90 50"
-              className="pointer-events-none absolute right-[23%] top-[37%] hidden h-12 w-20 text-blue-200 lg:block"
+              className="
+                pointer-events-none
+                absolute
+                right-[14%]
+                top-[30%]
+                hidden
+                h-9
+                w-16
+                text-blue-200
+
+                sm:block
+                sm:right-[18%]
+                sm:top-[33%]
+
+                lg:right-[23%]
+                lg:top-[37%]
+                lg:h-12
+                lg:w-20
+              "
             >
               <path
                 d="M11 39h57c7 0 12-4 12-10s-5-10-12-10h-3C62 12 56 8 48 8c-10 0-17 6-19 15-2-2-5-3-9-3-7 0-13 5-13 11 0 5 4 8 10 8Z"
@@ -452,95 +535,128 @@ const Hero = () => {
                 strokeWidth="1.3"
               />
             </svg>
-
-            {/* DOTS */}
 
             <div
-              className="pointer-events-none absolute left-[14%] top-[29%] hidden h-[75px] w-[115px] opacity-[0.25] lg:block"
+              className="
+                pointer-events-none
+                absolute
+                left-[8%]
+                top-[24%]
+                hidden
+                h-[50px]
+                w-[80px]
+                opacity-[0.25]
+
+                sm:block
+
+                lg:left-[14%]
+                lg:top-[29%]
+                lg:h-[75px]
+                lg:w-[115px]
+              "
               style={{
                 backgroundImage:
-                  'radial-gradient(circle, #4285F4 1.5px, transparent 1.6px)',
-                backgroundSize: '13px 13px',
+                  "radial-gradient(circle, #4285F4 1.5px, transparent 1.6px)",
+                backgroundSize: "13px 13px",
               }}
             />
 
-            {/* BLUE CODE */}
-
             <div
               className="
                 absolute
-                left-[15%]
-                top-[37%]
+                left-[8%]
+                top-[32%]
                 z-20
-                hidden
-                h-[62px]
-                w-[62px]
+                flex
+                h-9
+                w-9
                 -rotate-[3deg]
                 items-center
                 justify-center
-                rounded-2xl
+                rounded-xl
                 bg-[#4285F4]
                 text-white
-                shadow-[0_15px_30px_rgba(66,133,244,.28)]
-                lg:flex
+                shadow-[0_10px_20px_rgba(66,133,244,.28)]
+
+                sm:left-[12%]
+                sm:top-[35%]
+                sm:h-12
+                sm:w-12
+                sm:rounded-2xl
+
+                lg:left-[15%]
+                lg:top-[37%]
+                lg:h-[58px]
+                lg:w-[58px]
               "
             >
-              <Code2 className="h-7 w-7" />
+              <Code2 className="h-4 w-4 sm:h-5 sm:w-5 lg:h-7 lg:w-7" />
             </div>
-
-            {/* YELLOW LIGHT BULB */}
 
             <div
               className="
                 absolute
-                bottom-[15%]
-                left-[14%]
+                bottom-[16%]
+                left-[7%]
                 z-20
-                hidden
-                h-[62px]
-                w-[62px]
+                flex
+                h-9
+                w-9
                 rotate-[-2deg]
                 items-center
                 justify-center
-                rounded-2xl
+                rounded-xl
                 bg-[#FBBC04]
                 text-white
-                shadow-[0_14px_28px_rgba(251,188,4,.25)]
-                lg:flex
+                shadow-[0_10px_18px_rgba(251,188,4,.25)]
+
+                sm:bottom-[15%]
+                sm:left-[11%]
+                sm:h-12
+                sm:w-12
+                sm:rounded-2xl
+
+                lg:left-[14%]
+                lg:h-[58px]
+                lg:w-[58px]
               "
             >
-              <Lightbulb className="h-7 w-7" />
+              <Lightbulb className="h-4 w-4 sm:h-5 sm:w-5 lg:h-7 lg:w-7" />
             </div>
-
-            {/* GREEN BRACES */}
 
             <div
               className="
                 absolute
-                right-[5%]
-                top-[51%]
+                right-[3%]
+                top-[48%]
                 z-20
-                hidden
-                h-[62px]
-                w-[62px]
+                flex
+                h-9
+                w-9
                 rotate-[4deg]
                 items-center
                 justify-center
-                rounded-2xl
+                rounded-xl
                 bg-[#34A853]
                 text-white
-                shadow-[0_15px_30px_rgba(52,168,83,.25)]
-                lg:flex
+                shadow-[0_10px_20px_rgba(52,168,83,.25)]
+
+                sm:right-[6%]
+                sm:top-[50%]
+                sm:h-12
+                sm:w-12
+                sm:rounded-2xl
+
+                lg:right-[5%]
+                lg:top-[51%]
+                lg:h-[58px]
+                lg:w-[58px]
               "
             >
-              <Braces className="h-7 w-7" />
+              <Braces className="h-4 w-4 sm:h-5 sm:w-5 lg:h-7 lg:w-7" />
             </div>
           </div>
         </div>
-
-        {/* ==================================================== */}
-        {/* FLOWING WAVE */}
-        {/* ==================================================== */}
 
         <svg
           aria-hidden="true"
@@ -549,11 +665,11 @@ const Hero = () => {
           className="
             pointer-events-none
             absolute
-            bottom-[47px]
+            bottom-[40px]
             left-1/2
             z-20
             hidden
-            h-[245px]
+            h-[220px]
             w-[115%]
             -translate-x-1/2
             lg:block
@@ -588,10 +704,6 @@ const Hero = () => {
           })}
         </svg>
 
-        {/* ==================================================== */}
-        {/* FEATURE PANEL */}
-        {/* ==================================================== */}
-
         <div
           className="
             relative
@@ -599,18 +711,18 @@ const Hero = () => {
             mx-auto
             mb-7
             w-[calc(100%-32px)]
-            max-w-[1300px]
+            max-w-[1200px]
 
             lg:absolute
-            lg:bottom-[28px]
+            lg:bottom-[20px]
             lg:left-1/2
             lg:mb-0
             lg:-translate-x-1/2
-            lg:w-[73%]
+            lg:w-[76%]
 
             xl:w-[74%]
 
-            2xl:max-w-[1340px]
+            2xl:max-w-[1220px]
           "
         >
           <div
@@ -637,39 +749,30 @@ const Hero = () => {
                   key={feature.title}
                   className={`
                     flex
-                    min-h-[112px]
+                    min-h-[104px]
                     items-center
                     justify-center
                     gap-4
                     px-5
                     py-4
 
-                    sm:min-h-[128px]
+                    sm:min-h-[118px]
                     sm:px-7
                     sm:py-5
 
-                    ${
-                      index > 0
-                        ? 'border-t border-slate-100 sm:border-t-0'
-                        : ''
+                    ${index > 0 ? "border-t border-slate-100 sm:border-t-0" : ""
                     }
 
-                    ${
-                      index === 1
-                        ? 'sm:border-l sm:border-slate-100'
-                        : ''
+                    ${index === 1 ? "sm:border-l sm:border-slate-100" : ""}
+
+                    ${index >= 2
+                      ? "sm:border-t sm:border-slate-100 lg:border-t-0"
+                      : ""
                     }
 
-                    ${
-                      index >= 2
-                        ? 'sm:border-t sm:border-slate-100 lg:border-t-0'
-                        : ''
-                    }
-
-                    ${
-                      index === 2 || index === 3
-                        ? 'lg:border-l lg:border-slate-100'
-                        : ''
+                    ${index === 2 || index === 3
+                      ? "lg:border-l lg:border-slate-100"
+                      : ""
                     }
                   `}
                 >
@@ -704,10 +807,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* ====================================================== */}
-      {/* UPCOMING EVENTS */}
-      {/* ====================================================== */}
-
       {upcomingEvents.length > 0 && (
         <div className="relative mx-auto max-w-7xl px-4 pb-24 pt-20 sm:px-6 lg:px-8">
           <div className="pointer-events-none absolute -top-16 left-1/2 h-[560px] w-[1100px] -translate-x-1/2 rounded-[80px] bg-slate-50/70 blur-2xl" />
@@ -719,10 +818,7 @@ const Hero = () => {
             </div>
 
             <h2 className="mt-5 text-4xl font-bold tracking-[-0.035em] text-gray-950 sm:text-5xl lg:text-[56px]">
-              What&rsquo;s{' '}
-              <span className="text-blue-600">
-                Next?
-              </span>
+              What&rsquo;s <span className="text-blue-600">Next?</span>
             </h2>
 
             <p className="mt-4 text-base leading-relaxed text-gray-600 sm:text-lg">
@@ -783,19 +879,15 @@ const Hero = () => {
             <div
               ref={scrollerRef}
               onScroll={syncScrollState}
-              className={`flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
-                hasOverflow ? '' : 'justify-center-safe'
-              }`}
+              className={`flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${hasOverflow ? "" : "justify-center-safe"
+                }`}
             >
               {upcomingEvents.map((event) => (
                 <div
                   key={event.id}
                   className="w-[85%] shrink-0 snap-start sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]"
                 >
-                  <UpcomingEventCard
-                    event={event}
-                    categories={categories}
-                  />
+                  <UpcomingEventCard event={event} categories={categories} />
                 </div>
               ))}
             </div>
@@ -809,11 +901,10 @@ const Hero = () => {
                     onClick={() => scrollToIndex(index)}
                     aria-label={`Go to ${event.title}`}
                     aria-current={index === activeIndex}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      index === activeIndex
-                        ? 'w-6 bg-blue-600'
-                        : 'w-2 bg-gray-300 hover:bg-gray-400'
-                    }`}
+                    className={`h-2 rounded-full transition-all duration-300 ${index === activeIndex
+                        ? "w-6 bg-blue-600"
+                        : "w-2 bg-gray-300 hover:bg-gray-400"
+                      }`}
                   />
                 ))}
               </div>
