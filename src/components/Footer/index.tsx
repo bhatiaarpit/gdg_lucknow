@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -11,16 +10,12 @@ import {
   Linkedin,
   Instagram,
   ExternalLink,
-  ArrowRight,
   ArrowUpRight,
   Users,
-  Calendar,
-  CalendarDays,
 } from 'lucide-react';
 
 import gdgLogo from '@/assets/gdgLogo.svg';
 import whatsappIcon from '@/assets/whatsapp-icon2.svg';
-import { upcomingEvents } from '@/Data/Events.js';
 import { GateOutline } from './CityArt';
 
 const WHATSAPP_COMMUNITY =
@@ -152,33 +147,6 @@ type FooterProps = {
 };
 
 const Footer = ({ showCommunityBanner = false }: FooterProps) => {
-  const [email, setEmail] = useState('');
-
-  const nextEvent = upcomingEvents[0];
-  const nextEventDate =
-    nextEvent && nextEvent.date !== 'TBD'
-      ? new Date(nextEvent.date).toLocaleDateString('en-GB', {
-          day: '2-digit',
-          month: 'long',
-          year: 'numeric',
-        })
-      : 'Date to be announced';
-
-  // There is no newsletter backend yet, so a subscription hands the address to
-  // the organisers' inbox. Swap this for an API call once one exists.
-  const handleSubscribe = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!email.trim()) return;
-
-    const subject = encodeURIComponent('Newsletter subscription');
-    const body = encodeURIComponent(
-      `Please add ${email.trim()} to the GDG Lucknow newsletter.`
-    );
-
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-    setEmail('');
-  };
-
   return (
     <footer>
       {showCommunityBanner && (
@@ -233,8 +201,8 @@ const Footer = ({ showCommunityBanner = false }: FooterProps) => {
           />
 
           <div className="relative mx-auto max-w-7xl px-4 pt-14 pb-44 sm:px-6 lg:px-8">
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_0.8fr_1fr_1fr_1.3fr] lg:gap-8">
-              <div>
+            <div className="grid grid-cols-2 gap-10 lg:grid-cols-[1.5fr_0.8fr_1fr_1fr] lg:gap-8">
+              <div className="col-span-2 lg:col-span-1">
                 <div className="flex items-center gap-3">
                   <Image
                     src={gdgLogo}
@@ -325,65 +293,6 @@ const Footer = ({ showCommunityBanner = false }: FooterProps) => {
                 <FooterLinkList links={resourceLinks} />
               </div>
 
-              <div>
-                <FooterHeading>Stay Updated</FooterHeading>
-
-                <p className="mt-5 text-sm leading-relaxed text-slate-400">
-                  Subscribe to our newsletter and never miss an update.
-                </p>
-
-                <form onSubmit={handleSubscribe} className="mt-4">
-                  <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 p-1.5 transition-colors focus-within:border-blue-500">
-                    <label htmlFor="footer-newsletter" className="sr-only">
-                      Email address
-                    </label>
-
-                    <input
-                      id="footer-newsletter"
-                      type="email"
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter your email"
-                      className="min-w-0 flex-1 bg-transparent px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:outline-none"
-                    />
-
-                    <button
-                      type="submit"
-                      aria-label="Subscribe to the newsletter"
-                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white transition-colors hover:bg-blue-700"
-                    >
-                      <ArrowRight className="h-4 w-4" />
-                    </button>
-                  </div>
-                </form>
-
-                {nextEvent && (
-                  <Link
-                    href="/events"
-                    className="mt-5 flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 transition-colors hover:border-blue-500/50 hover:bg-white/10"
-                  >
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-600/15 text-blue-400">
-                      <Calendar className="h-5 w-5" />
-                    </span>
-
-                    <span className="min-w-0">
-                      <span className="block text-sm font-semibold text-blue-400">
-                        Next Event
-                      </span>
-
-                      <span className="mt-0.5 block text-sm font-bold text-white">
-                        {nextEvent.title}
-                      </span>
-
-                      <span className="mt-1 flex items-center gap-1.5 text-xs text-slate-400">
-                        <CalendarDays className="h-3.5 w-3.5" />
-                        {nextEventDate}
-                      </span>
-                    </span>
-                  </Link>
-                )}
-              </div>
             </div>
           </div>
         </div>

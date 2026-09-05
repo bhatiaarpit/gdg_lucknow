@@ -321,7 +321,6 @@ const Hero = () => {
                 rounded-full
                 bg-[#eef6ff]
 
-                sm:left-[57%]
                 sm:h-[500px]
                 sm:w-[500px]
 
@@ -346,7 +345,6 @@ const Hero = () => {
                 -translate-x-1/2
 
                 sm:bottom-[4px]
-                sm:left-[58%]
                 sm:w-[108%]
 
                 lg:w-[108%]
@@ -366,20 +364,22 @@ const Hero = () => {
                 style={{
                   maskImage: `
                     radial-gradient(
-                      ellipse 72% 70% at 52% 53%,
-                      black 44%,
-                      rgba(0,0,0,.96) 58%,
-                      rgba(0,0,0,.62) 72%,
-                      transparent 92%
+                      ellipse 64% 62% at 52% 53%,
+                      black 28%,
+                      rgba(0,0,0,.92) 40%,
+                      rgba(0,0,0,.58) 52%,
+                      rgba(0,0,0,.2) 64%,
+                      transparent 78%
                     )
                   `,
                   WebkitMaskImage: `
                     radial-gradient(
-                      ellipse 72% 70% at 52% 53%,
-                      black 44%,
-                      rgba(0,0,0,.96) 58%,
-                      rgba(0,0,0,.62) 72%,
-                      transparent 92%
+                      ellipse 64% 62% at 52% 53%,
+                      black 28%,
+                      rgba(0,0,0,.92) 40%,
+                      rgba(0,0,0,.58) 52%,
+                      rgba(0,0,0,.2) 64%,
+                      transparent 78%
                     )
                   `,
                 }}
