@@ -122,7 +122,7 @@ const Hero = () => {
           <div className="absolute left-[35%] top-[80px] h-[560px] w-[900px] rounded-full bg-sky-50/40 blur-[110px]" />
         </div>
 
-        <div className="relative z-10 mx-auto grid min-h-0 w-full max-w-[1280px] grid-cols-1 items-center gap-2 px-5 pb-8 pt-12 sm:px-8 sm:pt-16 lg:grid-cols-[42%_58%] lg:min-h-[600px] lg:gap-6 lg:px-10 lg:pb-[90px] lg:pt-14 xl:px-14">
+        <div className="relative z-10 mx-auto grid min-h-0 w-full max-w-[1280px] grid-cols-1 items-center gap-2 px-5 pb-5 pt-5 sm:px-8 sm:pt-16 lg:grid-cols-[42%_58%] lg:min-h-[600px] lg:gap-6 lg:px-10 lg:pb-[90px] lg:pt-14 xl:px-14">
           <div className="relative z-30 top-[64px] sm:top-0 flex flex-col items-center text-center lg:items-start lg:text-left lg:-translate-y-2">
             <h1 className="mx-auto max-w-[560px] text-[40px] font-bold leading-[1.05] tracking-[-0.045em] text-[#182033] sm:text-[46px] lg:mx-0 lg:max-w-[560px] lg:text-[54px] xl:text-[60px] 2xl:text-[66px]">
               Build. Learn.
