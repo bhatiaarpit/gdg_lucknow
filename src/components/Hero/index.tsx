@@ -251,8 +251,10 @@ const Hero = () => {
                 <ExternalLink className="h-[17px] w-[17px]" />
               </a>
 
-              <Link
-                href="/events"
+              <a
+                href="https://forms.gle/oLp2sUWyYPUnnd2T7"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
                   group
                   inline-flex
@@ -277,10 +279,10 @@ const Hero = () => {
                   hover:shadow-lg
                 "
               >
-                Explore Events
+                Join the Winter Arc
 
-                <Calendar className="h-[17px] w-[17px] text-[#4f5b6f]" />
-              </Link>
+                <ExternalLink className="h-[17px] w-[17px] text-[#4f5b6f]" />
+              </a>
             </div>
 
             {/* PEOPLE */}
